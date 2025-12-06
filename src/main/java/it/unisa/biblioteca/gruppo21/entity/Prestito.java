@@ -21,7 +21,7 @@ public class Prestito {
     
     private final Utente utente;
     private final Libro libro;
-    private LocalDate dataRestituzione;
+    private final LocalDate dataRestituzione;
     private StatoPrestito stato;
     
     public Prestito(Utente utente, Libro libro, LocalDate dataRestituzione){
@@ -46,6 +46,11 @@ public class Prestito {
     public StatoPrestito getStato() {
         return stato;
     }
+
+    public void setStato(StatoPrestito stato) {
+        this.stato = stato;
+    }
+    
     
     
 }

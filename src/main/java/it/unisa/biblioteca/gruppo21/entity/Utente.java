@@ -12,14 +12,14 @@ package it.unisa.biblioteca.gruppo21.entity;
 public class Utente {
     private final String nome;
     private final String cognome;
-    private String indirizzoEmail;
+    private String email;
     private int matricola;
     private int numeroLibriPossesso;
     
-    public Utente(String nome, String cognome, String indirizzoEmail, int matricola, int numeroLibriPossesso){
+    public Utente(String nome, String cognome, String email, int matricola, int numeroLibriPossesso){
         this.nome = nome;
         this.cognome = cognome;
-        this.indirizzoEmail = indirizzoEmail;
+        this.email = email;
         this.matricola = matricola;
         this.numeroLibriPossesso = numeroLibriPossesso;
     }
@@ -32,8 +32,8 @@ public class Utente {
         return cognome;
     }
 
-    public String getIndirizzoEmail() {
-        return indirizzoEmail;
+    public String getEmail() {
+        return email;
     }
 
     public int getMatricola() {
@@ -44,8 +44,8 @@ public class Utente {
         return numeroLibriPossesso;
     }
 
-    public void setIndirizzoEmail(String indirizzoEmail) {
-        this.indirizzoEmail = indirizzoEmail;
+    public void setEmail(String indirizzoEmail) {
+        this.email = email;
     }
 
     public void setMatricola(int matricola) {
