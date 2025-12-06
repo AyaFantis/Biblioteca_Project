@@ -11,4 +11,11 @@ package it.unisa.biblioteca.gruppo21.service;
  */
 public class Validatore {
     
+    public static boolean validaEmail(String email){
+        return false;
+    }
+    
+    public static boolean validaMatricola(String matricola){
+        return false;
+    }
 }
