@@ -13,10 +13,10 @@ public class Utente {
     private final String nome;
     private final String cognome;
     private String email;
-    private int matricola;
+    private String matricola;
     private int numeroLibriPossesso;
     
-    public Utente(String nome, String cognome, String email, int matricola, int numeroLibriPossesso){
+    public Utente(String nome, String cognome, String email, String matricola, int numeroLibriPossesso){
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
@@ -36,7 +36,7 @@ public class Utente {
         return email;
     }
 
-    public int getMatricola() {
+    public String getMatricola() {
         return matricola;
     }
 
@@ -48,7 +48,7 @@ public class Utente {
         this.email = email;
     }
 
-    public void setMatricola(int matricola) {
+    public void setMatricola(String matricola) {
         this.matricola = matricola;
     }
 

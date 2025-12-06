@@ -9,6 +9,7 @@ import it.unisa.biblioteca.gruppo21.archive.ArchiveLibri;
 import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
 import it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
+import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
 import java.util.List;
 
@@ -65,13 +66,32 @@ public class Biblioteca {
           
         //TODO
         return serviceLibri.getListaLibri(); 
-      }
-    
-    public List<Libro> cercaLibri(String keyword) {
-        
-        //TODO
-        return serviceLibri.cerca(keyword);
     }
+    // DA MODIFICARE
+    public List<Libro> cercaLibri(String titolo, String autore, String codiceISBN) {
+         //TODO
+        return serviceLibri.cerca(titolo, autore, codiceISBN);
+    }
+    
+    //METODI PRESTITO
+    public  String effettuaPrestito(String matricola, String codiceISBN){
+    
+        return servicePrestiti.nuovoPrestito(matricola, codiceISBN);
+    }
+    
+    public String restituisciLibro(String matricola, String codiceISBN){
+    
+        return servicePrestiti.restituzione(matricola, codiceISBN);
+    }
+    
+    public List<Prestito> getStoricoPrestiti(){
+    
+        return servicePrestiti.getLista();
+    }
+    
+    
+    
+    
  
     
     
