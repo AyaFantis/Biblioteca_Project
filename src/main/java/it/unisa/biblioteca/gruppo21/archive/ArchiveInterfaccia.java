@@ -7,8 +7,8 @@ package it.unisa.biblioteca.gruppo21.archive;
 
 /**
  *
- * @author manue
+ * @author HP
  */
-public class ArchiveInterfaccia {
+public interface ArchiveInterfaccia {
     
 }
