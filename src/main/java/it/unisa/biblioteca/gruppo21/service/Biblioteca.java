@@ -46,7 +46,7 @@ public class Biblioteca {
     
     public List<Utente> getElencoUtenti() { 
     
-        return serviceUtenti.getListaUtenti();
+        return serviceUtenti.getLista();
     }
     
     // METODI LIBRO
@@ -65,7 +65,7 @@ public class Biblioteca {
     public List<Libro> getElencoLibri() { 
           
         //TODO
-        return serviceLibri.getListaLibri(); 
+        return serviceLibri.getLista(); 
     }
     // DA MODIFICARE
     public List<Libro> cercaLibri(String titolo, String autore, String codiceISBN) {

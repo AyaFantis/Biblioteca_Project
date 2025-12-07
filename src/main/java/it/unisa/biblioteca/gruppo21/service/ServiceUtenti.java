@@ -5,8 +5,10 @@
  */
 package it.unisa.biblioteca.gruppo21.service;
 
-import it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti;
-import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
+import it.unisa.biblioteca.gruppo21.archive.*;
+import it.unisa.biblioteca.gruppo21.entity.Utente;
+import java.util.List;
+
 
 /**
  *
@@ -31,5 +33,9 @@ public class ServiceUtenti {
     public String rimuovi(String matricola){
     
         return null;
+    }
+    
+    public List<Utente> getLista() {
+        return arcUtenti.leggiTutti();
     }
 }

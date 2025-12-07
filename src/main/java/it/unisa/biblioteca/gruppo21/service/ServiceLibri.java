@@ -5,8 +5,7 @@
  */
 package it.unisa.biblioteca.gruppo21.service;
 
-import it.unisa.biblioteca.gruppo21.archive.ArchiveLibri;
-import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
+import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
 import java.util.List;
 
@@ -37,6 +36,10 @@ public class ServiceLibri {
     
     public List<Libro> cerca(String titolo, String autore, String codiceISBN){
     
+        return arcLibri.leggiTutti();
+    }
+    
+    public List<Libro> getLista(){
         return arcLibri.leggiTutti();
     }
     
