@@ -45,7 +45,7 @@ public class Utente {
     }
 
     public void setEmail(String indirizzoEmail) {
-        this.email = email;
+        this.email = indirizzoEmail;
     }
 
     public void setMatricola(String matricola) {
