@@ -43,4 +43,8 @@ public class Validatore {
     public static boolean validaMatricola(String matricola){
         return false;
     }
+    
+    public static boolean validaISBN(String isbn){
+        return false;
+    }
 }

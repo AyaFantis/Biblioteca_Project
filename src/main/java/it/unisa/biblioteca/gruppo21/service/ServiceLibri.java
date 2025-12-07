@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class ServiceLibri {
 
-    private ArchiveLibri arcLibri;
-    private ArchivePrestiti arcPrestiti;
+    private final ArchiveLibri arcLibri;
+    private final ArchivePrestiti arcPrestiti;
     
     public ServiceLibri(ArchiveLibri arcLibri,ArchivePrestiti arcPrestiti){
     
@@ -25,18 +25,19 @@ public class ServiceLibri {
     }
     
     public String aggiungi(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili){
+        return null;
+    }
     
+    public String aggiornaCopie(String codiceISBN, int nuoveCopie){
         return null;
     }
     
     public String rimuovi(String codiceISBN){
-    
         return null;
     }
     
     public List<Libro> cerca(String titolo, String autore, String codiceISBN){
-    
-        return arcLibri.leggiTutti();
+        return null;
     }
     
     public List<Libro> getLista(){

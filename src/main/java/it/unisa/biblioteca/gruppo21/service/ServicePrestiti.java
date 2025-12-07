@@ -17,29 +17,29 @@ import java.util.List;
  */
 public class ServicePrestiti {
 
-    private ArchivePrestiti arcPrestiti;
-    private ArchiveLibri arcLibri;
-    private ArchiveUtenti arcUtenti;
+    private final ArchivePrestiti arcPrestiti;
+    private final ArchiveLibri arcLibri;
+    private final ArchiveUtenti arcUtenti;
     
     public ServicePrestiti(ArchivePrestiti arcPrestiti,  ArchiveLibri arcLibri, ArchiveUtenti arcUtenti){
-    
         this.arcPrestiti = arcPrestiti;
         this.arcUtenti = arcUtenti;
         this.arcLibri = arcLibri;
     }
     
     public String nuovoPrestito(String matricola, String codiceISBN){
-    
         return null;
     }
     
     public String restituzione(String matricola, String codiceISBN){
+        return null;
+    }
     
+    public List<Prestito> controllaRitardi(){
         return null;
     }
     
     public List<Prestito> getLista(){
-    
         return arcPrestiti.leggiTutti();
     }
 }
