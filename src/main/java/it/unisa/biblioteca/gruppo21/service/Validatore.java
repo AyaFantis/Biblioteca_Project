@@ -44,6 +44,13 @@ public class Validatore {
         return false;
     }
     
+    /**
+     * @brief Verifica la validità di un codice ISBN.
+     * @pre L'input ISBN può essere NULL o una stringa qualsiasi.
+     * @post Restituisce true se la stringa rispetta il formato numerico.
+     * @param isbn Stringa da validare.
+     * @return Esito della validazione.
+     */
     public static boolean validaISBN(String isbn){
         return false;
     }
