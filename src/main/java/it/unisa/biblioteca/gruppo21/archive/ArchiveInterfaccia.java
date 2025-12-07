@@ -10,27 +10,29 @@ import java.util.List;
 
 /**
  * @file ArchiveInterfaccia.java
- * @brief Interfaccia generica per la gestione della persistenza dei dati (Pattern DAO/Repository).
+ * @brief Interfaccia generica per la gestione della persistenza dei dati 
  * @interface ArchiveInterfaccia
- * * Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) 
+ * Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) 
  * su un archivio dati, indipendentemente dal supporto di memorizzazione (File, Database, Memoria).
- * * @tparam T Il tipo di entità gestita dall'archivio (es. {@link it.unisa.biblioteca.gruppo21.entita.Libro}, {@link it.unisa.biblioteca.gruppo21.entita.Utente}).
- * * @author Gruppo 21
+ * @param <T> Il tipo di entità gestita dall'archivio.
+ * @author Gruppo 21
  * @version 1.0
  */
 
 public interface ArchiveInterfaccia<T>{
     
     /**
+     * @throws java.io.IOException
      * @brief Aggiunge un nuovo elemento all'archivio.
      * @pre Il parametro elemento non deve essere null.
      * @post L'archivio contiene l'elemento passato come parametro.
      * @post La dimensione dell'archivio è incrementata di 1.
-     * * @param elemento L'oggetto di tipo T da persistere.
+     * @param elemento L'oggetto di tipo T da persistere.
      */
     void aggiungi(T elemento) throws IOException;
     
     /**
+     * @throws java.io.IOException
      * @brief Rimuove un elemento esistente dall'archivio.
      * @pre Il parametro elemento non deve essere null.
      * @pre L'elemento deve essere presente nell'archivio.
@@ -51,6 +53,7 @@ public interface ArchiveInterfaccia<T>{
     T cerca(String id);
     
     /**
+     * @throws java.io.IOException
      * @brief Recupera tutti gli elementi presenti nell'archivio.
      * @pre Nessuna pre-condizione specifica (l'archivio può essere vuoto).
      * @post Restituisce una List contenente tutti gli oggetti di tipo T salvati.

@@ -9,9 +9,8 @@ package it.unisa.biblioteca.gruppo21.service;
  * @file Validatore.java
  * @brief Classe di utilità per la verifica della correttezza formale dei dati di input.
  * @class Validatore
- * * Questa classe implementa controlli robusti sui dati in ingresso utilizzando 
- * Espressioni Regolari.
- * * @author Gruppo 21
+ * Questa classe implementa controlli robusti sui dati in ingresso 
+ * @author Gruppo 21
  * @version 1.0
  */
 public class Validatore {
