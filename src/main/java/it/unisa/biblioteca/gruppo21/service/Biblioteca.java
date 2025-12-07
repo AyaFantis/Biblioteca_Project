@@ -20,73 +20,84 @@ import java.util.List;
  */
 public class Biblioteca {
    
-    private ServiceUtenti serviceUtenti;
-    private ServiceLibri serviceLibri;
-    private ServicePrestiti servicePrestiti;
+    private final ServiceUtenti serviceUtenti;
+    private final ServiceLibri serviceLibri;
+    private final ServicePrestiti servicePrestiti;
     
     public Biblioteca(){
     
-        ArchiveUtenti archivioUtente = new ArchiveUtenti();
-        ArchiveLibri archivioLibro = new ArchiveLibri();
-        ArchivePrestiti archivioPrestito = new ArchivePrestiti();
+        ArchiveUtenti archivioUtenti = new ArchiveUtenti();
+        ArchiveLibri archivioLibri = new ArchiveLibri();
+        ArchivePrestiti archivioPrestiti = new ArchivePrestiti();
+        
+        this.serviceUtenti = new ServiceUtenti(archivioUtenti, archivioPrestiti);
+        this.serviceLibri = new ServiceLibri(archivioLibri, archivioPrestiti);
+        this.servicePrestiti = new ServicePrestiti(archivioPrestiti, archivioLibri, archivioUtenti);
 
     }
     
+    //
     // METODI UTENTE
+    //
+    
     public String iscriviUtente(String nome, String cognome, String matricola, String email){
-        //TODO
         return serviceUtenti.iscrivi(nome, cognome, matricola, email);
     }
     
-    public String rimuoviUtente(String matricola){
-    
+    public String modificaUtente(String nuovoNome, String nuovoCognome, String nuovaEmail, String matricola){
         //TODO
+        return null;
+    }
+    public String rimuoviUtente(String matricola){
         return serviceUtenti.rimuovi(matricola);
     }
     
     public List<Utente> getElencoUtenti() { 
-    
         return serviceUtenti.getLista();
     }
     
-    // METODI LIBRO
-    public String aggiungiLibro(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili){
-    
+    public List<Utente> cercaUtenti(String nome, String cognome, String matricola){
         //TODO
+        return null;
+    }
+    
+    // 
+    //   METODI LIBRO
+    //
+    
+    public String aggiungiLibro(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili){
         return serviceLibri.aggiungi(titolo, autore, codiceISBN, annoPubblicazione, numeroCopieDisponibili);
     }
 
     public String rimuoviLibro(String codiceISBN){
-    
-        //TODO
        return serviceLibri.rimuovi(codiceISBN); 
     }
     
     public List<Libro> getElencoLibri() { 
-          
-        //TODO
         return serviceLibri.getLista(); 
     }
-    // DA MODIFICARE
+    
     public List<Libro> cercaLibri(String titolo, String autore, String codiceISBN) {
-         //TODO
         return serviceLibri.cerca(titolo, autore, codiceISBN);
     }
     
+    //
     //METODI PRESTITO
-    public  String effettuaPrestito(String matricola, String codiceISBN){
-    
+    //
+    public String effettuaPrestito(String matricola, String codiceISBN){
         return servicePrestiti.nuovoPrestito(matricola, codiceISBN);
     }
     
     public String restituisciLibro(String matricola, String codiceISBN){
-    
         return servicePrestiti.restituzione(matricola, codiceISBN);
     }
     
     public List<Prestito> getStoricoPrestiti(){
-    
         return servicePrestiti.getLista();
+    }
+    
+    public void controllaRitardi(){
+        //TODO
     }
     
     
