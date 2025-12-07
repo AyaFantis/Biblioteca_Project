@@ -11,18 +11,18 @@ package it.unisa.biblioteca.gruppo21.entity;
  * @class Utente
  * * Un utente è identificato univocamente dalla matricola e possiede dati anagrafici
  * e di contatto.
- * * @author Gruppo 21
+ * @author Gruppo 21
  * @version 1.0
  */
 public class Utente {
     /** Nome dell'utente */
-    private final String nome;
+    private String nome;
     /** Cognome dell'utente */
-    private final String cognome;
+    private String cognome;
     /** Indirizzo email istituzionale */
     private String email;
     /** Matricola univoca (ID) */
-    private String matricola;
+    private final String matricola;
     /** Libri attualmente in possesso */
     private int numeroLibriPossesso;
     
@@ -84,19 +84,27 @@ public class Utente {
     }
 
     /**
+     * @brief Aggiorna il nome dell'utente.
+     * @param nome La nuova email da impostare.
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @brief Aggiorna il cognome dell'utente.
+     * @param cognome La nuova email da impostare.
+     */
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    /**
      * @brief Aggiorna l'indirizzo email dell'utente.
      * @param email La nuova email da impostare.
      */
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    /**
-     * @brief Aggiorna la matricola dell'utente.
-     * @param matricola La nuova matricola da impostare.
-     */
-    public void setMatricola(String matricola) {
-        this.matricola = matricola;
     }
 
     /**

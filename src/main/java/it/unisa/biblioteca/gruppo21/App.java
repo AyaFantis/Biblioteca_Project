@@ -10,20 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- * Hello world!
- */
+
 public class App extends Application {
  @Override
     public void start(Stage primaryStage) {
-        
-        ViewLibreria root = new ViewLibreria();
     }
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
     }
 }
