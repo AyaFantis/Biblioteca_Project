@@ -1,0 +1,19 @@
+digraph "src/main/java/it/unisa/biblioteca/gruppo21"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_b50c714c2112071a88d8f18b509baefc {
+    graph [ bgcolor="#eaeaf9", pencolor="grey50", label="biblioteca", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_b50c714c2112071a88d8f18b509baefc.html",tooltip=""]
+  subgraph clusterdir_3ac97ea48e7f0b3d51dc6e667f140ecd {
+    graph [ bgcolor="#eaeaf9", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_3ac97ea48e7f0b3d51dc6e667f140ecd.html",tooltip=""]
+    dir_3ac97ea48e7f0b3d51dc6e667f140ecd [shape=plaintext, label="gruppo21"];
+  dir_798c7ae3aed6574f784e7ac6ad58c3f4 [label="archive", fillcolor="#9595e3", color="grey25", style="filled", URL="dir_798c7ae3aed6574f784e7ac6ad58c3f4.html",tooltip=""];
+  dir_2b4fbc2a2146edb7584473e739af9833 [label="entity", fillcolor="#9595e3", color="grey25", style="filled", URL="dir_2b4fbc2a2146edb7584473e739af9833.html",tooltip=""];
+  dir_0374f39b48aa788cf2fd0ca318307f8b [label="gui", fillcolor="#9595e3", color="grey25", style="filled", URL="dir_0374f39b48aa788cf2fd0ca318307f8b.html",tooltip=""];
+  dir_aac1e43a687e17698413392858fb4832 [label="service", fillcolor="#9595e3", color="grey25", style="filled", URL="dir_aac1e43a687e17698413392858fb4832.html",tooltip=""];
+  }
+  }
+}

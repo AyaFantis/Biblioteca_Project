@@ -1,0 +1,9 @@
+<map id="src/main/java/it/unisa/biblioteca/gruppo21/archive/ArchiveAstratto.java" name="src/main/java/it/unisa/biblioteca/gruppo21/archive/ArchiveAstratto.java">
+<area shape="rect" id="Node000001" title="Implementazione base astratta per la gestione di archivi su file di testo." alt="" coords="89,5,272,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,90,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,64,80,106,77,101,135,65"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="113,112,248,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,62,183,97,179,95,179,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="272,112,364,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,62,289,103,283,103,225,67"/>
+</map>

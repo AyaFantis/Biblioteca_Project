@@ -1,0 +1,183 @@
+\doxysection{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Interface Template Reference}
+\hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}{}\label{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}}
+
+
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a0c443ee8a7868bf401b09dc56d2a0dd4}{aggiungi}} (T elemento)  throws IOException
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo elemento all\textquotesingle{}archivio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af06c80c815b146bf00c91410f29373a5}{cancella}} (T elemento)  throws IOException
+\begin{DoxyCompactList}\small\item\em Rimuove un elemento esistente dall\textquotesingle{}archivio. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af78467ee43c488350b322ea9b53c0df2}{cerca}} (String id)
+\begin{DoxyCompactList}\small\item\em Cerca un elemento nell\textquotesingle{}archivio tramite il suo identificativo univoco. \end{DoxyCompactList}\item 
+List$<$ T $>$ \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a9042a19d773f983f56e60d7888f07a82}{leggi\+Tutti}} ()  throws IOException
+\begin{DoxyCompactList}\small\item\em Recupera tutti gli elementi presenti nell\textquotesingle{}archivio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) su un archivio dati, indipendentemente dal supporto di memorizzazione (File, Database, Memoria). 
+\begin{DoxyParams}{Parameters}
+{\em $<$\+T$>$} & Il tipo di entità gestita dall\textquotesingle{}archivio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Gruppo 21 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\label{doc-func-members}
+\Hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a0c443ee8a7868bf401b09dc56d2a0dd4}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}!aggiungi@{aggiungi}}
+\index{aggiungi@{aggiungi}!it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aggiungi()}{aggiungi()}}
+{\footnotesize\ttfamily \label{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a0c443ee8a7868bf401b09dc56d2a0dd4} 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia}}$<$ T $>$.aggiungi (\begin{DoxyParamCaption}\item[{T}]{elemento}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Aggiunge un nuovo elemento all\textquotesingle{}archivio. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Il parametro elemento non deve essere null. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}archivio contiene l\textquotesingle{}elemento passato come parametro. 
+
+La dimensione dell\textquotesingle{}archivio è incrementata di 1. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em elemento} & L\textquotesingle{}oggetto di tipo T da persistere. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ T $>$}}.
+
+\Hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af06c80c815b146bf00c91410f29373a5}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}!cancella@{cancella}}
+\index{cancella@{cancella}!it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cancella()}{cancella()}}
+{\footnotesize\ttfamily \label{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af06c80c815b146bf00c91410f29373a5} 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia}}$<$ T $>$.cancella (\begin{DoxyParamCaption}\item[{T}]{elemento}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Rimuove un elemento esistente dall\textquotesingle{}archivio. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Il parametro elemento non deve essere null. 
+
+L\textquotesingle{}elemento deve essere presente nell\textquotesingle{}archivio. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}archivio non contiene più l\textquotesingle{}elemento specificato. 
+
+La dimensione dell\textquotesingle{}archivio è decrementata di 1. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em elemento} & L\textquotesingle{}oggetto di tipo T da rimuovere. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ T $>$}}.
+
+\Hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af78467ee43c488350b322ea9b53c0df2}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}!cerca@{cerca}}
+\index{cerca@{cerca}!it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cerca()}{cerca()}}
+{\footnotesize\ttfamily \label{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af78467ee43c488350b322ea9b53c0df2} 
+T \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia}}$<$ T $>$.cerca (\begin{DoxyParamCaption}\item[{String}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Cerca un elemento nell\textquotesingle{}archivio tramite il suo identificativo univoco. 
+
+\begin{DoxyPrecond}{Precondition}
+Il parametro id non deve essere null. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Se esiste un elemento con l\textquotesingle{}ID specificato, il metodo lo restituisce. 
+
+Se non esiste alcun elemento con l\textquotesingle{}ID specificato, il metodo restituisce null. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & La stringa che identifica univocamente l\textquotesingle{}elemento (es. Matricola, ISBN). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto di tipo T trovato, oppure null. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_ac8a0b71d40af11743de530698a78ad3a}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ T $>$}}.
+
+\Hypertarget{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a9042a19d773f983f56e60d7888f07a82}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}!leggiTutti@{leggiTutti}}
+\index{leggiTutti@{leggiTutti}!it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{leggiTutti()}{leggiTutti()}}
+{\footnotesize\ttfamily \label{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a9042a19d773f983f56e60d7888f07a82} 
+List$<$ T $>$ \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia}}$<$ T $>$.leggi\+Tutti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Recupera tutti gli elementi presenti nell\textquotesingle{}archivio. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Nessuna pre-\/condizione specifica (l\textquotesingle{}archivio può essere vuoto). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Restituisce una List contenente tutti gli oggetti di tipo T salvati. 
+
+La lista restituita non è mai null (se l\textquotesingle{}archivio è vuoto, restituisce una lista vuota). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Una lista di oggetti T. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a898a2d71184286ba3c49936ec1d2e6a1}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ T $>$}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/gruppo21/archive/\mbox{\hyperlink{_archive_interfaccia_8java}{Archive\+Interfaccia.\+java}}\end{DoxyCompactItemize}

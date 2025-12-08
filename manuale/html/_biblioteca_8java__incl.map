@@ -1,0 +1,17 @@
+<map id="src/main/java/it/unisa/biblioteca/gruppo21/service/Biblioteca.java" name="src/main/java/it/unisa/biblioteca/gruppo21/service/Biblioteca.java">
+<area shape="rect" id="Node000001" title="Classe Facade che espone le funzionalità principali del sistema." alt="" coords="783,5,966,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,235,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="780,46,546,76,250,114,250,109,545,71,785,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="259,112,488,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="785,53,497,111,496,106,780,54"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="512,112,741,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="804,64,695,108,694,103,798,65"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="766,112,984,155"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="877,62,877,98,873,95,873,66"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1008,112,1226,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="947,62,1054,106,1049,106,946,67"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1251,112,1469,155"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="967,52,1244,108,1238,108,966,57"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1493,120,1584,147"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="967,39,1202,61,1342,82,1482,109,1495,115,1489,114,1481,115,1342,87,1201,67,967,44"/>
+</map>

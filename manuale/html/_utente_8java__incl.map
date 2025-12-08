@@ -1,0 +1,7 @@
+<map id="src/main/java/it/unisa/biblioteca/gruppo21/entity/Utente.java" name="src/main/java/it/unisa/biblioteca/gruppo21/entity/Utente.java">
+<area shape="rect" id="Node000001" title="Rappresenta un utente registrato nella biblioteca." alt="" coords="45,5,218,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,128,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,63,87,101,83,98,108,66"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="152,112,243,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,62,182,100,176,99,152,67"/>
+</map>

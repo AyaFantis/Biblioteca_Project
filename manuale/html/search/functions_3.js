@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['deserializza_0',['deserializza',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html#a826730cc6d2a67da94ee8bed8de2e852',1,'it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto.deserializza()'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri.html#a69a5ee8efaa3acc8bc45d068f1007f1e',1,'it.unisa.biblioteca.gruppo21.archive.ArchiveLibri.deserializza()'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti.html#a351ade5856239616eefa998a5bb7582a',1,'it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti.deserializza()'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti.html#ae52b2236e7cad6fc3124504b36a01a94',1,'it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti.deserializza()']]]
+];

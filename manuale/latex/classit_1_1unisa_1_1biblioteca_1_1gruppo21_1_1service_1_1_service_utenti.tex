@@ -1,0 +1,220 @@
+\doxysection{it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti Class Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+
+
+Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aeb4b84ca2e26f8e35560a65f7e9e0041}{Service\+Utenti}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} arc\+Utenti, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} arc\+Prestiti)
+\begin{DoxyCompactList}\small\item\em Costruttore del servizio utenti. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_ad5b743295dc54c5831ec2912f530eaf6}{iscrivi}} (String nome, String cognome, String matricola, String email)
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a3f1aed1385b413eb10ca249a2d2e4156}{modifica\+Dati\+Utente}} (String nuovo\+Nome, String nuovo\+Cognome, String nuova\+Email, String matricola)
+\begin{DoxyCompactList}\small\item\em Modifica i dati anagrafici di un utente esistente. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aa23db559620aeb6d330263530585c486}{rimuovi}} (String matricola)
+\begin{DoxyCompactList}\small\item\em Rimuove un utente dal sistema. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a41a0864777d80dc79df2c5cda7168073}{cerca}} (String filtro)
+\begin{DoxyCompactList}\small\item\em Cerca utenti in base a filtri. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a2f083e2e876c227dbf930eda2f2cfb3b}{get\+Lista}} ()
+\begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo degli utenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} {\bfseries arc\+Utenti}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} {\bfseries arc\+Prestiti}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+\begin{DoxyItemize}
+\item Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti e di rimuoverli, ma solo se non hanno libri ancora da restituire.
+\item Questa classe funge da intermediario tra il Controller e i dati persistenti degli utenti.
+\item Si assicura che i dati inseriti siano validi e che i vincoli di integrità (es. non cancellare utenti con prestiti attivi) siano rispettati.
+\item \begin{DoxyAuthor}{Author}
+Gruppo 21 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aeb4b84ca2e26f8e35560a65f7e9e0041}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!ServiceUtenti@{ServiceUtenti}}
+\index{ServiceUtenti@{ServiceUtenti}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{ServiceUtenti()}{ServiceUtenti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aeb4b84ca2e26f8e35560a65f7e9e0041} 
+it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+Service\+Utenti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}}}]{arc\+Utenti}{, }\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}}}]{arc\+Prestiti}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del servizio utenti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arc\+Utenti} & Riferimento all\textquotesingle{}archivio utenti. \\
+\hline
+{\em arc\+Prestiti} & Riferimento all\textquotesingle{}archivio prestiti \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a41a0864777d80dc79df2c5cda7168073}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!cerca@{cerca}}
+\index{cerca@{cerca}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{cerca()}{cerca()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a41a0864777d80dc79df2c5cda7168073} 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+cerca (\begin{DoxyParamCaption}\item[{String}]{filtro}{}\end{DoxyParamCaption})}
+
+
+
+Cerca utenti in base a filtri. 
+
+\begin{DoxyPrecond}{Precondition}
+Il criterio non deve essere null. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Restituisce una lista di utenti che soddisfano il criterio. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em filtro} & Stringa di ricerca (Matricola o Cognome) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista di utenti trovati. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a2f083e2e876c227dbf930eda2f2cfb3b}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!getLista@{getLista}}
+\index{getLista@{getLista}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{getLista()}{getLista()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a2f083e2e876c227dbf930eda2f2cfb3b} 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+get\+Lista (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera l\textquotesingle{}elenco completo degli utenti. 
+
+\begin{DoxyReturn}{Returns}
+Lista di tutti gli utenti registrati. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_ad5b743295dc54c5831ec2912f530eaf6}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!iscrivi@{iscrivi}}
+\index{iscrivi@{iscrivi}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{iscrivi()}{iscrivi()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_ad5b743295dc54c5831ec2912f530eaf6} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+iscrivi (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{matricola}{, }\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuovo utente nel sistema. 
+
+\begin{DoxyPrecond}{Precondition}
+I parametri nome, cognome, matricola ed email non devono essere null. 
+
+La matricola deve essere composta da 10 cifre. 
+
+L\textquotesingle{}email deve terminare con "{}@studenti.\+unisa.\+it"{}. 
+
+Non deve esistere già un utente con la stessa matricola nell\textquotesingle{}archivio. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Se le condizioni sono rispettate, un nuovo oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} viene aggiunto all\textquotesingle{}archivio. 
+
+La dimensione dell\textquotesingle{}archivio Utenti aumenta di 1. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome dell\textquotesingle{}utente \\
+\hline
+{\em cognome} & Cognome dell\textquotesingle{}utente \\
+\hline
+{\em matricola} & Matricola univoca (10 cifre) \\
+\hline
+{\em email} & Email istituzionale (@studenti.unisa.\+it) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Messaggio di esito ("{}\+Successo"{} o descrizione errore). 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a3f1aed1385b413eb10ca249a2d2e4156}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!modificaDatiUtente@{modificaDatiUtente}}
+\index{modificaDatiUtente@{modificaDatiUtente}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{modificaDatiUtente()}{modificaDatiUtente()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a3f1aed1385b413eb10ca249a2d2e4156} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+modifica\+Dati\+Utente (\begin{DoxyParamCaption}\item[{String}]{nuovo\+Nome}{, }\item[{String}]{nuovo\+Cognome}{, }\item[{String}]{nuova\+Email}{, }\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Modifica i dati anagrafici di un utente esistente. 
+
+\begin{DoxyPrecond}{Precondition}
+Deve esistere un utente con la matricola specificata. 
+
+La nuova email deve essere valida. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+I campi nome, cognome e email dell\textquotesingle{}utente vengono aggiornati 
+
+La matricola rimane invariata 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em nuovo\+Nome} & Nuovo nome. \\
+\hline
+{\em nuovo\+Cognome} & Nuovo cognome. \\
+\hline
+{\em nuova\+Email} & Nuova email. \\
+\hline
+{\em matricola} & Identificativo dell\textquotesingle{}utente da modificare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Messaggio di esito 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aa23db559620aeb6d330263530585c486}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!rimuovi@{rimuovi}}
+\index{rimuovi@{rimuovi}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{rimuovi()}{rimuovi()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aa23db559620aeb6d330263530585c486} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+rimuovi (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un utente dal sistema. 
+
+\begin{DoxyPrecond}{Precondition}
+Deve esistere un utente con la matricola specificata. 
+
+L\textquotesingle{}utente NON deve avere libri in prestito attivi 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}utente viene rimosso fisicamente dall\textquotesingle{}archivio. 
+
+La dimensione dell\textquotesingle{}archivio utenti diminuisce di 1. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & La matricola dell\textquotesingle{}utente da rimuovere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Messaggio di esito 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/gruppo21/service/\mbox{\hyperlink{_service_utenti_8java}{Service\+Utenti.\+java}}\end{DoxyCompactItemize}

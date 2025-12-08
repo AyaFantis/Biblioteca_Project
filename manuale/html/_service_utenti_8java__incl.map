@@ -1,0 +1,9 @@
+<map id="src/main/java/it/unisa/biblioteca/gruppo21/service/ServiceUtenti.java" name="src/main/java/it/unisa/biblioteca/gruppo21/service/ServiceUtenti.java">
+<area shape="rect" id="Node000001" title="Gestisce tutte le operazioni relative agli utenti (Studenti/Docenti)." alt="" coords="282,5,465,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,120,240,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,64,170,117,169,111,296,65"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="264,112,482,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="375,62,375,98,371,95,371,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="506,120,598,147"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="427,62,518,112,513,112,426,67"/>
+</map>

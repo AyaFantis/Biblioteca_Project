@@ -1,0 +1,237 @@
+\doxysection{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+
+
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a8de3d5f8e4213d5065375e5cab6975c0}{Archive\+Astratto}} (String filename)
+\begin{DoxyCompactList}\small\item\em Costruttore che inizializza l\textquotesingle{}archivio. Tenta di creare il file se non esiste e carica immediatamente i dati in memoria (Cache). \end{DoxyCompactList}\item 
+abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_ac8a0b71d40af11743de530698a78ad3a}{cerca}} (String id)
+\begin{DoxyCompactList}\small\item\em Ricerca un elemento per ID. Poiché T è generico, non sappiamo come estrarre l\textquotesingle{}ID. Le sottoclassi devono implementarlo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717}{aggiungi}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Aggiunge un elemento alla cache e appende la riga al file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad}{cancella}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Rimuove un elemento e riscrive l\textquotesingle{}intero file. \end{DoxyCompactList}\item 
+List$<$ T $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a898a2d71184286ba3c49936ec1d2e6a1}{leggi\+Tutti}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce una copia della lista caricata in memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a5cb50e2d2a1da90033140be5f719da6d}{serializza}} (T t)
+\begin{DoxyCompactList}\small\item\em Converte un oggetto in una stringa per il salvataggio. Deve essere implementato dalle sottoclassi per definire il formato (es. CSV). \end{DoxyCompactList}\item 
+abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a826730cc6d2a67da94ee8bed8de2e852}{deserializza}} (String riga)
+\begin{DoxyCompactList}\small\item\em Ricostruisce un oggetto da una stringa letta dal file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a95377ef20517d42919bef79849d8d4a5}{salva\+Tutto}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ T $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a9759280567211b94342e97109c7bcbad}{cache}}
+\item 
+File \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_aa1a300da7c75e6230d06cf3131f842a9}{file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Questa classe fornisce l\textquotesingle{}implementazione comune per le operazioni di I/O (Input/\+Output), gestendo una cache in memoria per ottimizzare le letture e sincronizzando le scritture su file. 
+\begin{DoxyParams}{Parameters}
+{\em $<$\+T$>$} & Il tipo di entità gestita (es. \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}, \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-constructors}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a8de3d5f8e4213d5065375e5cab6975c0}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!ArchiveAstratto@{ArchiveAstratto}}
+\index{ArchiveAstratto@{ArchiveAstratto}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ArchiveAstratto()}{ArchiveAstratto()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a8de3d5f8e4213d5065375e5cab6975c0} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.Archive\+Astratto (\begin{DoxyParamCaption}\item[{String}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore che inizializza l\textquotesingle{}archivio. Tenta di creare il file se non esiste e carica immediatamente i dati in memoria (Cache). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Il nome o percorso del file di testo da utilizzare. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!aggiungi@{aggiungi}}
+\index{aggiungi@{aggiungi}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aggiungi()}{aggiungi()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717} 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.aggiungi (\begin{DoxyParamCaption}\item[{T}]{elemento}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un elemento alla cache e appende la riga al file. 
+
+\begin{DoxyPrecond}{Precondition}
+elemento != null. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+La cache contiene l\textquotesingle{}elemento. 
+
+Il file contiene la nuova riga serializzata. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a0c443ee8a7868bf401b09dc56d2a0dd4}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia$<$ T $>$}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!cancella@{cancella}}
+\index{cancella@{cancella}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cancella()}{cancella()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad} 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.cancella (\begin{DoxyParamCaption}\item[{T}]{elemento}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un elemento e riscrive l\textquotesingle{}intero file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elemento} & L\textquotesingle{}oggetto da rimuovere. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af06c80c815b146bf00c91410f29373a5}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia$<$ T $>$}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_ac8a0b71d40af11743de530698a78ad3a}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!cerca@{cerca}}
+\index{cerca@{cerca}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cerca()}{cerca()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_ac8a0b71d40af11743de530698a78ad3a} 
+abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.cerca (\begin{DoxyParamCaption}\item[{String}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Ricerca un elemento per ID. Poiché T è generico, non sappiamo come estrarre l\textquotesingle{}ID. Le sottoclassi devono implementarlo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificativo da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto trovato o null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_af78467ee43c488350b322ea9b53c0df2}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia$<$ T $>$}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a826730cc6d2a67da94ee8bed8de2e852}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!deserializza@{deserializza}}
+\index{deserializza@{deserializza}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deserializza()}{deserializza()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a826730cc6d2a67da94ee8bed8de2e852} 
+abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.deserializza (\begin{DoxyParamCaption}\item[{String}]{riga}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Ricostruisce un oggetto da una stringa letta dal file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em riga} & La stringa letta dal file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto ricostruito. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a898a2d71184286ba3c49936ec1d2e6a1}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!leggiTutti@{leggiTutti}}
+\index{leggiTutti@{leggiTutti}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{leggiTutti()}{leggiTutti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a898a2d71184286ba3c49936ec1d2e6a1} 
+List$<$ T $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.leggi\+Tutti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce una copia della lista caricata in memoria. 
+
+\begin{DoxyReturn}{Returns}
+Una nuova Array\+List contenente gli elementi (per proteggere la cache interna). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia_a9042a19d773f983f56e60d7888f07a82}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Interfaccia$<$ T $>$}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a95377ef20517d42919bef79849d8d4a5}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!salvaTutto@{salvaTutto}}
+\index{salvaTutto@{salvaTutto}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{salvaTutto()}{salvaTutto()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a95377ef20517d42919bef79849d8d4a5} 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.salva\+Tutto (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a5cb50e2d2a1da90033140be5f719da6d}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!serializza@{serializza}}
+\index{serializza@{serializza}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{serializza()}{serializza()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a5cb50e2d2a1da90033140be5f719da6d} 
+abstract String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.serializza (\begin{DoxyParamCaption}\item[{T}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Converte un oggetto in una stringa per il salvataggio. Deve essere implementato dalle sottoclassi per definire il formato (es. CSV). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}oggetto da serializzare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stringa rappresentante l\textquotesingle{}oggetto. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a9759280567211b94342e97109c7bcbad}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!cache@{cache}}
+\index{cache@{cache}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cache}{cache}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a9759280567211b94342e97109c7bcbad} 
+List$<$T$>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Cache in memoria per accesso rapido ai dati senza leggere il disco continuamente. \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_aa1a300da7c75e6230d06cf3131f842a9}\index{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}!file@{file}}
+\index{file@{file}!it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$@{it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_aa1a300da7c75e6230d06cf3131f842a9} 
+File \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto}}$<$ T $>$.file\hspace{0.3cm}{\ttfamily [protected]}}
+
+Riferimento al file fisico su disco. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/gruppo21/archive/\mbox{\hyperlink{_archive_astratto_8java}{Archive\+Astratto.\+java}}\end{DoxyCompactItemize}

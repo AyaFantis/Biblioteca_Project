@@ -1,0 +1,11 @@
+<map id="it.unisa.biblioteca.gruppo21.service.ServiceUtenti" name="it.unisa.biblioteca.gruppo21.service.ServiceUtenti">
+<area shape="rect" id="Node000001" title=" " alt="" coords="127,532,345,724"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti.html" title=" " alt="" coords="5,311,224,460"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,457,183,517,178,517,151,463"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html" title=" " alt="" coords="5,5,224,261"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,274,117,311,112,311,114,279"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti.html" title=" " alt="" coords="248,311,467,460"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="322,458,294,518,289,515,318,462"/>
+<area shape="rect" id="Node000005" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html" title=" " alt="" coords="248,5,467,261"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="358,274,360,312,355,310,356,279"/>
+</map>

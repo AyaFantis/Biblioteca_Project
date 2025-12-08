@@ -1,0 +1,9 @@
+<map id="it.unisa.biblioteca.gruppo21.entity.Prestito" name="it.unisa.biblioteca.gruppo21.entity.Prestito">
+<area shape="rect" id="Node000001" title=" " alt="" coords="237,504,445,696"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html" title=" " alt="" coords="5,5,213,432"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,409,227,431,266,490,261,490,223,433,213,414"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html" title=" " alt="" coords="237,69,445,368"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="343,365,344,488,339,486,340,370"/>
+<area shape="rect" id="Node000004" href="$enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html" title="Enumerazione che definisce gli stati possibili del ciclo di vita di un prestito." alt="" coords="469,155,677,283"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="543,281,459,433,421,492,417,489,455,431,539,284"/>
+</map>
