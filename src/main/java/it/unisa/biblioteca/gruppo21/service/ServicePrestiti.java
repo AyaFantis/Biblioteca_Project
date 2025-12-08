@@ -12,8 +12,14 @@ import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import java.util.List;
 
 /**
- *
- * @author manue
+ * @file ServicePrestiti.java
+ * @brief Gestore della logica di business per la circolazione dei libri (Prestiti e Restituzioni).
+ * @class ServicePrestiti
+ * Questa classe implementa le regole di dominio relative ai prestiti, coordinando
+ * le interazioni tra Utenti, Libri e l'archivio storico dei Prestiti.
+ * Verifica la disponibilità delle copie e i limiti imposti agli utenti.
+ * @author Gruppo 21
+ * @version 1.0
  */
 public class ServicePrestiti {
 
@@ -21,6 +27,12 @@ public class ServicePrestiti {
     private final ArchiveLibri arcLibri;
     private final ArchiveUtenti arcUtenti;
     
+    /**
+     * @brief Costruttore del servizio prestiti.
+     * @param arcPrestiti Archivio per la persistenza dei prestiti.
+     * @param arcLibri Archivio per l'accesso ai dati dei libri (stock).
+     * @param arcUtenti Archivio per la verifica dell'esistenza utenti.
+     */
     public ServicePrestiti(ArchivePrestiti arcPrestiti,  ArchiveLibri arcLibri, ArchiveUtenti arcUtenti){
         this.arcPrestiti = arcPrestiti;
         this.arcUtenti = arcUtenti;

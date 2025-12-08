@@ -15,8 +15,14 @@ import java.util.List;
 
 
 /**
- *
- * @author manue
+ * @file Biblioteca.java
+ * @brief Classe Facade che espone le funzionalità principali del sistema.
+ * @class Biblioteca
+ * Questa classe agisce come un "pannello di controllo" unificato
+ * nascondendo la complessità dei sottosistemi (Archivi e Servizi) al livello superiore (Controller/ViewLibreria).
+ * Gestisce il ciclo di vita (creazione e iniezione delle dipendenze) dei componenti di backend.
+ * @author Gruppo 21
+ * @version 1.0
  */
 public class Biblioteca {
    
@@ -26,7 +32,8 @@ public class Biblioteca {
 
     /**
      * @brief Costruttore della classe Biblioteca.
-     * Inizializza gli archivi, collega le dipendenze
+     * Inizializza gli archivi, collegando le dipendenze
+     * @post Il sistema è pronto per elaborare richieste.
      */
     public Biblioteca(){
     

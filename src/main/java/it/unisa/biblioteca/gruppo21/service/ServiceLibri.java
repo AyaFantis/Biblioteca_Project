@@ -10,14 +10,23 @@ import it.unisa.biblioteca.gruppo21.entity.Libro;
 import java.util.List;
 
 /**
- *
- * @author manue
+ * @file ServiceUtenti.java
+ * @brief Gestisce tutte le operazioni relative agli utenti (Studenti/Docenti).
+ * @class ServiceUtenti
+ * * Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti
+ * e di rimuoverli, ma solo se non hanno libri ancora da restituire.
  */
 public class ServiceLibri {
 
     private final ArchiveLibri arcLibri;
     private final ArchivePrestiti arcPrestiti;
     
+    /**
+     * @brief Costruisce il servizio libri (Catalogo).
+     * @param arcLibri Il registro dove vengono salvati i libri.
+     * @param arcPrestiti Il registro dei prestiti. Serve al servizio per impedire la rimozione
+     * di un libro dal catalogo se ci sono ancora copie in giro (prestate agli studenti).
+     */
     public ServiceLibri(ArchiveLibri arcLibri,ArchivePrestiti arcPrestiti){
     
         this.arcLibri = arcLibri;
