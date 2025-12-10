@@ -7,6 +7,8 @@ package it.unisa.biblioteca.gruppo21.service;
 
 import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -77,6 +79,17 @@ public class ServiceLibri {
     }
     
     /**
+     * @brief Recupera l'elenco completo dei libri.
+     * @return Lista di tutti i libri nel catalogo.
+     */
+    public List<Libro> getLista(){
+        List<Libro> lista = arcLibri.leggiTutti();
+        
+        Collections.sort(lista);
+        return lista;
+    }
+    
+    /**
      * @brief Cerca libri per titolo, autore o ISBN.
      * @post Restituisce una lista di libri che corrispondono ai criteri di ricerca.
      * @param titolo Filtro titolo (opzionale)
@@ -84,20 +97,32 @@ public class ServiceLibri {
      * @param codiceISBN Filtro ISBN (opzionale)
      * @return Lista dei libri trovati.
      */
-    public List<Libro> cerca(String titolo, String autore, String codiceISBN){
-        return null;
+    public List<Libro> cerca(String parola){
+        List<Libro> tutti= getLista();
+        
+        List<Libro> risultati = new ArrayList<>();
+        
+        if (parola == null)
+            return risultati;
+        
+        String key = parola.toLowerCase();
+        
+        for (Libro l : tutti){
+        
+            boolean isTitolo = l.getTitolo().toLowerCase().contains(key);
+            
+            boolean isAutore = l.getAutore().toLowerCase().contains(key);
+
+            boolean isISBN = l.getCodiceISBN().toLowerCase().contains(key);
+
+            if(isTitolo || isAutore || isISBN){
+                risultati.add(l);
+            }
+                
+            }
+        return risultati;
+        }
+        
     }
     
-    /**
-     * @brief Recupera l'elenco completo dei libri.
-     * @return Lista di tutti i libri nel catalogo.
-     */
-    public List<Libro> getLista(){
-        return arcLibri.leggiTutti();
-    }
     
-    
-    
-    
-    
-}

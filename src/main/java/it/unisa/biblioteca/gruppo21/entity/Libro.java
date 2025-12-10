@@ -16,7 +16,7 @@ import java.util.Objects;
  * @version 1.0
  */
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
     /** Titolo del libro */
     private final String titolo;
     /** Autore o autori del libro */
@@ -99,6 +99,18 @@ public class Libro {
     @Override
     public String toString(){
         
-        return null;
+        return titolo + " - " + autore;
+    }
+
+    @Override
+    public int compareTo(Libro o) {
+        int esitoTitolo = this.titolo.compareToIgnoreCase(o.getTitolo());
+        
+        if (esitoTitolo != 0){
+        
+            return esitoTitolo;
+        }
+        
+        return this.autore.compareToIgnoreCase(o.getAutore());
     }
 }

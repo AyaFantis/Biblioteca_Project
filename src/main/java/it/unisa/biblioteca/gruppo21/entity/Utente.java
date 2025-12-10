@@ -17,7 +17,7 @@ import java.util.List;
  * @author Gruppo 21
  * @version 1.0
  */
-public class Utente {
+public class Utente implements Comparable<Utente>{
     
     /** Numero massimo di libri che può prendere in prestito un utente */
     public static final int MAX_PRESTITI = 3;
@@ -143,6 +143,23 @@ public class Utente {
         if(prestitiAttivi.contains(prestito)){
             prestitiAttivi.remove(prestito);
         }
+    }
+    
+    @Override
+    public String toString() { 
+        return cognome + " " + nome + " (" + matricola + ")"; 
+    }
+
+    @Override
+    public int compareTo(Utente u) {
+        int risultatoCognome = this.cognome.compareToIgnoreCase(u.getCognome());
+        
+        if(risultatoCognome != 0){
+        
+            return risultatoCognome;
+        }
+        
+        return this.nome.compareToIgnoreCase(u.getNome());
     }
     
 }

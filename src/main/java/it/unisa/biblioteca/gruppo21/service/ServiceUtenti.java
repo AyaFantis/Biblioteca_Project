@@ -7,6 +7,7 @@ package it.unisa.biblioteca.gruppo21.service;
 
 import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -98,6 +99,10 @@ public class ServiceUtenti {
      * @return Lista di tutti gli utenti registrati.
      */
     public List<Utente> getLista() {
-        return arcUtenti.leggiTutti();
+        List<Utente> lista = arcUtenti.leggiTutti();
+        
+        Collections.sort(lista);
+        
+        return lista;
     }
 }
