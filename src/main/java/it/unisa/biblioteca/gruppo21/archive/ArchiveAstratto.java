@@ -5,9 +5,9 @@
  */
 package it.unisa.biblioteca.gruppo21.archive;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @file ArchiveAstratto.java
@@ -30,6 +30,16 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      * @param filename Il nome o percorso del file di testo da utilizzare.
      */
     public ArchiveAstratto(String filename){
+        
+        this.file = new File(filename);
+        this.cache = new ArrayList<>();
+        try{
+            if(!file.exists()) file.createNewFile();
+            caricaDaFile();
+        }catch(IOException e){
+            System.err.println("Errore inizializzazione file: " + filename);
+        }
+        
     }
     
    /**
@@ -63,7 +73,9 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      * @post Il file contiene la nuova riga serializzata.
      */
     @Override
-    public void aggiungi(T elemento){
+    public void aggiungi(T elemento) throws IOException{
+        cache.add(elemento);
+        salvaTutto();
     }
 
     /**
@@ -71,7 +83,9 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      * @param elemento L'oggetto da rimuovere.
      */
     @Override
-    public void cancella(T elemento){
+    public void cancella(T elemento)throws IOException{
+        cache.remove(elemento);
+        salvaTutto();
     }
 
     /**
@@ -80,7 +94,7 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      */
     @Override
     public List<T> leggiTutti(){
-        return null;
+        return new ArrayList <>(cache); //restituisce una coia della cache
     }
 
     /**
@@ -89,6 +103,24 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      * Usato durante le operazioni di cancellazione o modifica.
      */
     protected void salvaTutto() throws IOException {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
+            for(T elem : cache){
+                writer.write(serializza(elem));
+                writer.newLine();
+            }
+        }
+    }
+    
+    private void caricaDaFile() throws IOException{
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
+            String riga;
+            while((riga = reader.readLine()) != null){
+                if(!riga.trim().isEmpty()){
+                    T obj = deserializza(riga);
+                    if(obj != null) cache.add(obj);
+                }
+            }
+        }
     }
 }
 
