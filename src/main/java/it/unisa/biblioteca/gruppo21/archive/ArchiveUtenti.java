@@ -37,7 +37,11 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      */
     @Override
     protected String serializza(Utente t) {
-        return null;
+        return t.getNome() + " "+
+               t.getCognome() + " /" +
+               t.getMatricola() + "/ "+
+               t.getEmail();
+                
     }
 
     /**
@@ -51,6 +55,11 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      */
     @Override
     protected Utente deserializza(String riga) {
+        try{
+            String[] parti = riga.split(";");
+        }catch(Exception e){
+            return null;
+        }
         return null;
     }
 
