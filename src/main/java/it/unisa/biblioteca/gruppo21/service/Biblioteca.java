@@ -102,15 +102,17 @@ public class Biblioteca {
     /**
      * @brief Cerca utenti in base a criteri anagrafici.
      * Passa l'operazione a ServiceUtenti.
-     * @param nome Filtro sul nome (opzionale).
      * @param cognome Filtro sul cognome (opzionale).
      * @param matricola Filtro sulla matricola (opzionale).
      * @return Lista degli utenti che corrispondono ai criteri specificati.
      */
-    public List<Utente> cercaUtenti(String nome, String cognome, String matricola){
-        //TODO
-        return null;
+    public List<Utente> cercaUtenti(String cognome, String matricola){
+        return serviceUtenti.cerca(cognome);
     }
+    
+    // public List<Utente> cercaUtenti(String matricola){ //per poter cercare con matricola
+        //return serviceUtenti.cerca(matricola);
+    //}
     
     // 
     //   METODI LIBRO
@@ -207,16 +209,6 @@ public class Biblioteca {
      * Può innescare l'invio di notifiche.
      */
     public void controllaRitardi(){
-        //TODO
-    }
-    
-    
-    
-    
- 
-    
-    
-    
-    
-    
+       servicePrestiti.controllaRitardi();
+    }  
 }
