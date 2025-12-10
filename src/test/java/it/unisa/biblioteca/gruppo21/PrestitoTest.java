@@ -5,10 +5,13 @@
  */
 package it.unisa.biblioteca.gruppo21;
 
+import static org.junit.jupiter.api.Assertions.*;
+import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import org.junit.jupiter.api.Test;
 /**
  *
  * @author greta
  */
 public class PrestitoTest {
-    
+
 }

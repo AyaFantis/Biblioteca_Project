@@ -5,6 +5,7 @@
  */
 package it.unisa.biblioteca.gruppo21.entity;
 
+import java.util.Objects;
 /**
  * @file Libro.java
  * @brief Rappresenta un libro all'interno del catalogo della biblioteca.
@@ -93,5 +94,11 @@ public class Libro {
      */
     public void setNumeroCopieDisponibili(int newNum){
         numeroCopieDisponibili = newNum;
+    }
+    
+    @Override
+    public String toString(){
+        
+        return null;
     }
 }
