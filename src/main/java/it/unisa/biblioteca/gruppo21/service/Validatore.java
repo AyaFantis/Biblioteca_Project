@@ -15,6 +15,8 @@ package it.unisa.biblioteca.gruppo21.service;
  */
 public class Validatore {
     
+ private static final String DOMINIO_RICHIESTO = "@studenti.unisa.it";
+    
      /**
      * @brief Verifica se una stringa rappresenta un indirizzo email istituzionale valido.
      * @pre L'input email può essere una stringa qualsiasi o null.
@@ -26,7 +28,28 @@ public class Validatore {
      * @return Esito della validazione.
      */
     public static boolean validaEmail(String email){
-        return false;
+        //Controllo base
+            if (email == null){
+            return false;
+        }
+
+        //Controllo dominio 
+        if (!email.endsWith(DOMINIO_RICHIESTO)) {
+            return false;
+        }
+
+        //Controllo lunghezza (deve esserci almeno un carattere prima della @)
+        if (email.length() <= DOMINIO_RICHIESTO.length()) {
+            return false;
+        }
+
+       // Scansione per Spazi
+        for (int i = 0; i < email.length(); i++) {
+            if (Character.isWhitespace(email.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
     
     /**
@@ -41,7 +64,18 @@ public class Validatore {
      */
     
     public static boolean validaMatricola(String matricola){
-        return false;
+      // Controllo null e lunghezza esatta
+        if (matricola == null || matricola.length() != 10) {
+            return false;
+        }
+
+         //Scansione caratteri
+        for (int i = 0; i < matricola.length(); i++) {
+            if (!Character.isDigit(matricola.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
     
     /**
@@ -52,6 +86,33 @@ public class Validatore {
      * @return Esito della validazione.
      */
     public static boolean validaISBN(String isbn){
-        return false;
+      // Controllo base
+        if (isbn == null) {
+            return false;
+        }
+        int digitCount = 0;
+
+        for (int i = 0; i < isbn.length(); i++) {
+            char c = isbn.charAt(i);
+
+            //Se è una cifra numerica standard
+            if (Character.isDigit(c)) {
+                digitCount++;
+            } 
+            //Se è un separatore ammesso (trattino o spazio)
+            else if (c == '-' || Character.isWhitespace(c)) {
+                continue; 
+            } 
+            //Qualsiasi altro carattere rende il codice invalido.
+            else {
+                return false; 
+            }
+            
+            if (digitCount > 13) {
+                return false;
+            }
+        }
+        return true;
     }
 }
+
