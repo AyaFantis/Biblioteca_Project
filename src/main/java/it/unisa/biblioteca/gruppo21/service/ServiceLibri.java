@@ -60,8 +60,8 @@ public class ServiceLibri {
             return "Errore:L'autore è obbligatorio.";
         }
         
-        if (!Validatore.validaISBN(codiceISBN)) {
-            return "Errore: Codice ISBN non valido (richiesto formato a 13 cifre).";
+        if (!Validatore.validaISBN(codiceISBN)) { 
+            return "Errore: ISBN non valido.";
         }
         
         int annoCorrente = Year.now().getValue();

@@ -39,11 +39,11 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      */
     @Override
     protected String serializza(Prestito p) {
-        String mat = p.getUtente().getMatricola();
+        String mat = p.getUtente().getMatricola(); 
         String isbn = p.getLibro().getCodiceISBN();
         
         String dataStr = (p.getDataRestituzione() == null) ? "null" : p.getDataRestituzione().toString();
-        
+
         return mat + ";" + isbn + ";" + dataStr + ";" + p.getStato();
     }
 

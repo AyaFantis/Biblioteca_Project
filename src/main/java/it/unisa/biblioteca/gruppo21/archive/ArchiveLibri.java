@@ -38,11 +38,11 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
      */
     @Override
     protected String serializza(Libro t) {
-        return t.getAutore()+ " "+
-              t.getTitolo()+ " /" +
-              t.getCodiceISBN()+ "/ "+
-              t.getAnnoPubblicazione() +" /" +
-              t.getNumeroCopieDisponibili();
+        return t.getTitolo() + ";" + 
+           t.getAutore() + ";" + 
+           t.getCodiceISBN() + ";" + 
+           t.getAnnoPubblicazione() + ";" + 
+           t.getNumeroCopieDisponibili();
     }
 
     /**

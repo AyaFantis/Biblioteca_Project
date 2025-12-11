@@ -37,11 +37,11 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      */
     @Override
     protected String serializza(Utente t) {
-        return t.getNome() + " "+
-               t.getCognome() + " /" +
-               t.getMatricola() + "/ "+
-               t.getEmail();
-                
+        return t.getNome() + ";" + 
+           t.getCognome() + ";" + 
+           t.getMatricola() + ";" + 
+           t.getEmail();
+        
     }
 
     /**
