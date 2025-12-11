@@ -38,7 +38,11 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
      */
     @Override
     protected String serializza(Libro t) {
-        return null; 
+        return t.getAutore()+ " "+
+              t.getTitolo()+ " /" +
+              t.getCodiceISBN()+ "/ "+
+              t.getAnnoPubblicazione() +" /" +
+              t.getNumeroCopieDisponibili();
     }
 
     /**
@@ -52,7 +56,24 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
      */
     @Override
     protected Libro deserializza(String riga) {
-        return null; 
+        try{
+            String[] parti = riga.split(";");
+            
+            if(parti.length != 5){
+                return null;
+            }
+            
+            String titolo = parti[0];
+            String autore = parti[1];
+            String isbn = parti[2];
+            
+            int anno = Integer.parseInt(parti[3]);
+            int copie = Integer.parseInt(parti[4]);
+            
+            return new Libro(titolo, autore, isbn, anno, copie);
+        }catch (NumberFormatException | ArrayIndexOutOfBoundsException e){
+            return null;   
+        } 
     }
     
 /**
@@ -65,6 +86,12 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
      */
     @Override
     public Libro cerca(String id) {
+        
+        for(Libro l : cache){
+            if(l.getCodiceISBN().equals(id)){
+                return l;
+            }
+        }
         return null; 
     }
     
