@@ -7,6 +7,7 @@ package it.unisa.biblioteca.gruppo21.service;
 
 import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
+import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import java.io.IOException;
 import java.time.Year;
 import java.util.ArrayList;
@@ -131,7 +132,30 @@ public class ServiceLibri {
      * @return Messaggio di esito.
      */
     public String rimuovi(String codiceISBN){
-        return null;
+        
+        if (codiceISBN == null)
+            return "Errore: ISBN nullo";
+        
+        Libro libro = arcLibri.cerca(codiceISBN);
+        if(libro == null){
+        
+            return "Errore: Libro non trovato in catologo.";
+        }
+        List<Prestito> prestiti = arcPrestiti.leggiTutti();
+        for(Prestito p : prestiti){
+        
+            if (p.getStato() == Prestito.StatoPrestito.ATTIVO && p.getLibro().getCodiceISBN().equals(codiceISBN)){
+                
+                return "Errore: Impossibile rimuovere. Ci sono copie attualmente in prestito.";
+            }
+        }
+        try {
+            arcLibri.cancella(libro);
+            return "Successo: Libro rimosso dal catalogo.";
+        }  catch (IOException ex) {
+            return "Errore critico durante la cancellazione: " + ex.getMessage();
+            
+        }
     }
     
     /**

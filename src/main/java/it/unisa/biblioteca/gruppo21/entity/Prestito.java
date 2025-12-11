@@ -16,8 +16,8 @@ import java.time.LocalDate;
  * * @author Gruppo 21
  * @version 1.0
  */
-public class Prestito {
-   
+public class Prestito implements Comparable<Prestito>{
+
     /**
      * @brief Enumerazione che definisce gli stati possibili del ciclo di vita di un prestito.
      */
@@ -98,6 +98,10 @@ public class Prestito {
         this.stato = stato;
     }
     
-    
+    @Override
+    public int compareTo(Prestito p) {
+        return this.dataRestituzione.compareTo(p.dataRestituzione);
+    }
+   
     
 }

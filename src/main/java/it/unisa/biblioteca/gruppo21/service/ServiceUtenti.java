@@ -8,6 +8,7 @@ package it.unisa.biblioteca.gruppo21.service;
 import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -136,7 +137,30 @@ public class ServiceUtenti {
      * @return Messaggio di esito
      */
     public String rimuovi(String matricola){
-        return null;
+
+        if (matricola == null)
+            return "Errore: Matricola non specificata.";
+        
+        Utente utente = arcUtenti.cerca(matricola);
+        if(utente == null){
+        
+            return "Errore: Utente non trovato.";
+        }
+        
+        if(utente.getNumeroLibriPossesso() > 0) {
+        
+            return "Errore: Impossibile rimuovere l'utente. Ha ancora" + utente.getNumeroLibriPossesso() + " libri in prestito.";
+        }
+        
+        try {
+        
+            arcUtenti.cancella(utente);
+            return "Successo: Utente rimosso dal sistema.";
+        } catch (IOException ex){
+        
+            return "Errore durante la cancellazione: " + ex.getMessage();
+        }
+    
     }
     
     /**
@@ -147,7 +171,31 @@ public class ServiceUtenti {
      * @return Lista di utenti trovati.
      */
     public List<Utente> cerca (String filtro){
-        return null;
+        
+        List<Utente> tutti = getLista();
+        
+        if(filtro == null || filtro.trim().isEmpty()){
+        
+            return tutti;
+        }
+        
+        List<Utente> risultati = new ArrayList<>();
+        String filtroLower = filtro.toLowerCase();
+        
+        for (Utente u : tutti){
+        
+            boolean isMatricola = u.getMatricola().contains(filtro);
+            
+            boolean isCognome = u.getCognome().toLowerCase().contains(filtroLower);
+            
+            boolean isNome = u.getNome().toLowerCase().contains(filtroLower);
+            
+            if(isMatricola || isCognome || isNome){
+            
+                risultati.add(u);
+            }
+        }
+        return risultati;
     }
     
     /**

@@ -8,8 +8,15 @@ package it.unisa.biblioteca.gruppo21.service;
 import it.unisa.biblioteca.gruppo21.archive.ArchiveLibri;
 import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
 import it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti;
+import it.unisa.biblioteca.gruppo21.entity.Libro;
 import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import it.unisa.biblioteca.gruppo21.entity.Utente;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.time.LocalDate;
 
 /**
  * @file ServicePrestiti.java
@@ -53,7 +60,35 @@ public class ServicePrestiti {
      * @return Messaggio di esito.
      */
     public String nuovoPrestito(String matricola, String codiceISBN){
-        return null;
+        
+        Utente utente = arcUtenti.cerca(matricola);
+        Libro libro = arcLibri.cerca(codiceISBN);
+        
+        if (utente == null){       
+            return "Errore: Utente non trovato.";
+        }
+        if (libro == null){       
+            return "Errore: Libro non trovato.";
+        }
+        if (utente.getNumeroLibriPossesso() >= Utente.MAX_PRESTITI){       
+            return "Errore: Limite massimo di prestiti raggiunto per questo utente.";
+        }
+        if (libro.getNumeroCopieDisponibili() <= 0){       
+            return "Errore: Copie esaurite per il libro richiesto.";
+        }
+        LocalDate dataScandenza = LocalDate.now().plusDays(30);       
+        Prestito nuovoPrestito = new Prestito(utente, libro, dataScandenza, Prestito.StatoPrestito.ATTIVO);       
+        libro.setNumeroCopieDisponibili(libro.getNumeroCopieDisponibili() -1);
+        utente.aggiungiPrestito(nuovoPrestito);
+        
+        try{
+        
+            arcPrestiti.aggiungi(nuovoPrestito);
+            return "Successo: Prestito registrato correttamente.";
+        } catch (IOException ex) {       
+            return "Errore: Impossibile salvare il prestito su file.";
+        }
+                
     }
     
     /**
@@ -66,7 +101,26 @@ public class ServicePrestiti {
      * @return Messaggio di esito.
      */
     public String restituzione(String matricola, String codiceISBN){
-        return null;
+        List<Prestito> elenco = arcPrestiti.leggiTutti();
+        
+        for (Prestito p : elenco){
+        
+            if(p.getStato() == Prestito.StatoPrestito.ATTIVO &&
+               p.getUtente().getMatricola().equals(matricola) &&
+               p.getLibro().getCodiceISBN().equals(codiceISBN)){
+            
+                p.setStato(Prestito.StatoPrestito.RESTITUITO);
+                Libro libro = p.getLibro();
+                libro.setNumeroCopieDisponibili(libro.getNumeroCopieDisponibili() + 1);
+                
+                Utente utente = p.getUtente();
+                utente.rimuoviPrestito(p);
+                
+                return "Successo: Libro restituito.";
+            }
+        }
+        return "Errore: Nessun prestito attivo trovato per i dati forniti.";
+       
     }
     
     /**
@@ -77,7 +131,20 @@ public class ServicePrestiti {
      * @return Lista dei prestiti identificati come in ritardo.
      */
     public List<Prestito> controllaRitardi(){
-        return null;
+        
+        List<Prestito> tutti = arcPrestiti.leggiTutti();
+        List<Prestito> inRitardo = new ArrayList<>();
+        LocalDate oggi = LocalDate.now();
+        
+        for (Prestito p : tutti){
+        
+            if (p.getStato() == Prestito.StatoPrestito.ATTIVO && p.getDataRestituzione().isBefore((oggi))){
+            
+                p.setStato(Prestito.StatoPrestito.IN_RITARDO);
+                inRitardo.add(p);
+            }
+        }
+        return inRitardo;
     }
     
     /**
@@ -87,4 +154,21 @@ public class ServicePrestiti {
     public List<Prestito> getLista(){
         return arcPrestiti.leggiTutti();
     }
+    
+    public List<Prestito> getPrestitiAttiviOrdinati(){
+    
+        List<Prestito> tutti = arcPrestiti.leggiTutti();        
+        List<Prestito> attivi = new ArrayList<>();
+        
+        for (Prestito p : tutti){
+        
+            if(p.getStato() == Prestito.StatoPrestito.ATTIVO){
+            
+                attivi.add(p);
+            }
+        }
+        Collections.sort(attivi);
+        return attivi;
+    }
+    
 }
