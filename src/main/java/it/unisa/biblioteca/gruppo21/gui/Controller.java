@@ -10,6 +10,13 @@ import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
 import it.unisa.biblioteca.gruppo21.service.Biblioteca;
 import java.util.List;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * @file Controller.java
@@ -45,7 +52,8 @@ public class Controller {
      * @param email Email (deve essere istituzionale).
      */
     public void gestisciIscrizione(String nome, String cognome, String matricola, String email) {
-        // TODO
+        String esito = biblioteca.iscriviUtente(nome, cognome, matricola, email);
+        mostraMessaggio(esito);
     }
     
     /**
@@ -55,7 +63,8 @@ public class Controller {
      * @param matricola La matricola dell'utente.
      */
     public void gestisciRimozioneUtente(String matricola) {
-        // TODO
+        String esito = biblioteca.rimuoviUtente(matricola);
+        mostraMessaggio(esito);
     }
     
     /**
@@ -64,8 +73,7 @@ public class Controller {
      * @return Lista di Utente.
      */
     public List<Utente> getListaUtenti() {
-        // TODO
-        return null;
+        return biblioteca.getElencoUtenti();
     }
     
     /**
@@ -83,7 +91,15 @@ public class Controller {
      */
     
     public void gestisciAggiuntaLibro(String titolo, String autore, String isbn, String annoStr, String copieStr) {
-        // TODO
+        try {
+            int anno = Integer.parseInt(annoStr);
+            int copie = Integer.parseInt(copieStr);
+            
+            String esito = biblioteca.aggiungiLibro(titolo, autore, isbn, anno, copie);
+            mostraMessaggio(esito);
+        } catch (NumberFormatException e) {
+            mostraMessaggio("Anno e Copie devono essere numeri interi validi.");
+        }
     }
     
     /**
@@ -93,7 +109,8 @@ public class Controller {
      * @param isbn Codice del libro.
      */
     public void gestisciRimozioneLibro(String isbn) {
-        // TODO
+        String esito = biblioteca.rimuoviLibro(isbn);
+        mostraMessaggio(esito);
     }
     
     /**
@@ -102,8 +119,7 @@ public class Controller {
      * @return Lista di Libro.
      */
     public List<Libro> getListaLibri() {
-        // TODO
-        return null;
+        return biblioteca.getElencoLibri();
     }
    
     /**
@@ -114,7 +130,8 @@ public class Controller {
      * @param isbn ID Libro.
      */
     public void gestisciPrestito(String matricola, String isbn) {
-        // TODO
+        String esito = biblioteca.effettuaPrestito(matricola, isbn);
+        mostraMessaggio(esito);
     }
     
     /**
@@ -125,7 +142,8 @@ public class Controller {
      * @param isbn ID Libro.
      */
     public void gestisciRestituzione(String matricola, String isbn) {
-        // TODO
+        String esito = biblioteca.restituisciLibro(matricola, isbn);
+        mostraMessaggio(esito);
     }
     
     /**
@@ -135,8 +153,7 @@ public class Controller {
      * @return Lista di Prestito.
      */
     public List<Prestito> getListaPrestiti() {
-        // TODO
-        return null;
+        return biblioteca.getStoricoPrestiti();
     }
  
     /**
@@ -146,6 +163,29 @@ public class Controller {
      * * @param messaggio Testo da mostrare.
      */
     private void mostraMessaggio(String messaggio) {
-        // TODO
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL); 
+        popupStage.setTitle("Avviso Biblioteca");
+        popupStage.setMinWidth(350);
+        popupStage.setMinHeight(180);
+
+        Label label = new Label(messaggio);
+        label.setWrapText(true);
+        
+        label.setStyle("-fx-font-size: 14px; -fx-padding: 20px; -fx-text-fill: #003366;");
+
+        Button closeButton = new Button("OK");
+        closeButton.setOnAction(e -> popupStage.close());
+        
+        closeButton.setStyle("-fx-background-color: #FFB347; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-padding: 10 20; -fx-cursor: hand;");
+
+        VBox layout = new VBox(15); 
+        layout.getChildren().addAll(label, closeButton);
+        layout.setAlignment(Pos.CENTER);
+        layout.setStyle("-fx-background-color: #FFF8E7; -fx-border-color: #FFB347; -fx-border-width: 2;");
+
+        Scene scene = new Scene(layout);
+        popupStage.setScene(scene);
+        popupStage.showAndWait();
     }
 }
