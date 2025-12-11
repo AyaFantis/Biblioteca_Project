@@ -1,0 +1,58 @@
+
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 20 12 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 0 4;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255, 179, 71, 0.6), 10, 0, 0, 0);
+}
+
+.nav-button:selected {
+    -fx-background-color: rgba(0, 51, 102, 0.3);
+    -fx-text-fill: #FFB347; /* Oro */
+    -fx-border-color: #FFB347;
+    -fx-effect: dropshadow(gaussian, rgba(255, 179, 71, 0.8), 15, 0, 2, 0);
+}
+
+
+.btn-action {
+    -fx-background-color: linear-gradient(to right, #FFB347, #FF7F50);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+.btn-action:hover {
+    -fx-effect: dropshadow(gaussian, #FF7F50, 10, 0, 0, 1);
+}
+
+/* Tabelle */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+.table-view .column-header-background {
+    -fx-background-color: #0077BE; 
+    -fx-background-radius: 10 10 0 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
