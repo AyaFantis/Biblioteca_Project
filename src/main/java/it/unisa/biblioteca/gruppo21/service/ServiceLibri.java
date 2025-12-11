@@ -7,6 +7,8 @@ package it.unisa.biblioteca.gruppo21.service;
 
 import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
+import java.io.IOException;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -49,8 +51,40 @@ public class ServiceLibri {
      * @param numeroCopieDisponibili Quantità iniziale.
      * @return Messaggio di esito.
      */
-    public String aggiungi(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili){
-        return null;
+    public String aggiungi(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili) {
+        if (titolo == null || titolo.length() == 0) {
+            return "Errore:Il titolo è obbligatorio.";
+        }
+        if (autore == null || autore.length() == 0) {
+            return "Errore:L'autore è obbligatorio.";
+        }
+        
+        if (!Validatore.validaISBN(codiceISBN)) {
+            return "Errore: Codice ISBN non valido (richiesto formato a 13 cifre).";
+        }
+        
+        int annoCorrente = Year.now().getValue();
+        if (annoPubblicazione < 1000 || annoPubblicazione > annoCorrente) {
+            return "Errore: Anno di pubblicazione non valido (1000 - " + annoCorrente + ").";
+        }
+        
+        if (numeroCopieDisponibili < 0) {
+            return "Errore: Il numero di copie non può essere negativo.";
+        }
+
+        if (arcLibri.cerca(codiceISBN) != null) {
+            return "Errore: Un libro con questo ISBN è già presente in catalogo.";
+        }
+
+        // 3. Creazione e Persistenza
+        Libro nuovoLibro = new Libro(titolo, autore, codiceISBN, annoPubblicazione, numeroCopieDisponibili);
+        
+        try {
+            arcLibri.aggiungi(nuovoLibro);
+            return "Libro aggiunto correttamente al catalogo.";
+        } catch (IOException e) {
+            return "Errore di sistema durante il salvataggio: " + e.getMessage();
+        }
     }
     
     /**
@@ -62,8 +96,30 @@ public class ServiceLibri {
      * @param nuoveCopie Il nuovo numero totale di copie.
      * @return Messaggio di esito.
      */
-    public String aggiornaCopie(String codiceISBN, int nuoveCopie){
-        return null;
+   public String aggiornaCopie(String codiceISBN, int nuoveCopie) {
+        // 1. Validazione Input
+        if (codiceISBN == null || codiceISBN.length() == 0) {
+            return "Errore: ISBN non specificato.";
+        }
+        if (nuoveCopie < 0) {
+            return "Errore: Il numero di copie non può essere negativo.";
+        }
+
+        // 2. Verifica Esistenza
+        Libro libro = arcLibri.cerca(codiceISBN);
+        if (libro == null) {
+            return "Errore: Nessun libro trovato con questo ISBN.";
+        }
+
+        // 3. Aggiornamento e Persistenza
+        try {
+            libro.setNumeroCopieDisponibili(nuoveCopie);
+            // Ipotizziamo che salvaTutto renda persistenti le modifiche in memoria
+            arcLibri.salvaTutto(); 
+            return "Copie aggiornate con successo. Totale attuale: " + nuoveCopie;
+        } catch (IOException e) {
+            return "Errore durante l'aggiornamento: " + e.getMessage();
+        }
     }
     
     /**
@@ -90,39 +146,51 @@ public class ServiceLibri {
     }
     
     /**
-     * @brief Cerca libri per titolo, autore o ISBN.
-     * @post Restituisce una lista di libri che corrispondono ai criteri di ricerca.
-     * @param titolo Filtro titolo (opzionale)
-     * @param autore Filtro autore (opzionale)
-     * @param codiceISBN Filtro ISBN (opzionale)
-     * @return Lista dei libri trovati.
+     * @brief Cerca libri per titolo, autore e/o ISBN.
+     * I parametri null o vuoti vengono ignorati nella ricerca.
+     * Se tutti i parametri sono null, restituisce la lista completa.
+     * @param titolo Titolo (o parte di esso) da cercare.
+     * @param autore Autore (o parte di esso) da cercare.
+     * @param isbn ISBN da cercare.
+     * @return Lista dei libri che soddisfano tutti i criteri specificati.
      */
-    public List<Libro> cerca(String parola){
-        List<Libro> tutti= getLista();
-        
+    public List<Libro> cerca(String titolo, String autore, String isbn) {
+        List<Libro> tutti = getLista();
         List<Libro> risultati = new ArrayList<>();
-        
-        if (parola == null)
-            return risultati;
-        
-        String key = parola.toLowerCase();
-        
-        for (Libro l : tutti){
-        
-            boolean isTitolo = l.getTitolo().toLowerCase().contains(key);
-            
-            boolean isAutore = l.getAutore().toLowerCase().contains(key);
 
-            boolean isISBN = l.getCodiceISBN().toLowerCase().contains(key);
+        // Se non viene passato nessun filtro, restituire tutto o niente.
+        if ((titolo == null || titolo.isEmpty()) && 
+            (autore == null || autore.isEmpty()) && 
+            (isbn == null || isbn.isEmpty())) {
+            return new ArrayList<>(tutti);
+        }
 
-            if(isTitolo || isAutore || isISBN){
+        for (Libro l : tutti) {
+            boolean match = true;
+            //Filtro su ISBN (ricerca esatta o parziale)
+            if (isbn != null && !isbn.isEmpty()) {
+                if (!l.getCodiceISBN().equals(isbn)) { // O contains, se parziale
+                    match = false;
+                }
+            }
+            //Filtro su Titolo
+            if (match && titolo != null && !titolo.isEmpty()) {
+                if (!l.getTitolo().toLowerCase().contains(titolo.toLowerCase())) {
+                    match = false;
+                }
+            }
+            //Filtro su Autore 
+            if (match && autore != null && !autore.isEmpty()) {
+                if (!l.getAutore().toLowerCase().contains(autore.toLowerCase())) {
+                    match = false;
+                }
+            }
+            // Se il libro ha superato tutti i filtri attivi, lo aggiungiamo
+            if (match) {
                 risultati.add(l);
             }
-                
-            }
-        return risultati;
         }
-        
+        return risultati;
     }
-    
+}
     
