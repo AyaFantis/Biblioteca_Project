@@ -102,7 +102,7 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
      * @brief Metodo di utilità per riscrivere completamente il file dalla cache.
      * Usato durante le operazioni di cancellazione o modifica.
      */
-    protected void salvaTutto() throws IOException {
+    public void salvaTutto() throws IOException {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
             for(T elem : cache){
                 writer.write(serializza(elem));
