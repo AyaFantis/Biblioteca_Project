@@ -78,4 +78,54 @@ public class ArchiveLibroTest {
 
         new File("libri.txt").delete();
     }
+    
+    @Test
+    public void testPersistenzaReale() throws IOException {
+        new File("libri.txt").delete();
+        ArchiveLibri archiveSessione1 = new ArchiveLibri();
+
+        Libro l = new Libro("1984", "Orwell", "111-222", 1949, 10);
+        archiveSessione1.aggiungi(l);
+
+        ArchiveLibri archiveSessione2 = new ArchiveLibri();
+        
+        Libro caricato = archiveSessione2.cerca("111-222");
+
+        assertNotNull(caricato, "Il libro deve essere ricaricato dal file dopo il riavvio");
+        assertEquals("Orwell", caricato.getAutore(), "I dati caricati devono essere corretti");
+        
+        new File("libri.txt").delete();
+    }
+    
+    @Test
+    public void testDeserializzaDatiCorrotti() {
+        ArchiveLibri archive = new ArchiveLibri();
+
+        String rigaIncompleta = "Titolo;Autore;ISBN;2020"; 
+        assertNull(archive.deserializza(rigaIncompleta), "Deve ritornare null se mancano campi");
+
+        String rigaErrata = "Titolo;Autore;ISBN;Duemila;5";
+        assertNull(archive.deserializza(rigaErrata), "Deve ritornare null se l'anno non è un numero");
+
+    }
+    
+    @Test
+    public void testCancella() throws Exception {
+        new File("libri.txt").delete();
+        ArchiveLibri archive = new ArchiveLibri();
+        
+        Libro l = new Libro("Da Cancellare", "Autore", "DEL-123", 2020, 1);
+        archive.aggiungi(l);
+
+        assertNotNull(archive.cerca("DEL-123"));
+        
+        archive.cancella(l);
+
+        assertNull(archive.cerca("DEL-123"), "Il libro deve essere rimosso dalla memoria");
+
+        ArchiveLibri archiveCheck = new ArchiveLibri();
+        assertNull(archiveCheck.cerca("DEL-123"), "Il libro deve essere rimosso dal file fisico");
+        
+        new File("libri.txt").delete();
+    }
 }
