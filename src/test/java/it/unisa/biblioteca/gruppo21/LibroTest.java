@@ -35,6 +35,21 @@ public class LibroTest {
     }
     
     @Test
+    public void testOrdinamentoNaturale() {
+        Libro l1 = new Libro("Anna Karenina", "Tolstoj", "1111111111", 2000, 1);
+        Libro l2 = new Libro("Zanna Bianca", "London", "2222222222", 1990, 1);
+        
+        assertTrue(l1.compareTo(l2) < 0, "Anna Karenina dovrebbe venire prima di Zanna Bianca");
+        
+        Libro l3 = new Libro("Anna Karenina", "UnAltroAutore", "3333333333", 2010, 1);
+        
+        assertTrue(l1.compareTo(l3) < 0, "A parità di titolo, si deve ordinare per autore");
+        
+        Libro l4 = new Libro("anna karenina", "tolstoj", "4444444444", 2000, 1);
+        assertEquals(0, l1.compareTo(l4), "L'ordinamento dovrebbe ignorare le maiuscole");
+    }
+    
+    @Test
     public void testToString() {
         Libro libro = new Libro("La gaia scienza", "Nietzsche", "8818027409", 2010, 5);
         String stringa = libro.toString();
