@@ -36,12 +36,13 @@
     -fx-font-weight: bold;
     -fx-background-radius: 20;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #00000040, 5, 0, 0, 1);
 }
 .btn-action:hover {
     -fx-effect: dropshadow(gaussian, #FF7F50, 10, 0, 0, 1);
 }
 
-/* Tabelle */
+
 .table-view {
     -fx-background-color: white;
     -fx-background-radius: 10;
@@ -49,7 +50,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
 }
 .table-view .column-header-background {
-    -fx-background-color: #0077BE; 
+    -fx-background-color: #0077BE;
     -fx-background-radius: 10 10 0 0;
 }
 .table-view .column-header .label {

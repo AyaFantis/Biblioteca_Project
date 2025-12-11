@@ -1,27 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unisa.biblioteca.gruppo21.gui;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import java.time.format.DateTimeFormatter;
 
-/**
- * FXML Controller class
- *
- * @author manuel
- */
-public class ViewPrestitiController implements Initializable {
+public class ViewPrestitiController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    @FXML private TextField txtMatricolaLoan;
+    @FXML private TextField txtIsbnLoan;
+
+    @FXML private TableView<Prestito> loanTable;
+    @FXML private TableColumn<Prestito, String> colMatricolaUtente;
+    @FXML private TableColumn<Prestito, String> colIsbnLibro;
+    @FXML private TableColumn<Prestito, String> colDataScadenza;
+    @FXML private TableColumn<Prestito, String> colStato;
+
+    private Controller logicController;
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    @FXML
+    public void initialize() {
+        colMatricolaUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getMatricola()));
+        colIsbnLibro.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getCodiceISBN()));
+        colDataScadenza.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDataRestituzione().format(formatter)));
+        colStato.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStato().toString()));
+    }
+
+    public void setLogicController(Controller logicController) {
+        this.logicController = logicController;
+        aggiornaTabella();
+    }
+
+    @FXML private void handleEffettuaPrestito() {
+        if (logicController != null) {
+            logicController.gestisciPrestito(txtMatricolaLoan.getText(), txtIsbnLoan.getText());
+            aggiornaTabella();
+        }
+    }
+
+    @FXML private void handleRestituzione() {
+        if (logicController != null) {
+            logicController.gestisciRestituzione(txtMatricolaLoan.getText(), txtIsbnLoan.getText());
+            aggiornaTabella();
+        }
+    }
+
+    private void aggiornaTabella() {
+        if (logicController != null) loanTable.getItems().setAll(logicController.getListaPrestiti());
+    }
 }
