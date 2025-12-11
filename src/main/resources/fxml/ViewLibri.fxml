@@ -7,60 +7,56 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<HBox spacing="30.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.gruppo21.gui.ViewLibriController">
+<HBox spacing="25.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.gruppo21.gui.ViewLibriController">
    <children>
-      <VBox prefWidth="300.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15;">
-         <padding>
-            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-         </padding>
-         <effect>
-            <DropShadow color="#00000026" offsetY="4.0" radius="10.0" />
-         </effect>
+      <VBox prefWidth="320.0" spacing="20.0" styleClass="content-card">
          <children>
-            <Label text="Nuovo Libro" textFill="#ff7f50">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtIsbn" promptText="Codice ISBN" style="-fx-background-color: #FFF8E7; -fx-background-radius: 5;" />
-            <TextField fx:id="txtTitolo" promptText="Titolo" style="-fx-background-color: #FFF8E7; -fx-background-radius: 5;" />
-            <TextField fx:id="txtAutore" promptText="Autore" style="-fx-background-color: #FFF8E7; -fx-background-radius: 5;" />
+            <Label styleClass="header-label" text="Nuovo Libro" />
+            <TextField fx:id="txtIsbn" promptText="Codice ISBN" />
+            <TextField fx:id="txtTitolo" promptText="Titolo" />
+            <TextField fx:id="txtAutore" promptText="Autore" />
             <HBox spacing="10.0">
-               <TextField fx:id="txtAnno" promptText="Anno" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFF8E7; -fx-background-radius: 5;" />
-               <TextField fx:id="txtCopie" promptText="Copie" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFF8E7; -fx-background-radius: 5;" />
+               <TextField fx:id="txtAnno" promptText="Anno" HBox.hgrow="ALWAYS" />
+               <TextField fx:id="txtCopie" promptText="Copie" HBox.hgrow="ALWAYS" />
             </HBox>
-            <Button onAction="#handleAggiungiLibro" maxWidth="1.7976931348623157E308" styleClass="btn-action" text="SALVA LIBRO" />
-            <Button onAction="#handleRimuoviLibro" maxWidth="1.7976931348623157E308" style="-fx-background-color: #A52A2A; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold; -fx-cursor: hand;" text="RIMUOVI SELEZIONATO" />
+            
+            <VBox spacing="10.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" onAction="#handleAggiungiLibro" styleClass="btn-primary" text="SALVA LIBRO" />
+                  <Button maxWidth="1.7976931348623157E308" onAction="#handleRimuoviLibro" styleClass="btn-danger" text="RIMUOVI SELEZIONATO" />
+               </children>
+            </VBox>
          </children>
       </VBox>
       
-      <VBox HBox.hgrow="ALWAYS">
+      <VBox HBox.hgrow="ALWAYS" spacing="15.0">
          <children>
-            <Label text="Catalogo Libri" textFill="#003366">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Label>
-            <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label styleClass="header-label" text="Catalogo Libri">
+                     <HBox.margin>
+                        <Insets bottom="0.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtSearch" onKeyReleased="#handleRicerca" promptText="Cerca per ISBN, Titolo, Autore..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            
+            <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
                <content>
-                  <TableView fx:id="bookTable">
+                  <TableView fx:id="tableLibri">
                      <columns>
                         <TableColumn fx:id="colIsbn" text="ISBN" />
                         <TableColumn fx:id="colTitolo" text="Titolo" />
                         <TableColumn fx:id="colAutore" text="Autore" />
                         <TableColumn fx:id="colCopieDisp" text="Copie Disp." />
                      </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
                   </TableView>
                </content>
             </ScrollPane>

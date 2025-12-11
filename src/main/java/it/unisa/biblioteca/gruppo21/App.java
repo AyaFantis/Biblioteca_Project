@@ -6,9 +6,13 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+
+import java.io.IOException;
 
 /**
  * @file App.java
@@ -30,6 +34,25 @@ public class App extends Application {
      */
  @Override
     public void start(Stage primaryStage) {
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ViewMain.fxml"));
+            Parent root = loader.load();
+
+            ViewMainController mainGuiController = loader.getController();
+
+            mainGuiController.setLogicController(null);
+
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("GUI Test - Biblioteca UniSA");
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(true);
+            primaryStage.show();
+
+        } catch (IOException e) {
+            System.err.println("ERRORE: Impossibile caricare l'interfaccia grafica.");
+            System.err.println("Controlla che i file FXML siano nella cartella 'src/main/resources/fxml/'");
+        }
     }
     
     /**

@@ -10,10 +10,10 @@ import java.time.format.DateTimeFormatter;
 
 public class ViewPrestitiController {
 
-    @FXML private TextField txtMatricolaLoan;
-    @FXML private TextField txtIsbnLoan;
+    @FXML private TextField txtMatricolaPrestito;
+    @FXML private TextField txtIsbnPrestito;
 
-    @FXML private TableView<Prestito> loanTable;
+    @FXML private TableView<Prestito> tablePrestiti;
     @FXML private TableColumn<Prestito, String> colMatricolaUtente;
     @FXML private TableColumn<Prestito, String> colIsbnLibro;
     @FXML private TableColumn<Prestito, String> colDataScadenza;
@@ -37,19 +37,19 @@ public class ViewPrestitiController {
 
     @FXML private void handleEffettuaPrestito() {
         if (logicController != null) {
-            logicController.gestisciPrestito(txtMatricolaLoan.getText(), txtIsbnLoan.getText());
+            logicController.gestisciPrestito(txtMatricolaPrestito.getText(), txtIsbnPrestito.getText());
             aggiornaTabella();
         }
     }
 
     @FXML private void handleRestituzione() {
         if (logicController != null) {
-            logicController.gestisciRestituzione(txtMatricolaLoan.getText(), txtIsbnLoan.getText());
+            logicController.gestisciRestituzione(txtMatricolaPrestito.getText(), txtIsbnPrestito.getText());
             aggiornaTabella();
         }
     }
 
     private void aggiornaTabella() {
-        if (logicController != null) loanTable.getItems().setAll(logicController.getListaPrestiti());
+        if (logicController != null) tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
     }
 }

@@ -20,7 +20,7 @@ public class ViewMainController {
 
     public void setLogicController(Controller logicController) {
         this.logicController = logicController;
-        showViewUtenti(); // Avvio sulla schermata utenti
+        showViewUtenti(); // Default view
     }
 
     @FXML private void showViewUtenti() { attivaBottone(btnNavUtenti); loadView("ViewUtenti.fxml"); }
@@ -36,12 +36,12 @@ public class ViewMainController {
 
     private void loadView(String fxmlFileName) {
         try {
+            // Nota il percorso /fxml/
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFileName));
             Parent view = loader.load();
 
-            // Colleghiamo i controller specifici
+            // Collega i sotto-controller
             Object fxmlController = loader.getController();
-            
             if (fxmlController instanceof ViewUtentiController) {
                 ((ViewUtentiController) fxmlController).setLogicController(this.logicController);
             } else if (fxmlController instanceof ViewLibriController) {
