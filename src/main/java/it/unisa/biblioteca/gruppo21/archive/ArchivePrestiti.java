@@ -5,7 +5,9 @@
  */
 package it.unisa.biblioteca.gruppo21.archive;
 
-import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import it.unisa.biblioteca.gruppo21.entity.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 /**
  * @file ArchivePrestiti.java
@@ -37,7 +39,12 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      */
     @Override
     protected String serializza(Prestito p) {
-        return null;
+        String mat = p.getUtente().getMatricola();
+        String isbn = p.getLibro().getCodiceISBN();
+        
+        String dataStr = (p.getDataRestituzione() == null) ? "null" : p.getDataRestituzione().toString();
+        
+        return mat + ";" + isbn + ";" + dataStr + ";" + p.getStato();
     }
 
     /**
@@ -51,7 +58,37 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      */
     @Override
     protected Prestito deserializza(String riga) {
-        return null;
+        try {
+            String[] parti = riga.split(";");
+            if (parti.length != 4) return null;
+
+            String matricola = parti[0];
+            String isbn = parti[1];
+            String dataStr = parti[2];
+            String statoStr = parti[3];
+
+            // 1. Parsing della Data
+            LocalDate dataRestituzione = null;
+            if (!dataStr.equals("null")) {
+                dataRestituzione = LocalDate.parse(dataStr); // Formato ISO standard (YYYY-MM-DD)
+            }
+
+            // 2. Parsing dello Stato (Enum)
+            Prestito.StatoPrestito stato = Prestito.StatoPrestito.valueOf(statoStr);
+
+            // 3. Creazione Oggetti "Stub" (Contenitori solo per l'ID)
+            // Non abbiamo i dati completi (Nome, Titolo, ecc), ma per l'archivio basta l'ID.
+            // Il Service poi userà questi ID per recuperare i dati completi dagli altri archivi se serve.
+            Utente uStub = new Utente("", "", matricola, ""); 
+            Libro lStub = new Libro("", "", isbn, 0, 0);
+
+            return new Prestito(uStub, lStub, dataRestituzione, stato);
+
+        } catch (DateTimeParseException | IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
+            // DateTimeParseException: Data corrotta
+            // IllegalArgumentException: Stato enum non valido
+            return null;
+        }
     }
 
     /**
@@ -61,6 +98,17 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
     
     @Override
     public Prestito cerca(String id) {
+        return null;
+    }
+    
+    public Prestito cercaPrestito(String matricola, String isbn) {
+        for (Prestito p : cache) {
+            if (p.getUtente().getMatricola().equals(matricola) && 
+                p.getLibro().getCodiceISBN().equals(isbn) &&
+                p.getStato() == Prestito.StatoPrestito.ATTIVO) {
+                return p;
+            }
+        }
         return null;
     }
     

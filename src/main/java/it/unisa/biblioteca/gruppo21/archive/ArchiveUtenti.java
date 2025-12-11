@@ -57,10 +57,20 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
     protected Utente deserializza(String riga) {
         try{
             String[] parti = riga.split(";");
+            
+            if(parti.length != 4){
+                return null;
+            }
+            
+            String nome = parti[0];
+            String cognome = parti[1];
+            String matricola = parti[2];
+            String email = parti[3];
+            
+            return new Utente(nome, cognome, matricola, email);
         }catch(Exception e){
             return null;
         }
-        return null;
     }
 
     /**
@@ -74,6 +84,12 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      */
     @Override
     public Utente cerca(String id) {
+        
+        for(Utente u : cache){
+            if(u.getMatricola().equals(id)){
+                return u;
+            }
+        }
         return null;
     }
     
