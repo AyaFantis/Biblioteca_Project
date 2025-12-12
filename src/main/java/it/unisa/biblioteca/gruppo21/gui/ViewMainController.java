@@ -23,9 +23,20 @@ public class ViewMainController {
         showViewUtenti(); // Default view
     }
 
-    @FXML private void showViewUtenti() { attivaBottone(btnNavUtenti); loadView("ViewUtenti.fxml"); }
-    @FXML private void showViewLibri() { attivaBottone(btnNavLibri); loadView("ViewLibri.fxml"); }
-    @FXML private void showViewPrestiti() { attivaBottone(btnNavPrestiti); loadView("ViewPrestiti.fxml"); }
+    @FXML private void showViewUtenti() { 
+        attivaBottone(btnNavUtenti); 
+        loadView("ViewUtenti.fxml"); 
+    }
+    
+    @FXML private void showViewLibri() { 
+        attivaBottone(btnNavLibri); 
+        loadView("ViewLibri.fxml"); 
+    }
+    
+    @FXML private void showViewPrestiti() { 
+        attivaBottone(btnNavPrestiti); 
+        loadView("ViewPrestiti.fxml"); 
+    }
 
     private void attivaBottone(Button bottoneAttivo) {
         btnNavUtenti.getStyleClass().remove("selected");

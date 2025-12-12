@@ -25,7 +25,15 @@
                   <Insets top="10.0" />
                </VBox.margin>
                <children>
-                  <Button maxWidth="1.7976931348623157E308" onAction="#handleAggiungiUtente" styleClass="btn-primary" text="REGISTRA UTENTE" />
+                  <Button maxWidth="1.7976931348623157E308" onAction="#handlePulisciCampi" styleClass="btn-neutral" text="NUOVO / PULISCI CAMPI" />
+                  
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnInserisci" maxWidth="1.7976931348623157E308" onAction="#handleAggiungiUtente" styleClass="btn-primary" text="REGISTRA" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnModifica" disable="true" maxWidth="1.7976931348623157E308" onAction="#handleModificaUtente" styleClass="btn-secondary" text="MODIFICA" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  
                   <Button maxWidth="1.7976931348623157E308" onAction="#handleRimuoviUtente" styleClass="btn-danger" text="RIMUOVI SELEZIONATO" />
                </children>
             </VBox>
@@ -47,7 +55,7 @@
             
             <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
                <content>
-                  <TableView fx:id="tableUtenti">
+                  <TableView fx:id="tableUtenti" onMouseClicked="#handleSelezioneTabella">
                     <columns>
                       <TableColumn fx:id="colMatricola" text="Matricola" />
                       <TableColumn fx:id="colCognome" text="Cognome" />

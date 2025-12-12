@@ -6,10 +6,12 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 public class ViewUtentiController {
 
@@ -18,6 +20,9 @@ public class ViewUtentiController {
     @FXML private TextField txtCognome;
     @FXML private TextField txtEmail;
     @FXML private TextField txtSearch;
+    
+    @FXML private Button btnInserisci;
+    @FXML private Button btnModifica;
 
     @FXML private TableView<Utente> tableUtenti;
     @FXML private TableColumn<Utente, String> colMatricola;
@@ -36,6 +41,43 @@ public class ViewUtentiController {
         colCognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         tableUtenti.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+    
+    /**
+     * @brief Gestisce il click del mouse sulla tabella.
+     * Recupera l'elemento selezionato e riempie i campi di testo.
+     * @param event L'evento del mouse.
+     */
+    @FXML
+    private void handleSelezioneTabella(MouseEvent event) {
+        
+        Utente u = tableUtenti.getSelectionModel().getSelectedItem();
+        
+        if (u != null) {
+            txtMatricola.setText(u.getMatricola());
+            txtNome.setText(u.getNome());
+            txtCognome.setText(u.getCognome());
+            txtEmail.setText(u.getEmail());
+            
+            txtMatricola.setDisable(true);
+            btnInserisci.setDisable(true);
+            btnModifica.setDisable(false);
+        }
+    }
+
+    @FXML
+    private void handlePulisciCampi() {
+        txtMatricola.clear();
+        txtNome.clear();
+        txtCognome.clear();
+        txtEmail.clear();
+        
+        
+        txtMatricola.setDisable(false);
+        btnInserisci.setDisable(false);
+        btnModifica.setDisable(true);
+        
+        tableUtenti.getSelectionModel().clearSelection();
     }
 
     @FXML
@@ -70,10 +112,37 @@ public class ViewUtentiController {
 
     @FXML private void handleAggiungiUtente() {
         if (logicController != null) {
-            logicController.gestisciIscrizione(txtNome.getText(), txtCognome.getText(), txtMatricola.getText(), txtEmail.getText());
-            txtNome.clear(); txtCognome.clear(); txtMatricola.clear(); txtEmail.clear();
-            aggiornaTabella();
-            txtSearch.clear(); 
+            boolean successo = logicController.gestisciIscrizione(
+                    txtNome.getText(), 
+                    txtCognome.getText(), 
+                    txtMatricola.getText(), 
+                    txtEmail.getText()
+            );
+            
+            if(successo){
+                handlePulisciCampi();
+                aggiornaTabella();
+                txtSearch.clear();
+            }
+            
+        }
+    }
+    
+    @FXML
+    private void handleModificaUtente() {
+        if (logicController != null) {
+            boolean successo = logicController.gestisciModificaUtente(
+                txtNome.getText(), 
+                txtCognome.getText(), 
+                txtEmail.getText(),
+                txtMatricola.getText()
+            );
+            
+            if (successo) {
+                handlePulisciCampi();
+                aggiornaTabella();
+                txtSearch.clear();
+            }
         }
     }
     
@@ -81,6 +150,7 @@ public class ViewUtentiController {
         Utente u = tableUtenti.getSelectionModel().getSelectedItem();
         if (u != null && logicController != null) {
             logicController.gestisciRimozioneUtente(u.getMatricola());
+            handlePulisciCampi();
             aggiornaTabella();
         }
     }

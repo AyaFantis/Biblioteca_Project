@@ -1,1 +1,20 @@
 Manuel Huy;Famiglietti;m.famiglietti17@studenti.unisa.it;0612709286
+Alessandro;Rossi;a.rossi23@studenti.unisa.it;0612703489
+Maria;Esposito;m.esposito04@studenti.unisa.it;0612709123
+Francesco;Russo;f.russo11@studenti.unisa.it;0612705678
+Giulia;Romano;g.romano89@studenti.unisa.it;0612702234
+Luca;Bianchi;l.bianchi15@studenti.unisa.it;0612708890
+Sofia;Ferrari;s.ferrari07@studenti.unisa.it;0612701122
+Matteo;Marino;m.marino33@studenti.unisa.it;0612704455
+Chiara;Greco;c.greco19@studenti.unisa.it;0612706677
+Martina;Gallo;m.gallo21@studenti.unisa.it;0612703344
+Davide;Conti;d.conti05@studenti.unisa.it;0612707766
+Sara;De Luca;s.deluca14@studenti.unisa.it;0612705511
+Simone;Costa;s.costa09@studenti.unisa.it;0612702299
+Valentina;Giordano;v.giordano28@studenti.unisa.it;0612708833
+Nicola;Mancini;n.mancini10@studenti.unisa.it;0612701234
+Alessia;Rizzo;a.rizzo06@studenti.unisa.it;0612709876
+Federico;Lombardi;f.lombardi18@studenti.unisa.it;0612704321
+Elena;Moretti;e.moretti25@studenti.unisa.it;0612706543
+Antonio;Barbieri;a.barbieri03@studenti.unisa.it;0612708765
+Giorgia;Fontana;g.fontana12@studenti.unisa.it;0612700987

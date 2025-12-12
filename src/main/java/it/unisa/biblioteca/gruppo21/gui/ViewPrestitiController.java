@@ -37,8 +37,16 @@ public class ViewPrestitiController {
 
     @FXML private void handleEffettuaPrestito() {
         if (logicController != null) {
-            logicController.gestisciPrestito(txtMatricolaPrestito.getText(), txtIsbnPrestito.getText());
-            aggiornaTabella();
+            boolean successo = logicController.gestisciPrestito(
+                    txtMatricolaPrestito.getText(), 
+                    txtIsbnPrestito.getText()
+            );
+            if(successo){
+                txtMatricolaPrestito.clear();
+                txtIsbnPrestito.clear();
+                aggiornaTabella();
+            }
+            
         }
     }
 

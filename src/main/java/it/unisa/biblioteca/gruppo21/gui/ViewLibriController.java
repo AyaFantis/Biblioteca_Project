@@ -6,10 +6,12 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 public class ViewLibriController {
 
@@ -19,6 +21,9 @@ public class ViewLibriController {
     @FXML private TextField txtAnno;
     @FXML private TextField txtCopie;
     @FXML private TextField txtSearch;
+    
+    @FXML private Button btnInserisci;
+    @FXML private Button btnModifica;
 
     @FXML private TableView<Libro> tableLibri;
     @FXML private TableColumn<Libro, String> colIsbn;
@@ -37,6 +42,63 @@ public class ViewLibriController {
         colAutore.setCellValueFactory(new PropertyValueFactory<>("autore"));
         colCopieDisp.setCellValueFactory(new PropertyValueFactory<>("numeroCopieDisponibili"));
         tableLibri.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+    
+    /**
+     * @brief Gestione semplice del click sulla tabella.
+     */
+    @FXML
+    private void handleSelezioneTabella(MouseEvent event) {
+        Libro l = tableLibri.getSelectionModel().getSelectedItem();
+        if (l != null) {
+            txtIsbn.setText(l.getCodiceISBN());
+            txtTitolo.setText(l.getTitolo());
+            txtAutore.setText(l.getAutore());
+            txtAnno.setText(String.valueOf(l.getAnnoPubblicazione()));
+            txtCopie.setText(String.valueOf(l.getNumeroCopieDisponibili()));
+            
+            txtIsbn.setDisable(true);
+            txtTitolo.setDisable(true);
+            txtAutore.setDisable(true);
+            txtAnno.setDisable(true);
+            
+            txtCopie.setDisable(false); 
+            
+            btnInserisci.setDisable(true);
+            btnModifica.setDisable(false);
+        }
+    }
+
+    @FXML
+    private void handlePulisciCampi() {
+        txtIsbn.clear(); 
+        txtTitolo.clear(); 
+        txtAutore.clear(); 
+        txtAnno.clear(); 
+        txtCopie.clear();
+        
+        txtIsbn.setDisable(false);
+        txtTitolo.setDisable(false);
+        txtAutore.setDisable(false);
+        txtAnno.setDisable(false);
+        
+        btnInserisci.setDisable(false);
+        btnModifica.setDisable(true);
+        tableLibri.getSelectionModel().clearSelection();
+    }
+
+    @FXML private void handleModificaCopie() {
+        if (logicController != null) {
+            boolean successo = logicController.gestisciAggiornamentoCopie(
+                txtIsbn.getText(), 
+                txtCopie.getText()
+            );
+            if (successo) {
+                handlePulisciCampi();
+                aggiornaTabella();
+                txtSearch.clear();
+            }
+        }
     }
 
     @FXML
@@ -71,10 +133,19 @@ public class ViewLibriController {
 
     @FXML private void handleAggiungiLibro() {
         if (logicController != null) {
-            logicController.gestisciAggiuntaLibro(txtTitolo.getText(), txtAutore.getText(), txtIsbn.getText(), txtAnno.getText(), txtCopie.getText());
-            txtIsbn.clear(); txtTitolo.clear(); txtAutore.clear(); txtAnno.clear(); txtCopie.clear();
-            aggiornaTabella();
-            txtSearch.clear();
+            boolean successo = logicController.gestisciAggiuntaLibro(
+                    txtTitolo.getText(), 
+                    txtAutore.getText(), 
+                    txtIsbn.getText(), 
+                    txtAnno.getText(), 
+                    txtCopie.getText()
+            );
+            
+            if(successo){
+                handlePulisciCampi();
+                aggiornaTabella();
+                txtSearch.clear();
+            }
         }
     }
     
@@ -82,6 +153,7 @@ public class ViewLibriController {
         Libro l = tableLibri.getSelectionModel().getSelectedItem();
         if(l != null && logicController != null) {
             logicController.gestisciRimozioneLibro(l.getCodiceISBN());
+            handlePulisciCampi();
             aggiornaTabella();
         }
     }

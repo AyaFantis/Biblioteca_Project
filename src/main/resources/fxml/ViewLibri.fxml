@@ -14,7 +14,7 @@
    <children>
       <VBox prefWidth="320.0" spacing="20.0" styleClass="content-card">
          <children>
-            <Label styleClass="header-label" text="Nuovo Libro" />
+            <Label styleClass="header-label" text="Gestione Libro" />
             <TextField fx:id="txtIsbn" promptText="Codice ISBN" />
             <TextField fx:id="txtTitolo" promptText="Titolo" />
             <TextField fx:id="txtAutore" promptText="Autore" />
@@ -28,7 +28,15 @@
                   <Insets top="10.0" />
                </VBox.margin>
                <children>
-                  <Button maxWidth="1.7976931348623157E308" onAction="#handleAggiungiLibro" styleClass="btn-primary" text="SALVA LIBRO" />
+                  <Button maxWidth="1.7976931348623157E308" onAction="#handlePulisciCampi" styleClass="btn-neutral" text="NUOVO / PULISCI CAMPI" />
+                  
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnInserisci" maxWidth="1.7976931348623157E308" onAction="#handleAggiungiLibro" styleClass="btn-primary" text="SALVA" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnModifica" disable="true" maxWidth="1.7976931348623157E308" onAction="#handleModificaCopie" styleClass="btn-secondary" text="AGGIORNA COPIE" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  
                   <Button maxWidth="1.7976931348623157E308" onAction="#handleRimuoviLibro" styleClass="btn-danger" text="RIMUOVI SELEZIONATO" />
                </children>
             </VBox>
@@ -50,7 +58,7 @@
             
             <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
                <content>
-                  <TableView fx:id="tableLibri">
+                  <TableView fx:id="tableLibri" onMouseClicked="#handleSelezioneTabella">
                      <columns>
                         <TableColumn fx:id="colIsbn" text="ISBN" />
                         <TableColumn fx:id="colTitolo" text="Titolo" />

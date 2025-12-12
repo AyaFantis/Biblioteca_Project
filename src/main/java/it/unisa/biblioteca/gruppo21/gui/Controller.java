@@ -46,14 +46,26 @@ public class Controller {
      * @brief Gestisce la richiesta di iscrizione di un nuovo utente.
      * @pre I parametri non dovrebbero essere null.
      * @post Viene mostrato un messaggio all'utente con l'esito dell'operazione.
+     * @return true se l'iscrizione è avvenuta con successo; false se si è verificato un errore.
      * @param nome Nome dell'utente.
      * @param cognome Cognome dell'utente.
      * @param matricola Matricola (deve essere valida).
      * @param email Email (deve essere istituzionale).
      */
-    public void gestisciIscrizione(String nome, String cognome, String matricola, String email) {
+    public boolean gestisciIscrizione(String nome, String cognome, String matricola, String email) {
         String esito = biblioteca.iscriviUtente(nome, cognome, matricola, email);
         mostraMessaggio(esito);
+        return !esito.startsWith("Errore");
+    }
+    
+    /**
+     * @brief Modifica un utente esistente.
+     * @return true se successo, false se errore.
+     */
+    public boolean gestisciModificaUtente(String nome, String cognome, String email, String matricola) {
+        String esito = biblioteca.modificaUtente(nome, cognome, email, matricola);
+        mostraMessaggio(esito);
+        return !esito.startsWith("Errore");
     }
     
     /**
@@ -83,6 +95,7 @@ public class Controller {
      * viene chiamato il servizio di aggiunta e mostrato l'esito.
      * @post Caso 2 Se i campi numerici non sono validi, viene mostrato
      * un messaggio di errore specifico senza invocare il servizio.
+     * @return true se l'iscrizione è avvenuta con successo; false se si è verificato un errore.
      * @param titolo Titolo del libro.
      * @param autore Autore.
      * @param isbn ISBN.
@@ -90,15 +103,37 @@ public class Controller {
      * @param copieStr Copie.
      */
     
-    public void gestisciAggiuntaLibro(String titolo, String autore, String isbn, String annoStr, String copieStr) {
+    public boolean gestisciAggiuntaLibro(String titolo, String autore, String isbn, String annoStr, String copieStr) {
         try {
             int anno = Integer.parseInt(annoStr);
             int copie = Integer.parseInt(copieStr);
             
             String esito = biblioteca.aggiungiLibro(titolo, autore, isbn, anno, copie);
             mostraMessaggio(esito);
+            return !esito.startsWith("Errore");
         } catch (NumberFormatException e) {
             mostraMessaggio("Anno e Copie devono essere numeri interi validi.");
+            return false;
+        }
+    }
+    
+    /**
+     * @brief Gestisce l'aggiornamento del numero di copie di un libro.
+     * @param isbn Codice ISBN del libro da modificare.
+     * @param copieStr Nuovo numero di copie.
+     * @return true se l'operazione ha successo, false altrimenti.
+     */
+    public boolean gestisciAggiornamentoCopie(String isbn, String copieStr) {
+        try {
+            int copie = Integer.parseInt(copieStr);
+            
+            String esito = biblioteca.aggiornaCopieLibro(isbn, copie);
+            mostraMessaggio(esito);
+            return !esito.startsWith("Errore");
+            
+        } catch (NumberFormatException e) {
+            mostraMessaggio("Errore: 'Copie' deve essere un numero intero valido.");
+            return false;
         }
     }
     
@@ -126,12 +161,14 @@ public class Controller {
      * @brief Gestisce il flusso di creazione prestito.
      * @pre matricola e isbn non nulli.
      * @post L'esito (Successo, Utente non trovato, Stock esaurito) viene mostrato all'utente.
+     * @return true se l'iscrizione è avvenuta con successo; false se si è verificato un errore.
      * @param matricola ID Utente.
      * @param isbn ID Libro.
      */
-    public void gestisciPrestito(String matricola, String isbn) {
+    public boolean gestisciPrestito(String matricola, String isbn) {
         String esito = biblioteca.effettuaPrestito(matricola, isbn);
         mostraMessaggio(esito);
+        return !esito.startsWith("Errore");
     }
     
     /**
