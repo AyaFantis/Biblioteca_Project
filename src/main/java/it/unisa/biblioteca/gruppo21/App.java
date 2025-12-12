@@ -1,6 +1,8 @@
 package it.unisa.biblioteca.gruppo21;
 
 import it.unisa.biblioteca.gruppo21.gui.*;
+import it.unisa.biblioteca.gruppo21.archive.*;
+import it.unisa.biblioteca.gruppo21.service.*;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -36,12 +38,15 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         try {
             
+            Biblioteca bibliotecaManager = new Biblioteca();
+            Controller logicController = new Controller(bibliotecaManager);
+            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ViewMain.fxml"));
             Parent root = loader.load();
 
             ViewMainController mainGuiController = loader.getController();
 
-            mainGuiController.setLogicController(null);
+            mainGuiController.setLogicController(logicController);
 
             Scene scene = new Scene(root);
             primaryStage.setTitle("GUI Test - Biblioteca UniSA");
