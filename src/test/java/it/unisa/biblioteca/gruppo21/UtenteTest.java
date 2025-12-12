@@ -71,7 +71,7 @@ public class UtenteTest {
     }
     @Test
     public void testToString() {
-        Utente u = new Utente("Mario", "Rossi", "0512100001", "m.rossi@unisa.it");
+        Utente u = new Utente("Mario", "Rossi", "m.rossi@unisa.it", "0512100001");
         String output = u.toString();
         
         assertTrue(output.contains("Mario"), "Il toString deve contenere il nome");
@@ -81,9 +81,9 @@ public class UtenteTest {
     
     @Test
     public void testOrdinamentoPerCognomePoiNome() {
-        Utente u1 = new Utente("Mario", "Bianchi", "001", "email1");
-        Utente u2 = new Utente("Anna", "Rossi", "002", "email2");
-        Utente u3 = new Utente("Luca", "Rossi", "003", "email3");
+        Utente u1 = new Utente("Mario", "Bianchi", "email1", "001");
+        Utente u2 = new Utente("Anna", "Rossi", "email2", "002");
+        Utente u3 = new Utente("Luca", "Rossi", "email3", "003");
 
         assertTrue(u1.compareTo(u2) < 0, "Bianchi deve precedere Rossi");
         

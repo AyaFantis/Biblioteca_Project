@@ -25,7 +25,7 @@ public class ArchivePrestitiTest {
         new File("dummy.txt").delete();
         ArchivePrestiti archive = new ArchivePrestiti();
         
-        Utente u = new Utente("M", "R", "001", "email");
+        Utente u = new Utente("M", "R", "email", "001");
         Libro l = new Libro("T", "A", "ISBN-1", 2020, 5);
         LocalDate data = LocalDate.of(2025, 12, 31);
         
@@ -63,7 +63,7 @@ public class ArchivePrestitiTest {
         new File(FILE_NAME).delete();
         ArchivePrestiti sessione1 = new ArchivePrestiti();
         
-        Utente u = new Utente("M", "R", "999", "email");
+        Utente u = new Utente("M", "R", "email", "999");
         Libro l = new Libro("T", "A", "ISBN-999", 2020, 5);
         Prestito p = new Prestito(u, l, LocalDate.now(), StatoPrestito.IN_RITARDO);
         

@@ -39,8 +39,8 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
     protected String serializza(Utente t) {
         return t.getNome() + ";" + 
            t.getCognome() + ";" + 
-           t.getMatricola() + ";" + 
-           t.getEmail();
+           t.getEmail() + ";" + 
+           t.getMatricola();
         
     }
 
@@ -64,10 +64,10 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
             
             String nome = parti[0];
             String cognome = parti[1];
-            String matricola = parti[2];
-            String email = parti[3];
+            String email = parti[2];
+            String matricola = parti[3];
             
-            return new Utente(nome, cognome, matricola, email);
+            return new Utente(nome, cognome, email, matricola);
         }catch(Exception e){
             return null;
         }

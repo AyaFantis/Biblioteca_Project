@@ -43,7 +43,7 @@ public class ServicePrestitiTest {
 
         service = new ServicePrestiti(arcPrestiti, arcLibri, arcUtenti);
 
-        Utente u = new Utente("Mario", "Rossi", "0512100001", "m.rossi@studenti.unisa.it");
+        Utente u = new Utente("Mario", "Rossi", "m.rossi@studenti.unisa.it", "0512100001");
         arcUtenti.aggiungi(u);
 
         Libro l = new Libro("Harry Potter", "Rowling", "ISBN-HP", 2000, 5);

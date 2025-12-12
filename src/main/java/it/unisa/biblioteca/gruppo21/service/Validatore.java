@@ -107,12 +107,8 @@ public class Validatore {
             else {
                 return false; 
             }
-            
-            if (digitCount > 13) {
-                return false;
-            }
         }
-        return true;
+        return digitCount == 10;
     }
 }
 

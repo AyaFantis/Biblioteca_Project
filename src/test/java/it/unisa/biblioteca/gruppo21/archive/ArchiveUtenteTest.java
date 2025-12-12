@@ -24,11 +24,11 @@ public class ArchiveUtenteTest {
         new File("test_dummy.txt").delete();
         ArchiveUtenti archive = new ArchiveUtenti();
         
-        Utente u = new Utente("Mario", "Rossi", "0512100001", "m.rossi@unisa.it");
+        Utente u = new Utente("Mario", "Rossi", "m.rossi@unisa.it",  "0512100001");
         
         String risultato = archive.serializza(u);
         
-        String atteso = "Mario;Rossi;0512100001;m.rossi@unisa.it";
+        String atteso = "Mario;Rossi;m.rossi@unisa.it;0512100001";
         
         assertEquals(atteso, risultato, "La stringa serializzata non corrisponde al formato atteso");
         
@@ -40,7 +40,7 @@ public class ArchiveUtenteTest {
         new File(FILE_NAME).delete();
         ArchiveUtenti archive = new ArchiveUtenti();
         
-        String rigaCsv = "Luca;Verdi;1234567890;l.verdi@unisa.it";
+        String rigaCsv = "Luca;Verdi;l.verdi@unisa.it;1234567890";
         
         Utente u = archive.deserializza(rigaCsv);
         
@@ -58,17 +58,17 @@ public class ArchiveUtenteTest {
         new File(FILE_NAME).delete();
         ArchiveUtenti archive = new ArchiveUtenti();
         
-        Utente u1 = new Utente("Anna", "Neri", "001", "anna@test.it");
-        Utente u2 = new Utente("Marco", "Gialli", "002", "marco@test.it");
+        Utente u1 = new Utente("Anna", "Neri", "anna@test.it", "0010010011");
+        Utente u2 = new Utente("Marco", "Gialli", "marco@test.it", "0020020022");
         
         archive.aggiungi(u1);
         archive.aggiungi(u2);
         
-        Utente trovato = archive.cerca("001");
+        Utente trovato = archive.cerca("0010010011");
         assertNotNull(trovato);
         assertEquals("Anna", trovato.getNome());
         
-        Utente nonTrovato = archive.cerca("999");
+        Utente nonTrovato = archive.cerca("9999999999");
         assertNull(nonTrovato, "Utente inesistente deve ritornare null");
         
         new File(FILE_NAME).delete();
@@ -78,11 +78,11 @@ public class ArchiveUtenteTest {
     public void testPersistenzaReale() throws IOException {
         new File(FILE_NAME).delete();
         ArchiveUtenti sessione1 = new ArchiveUtenti();
-        Utente u = new Utente("Persistente", "User", "111", "p@test.it");
+        Utente u = new Utente("Persistente", "User", "p@test.it", "1111111111");
         sessione1.aggiungi(u);
         
         ArchiveUtenti sessione2 = new ArchiveUtenti();
-        Utente caricato = sessione2.cerca("111");
+        Utente caricato = sessione2.cerca("1111111111");
         
         assertNotNull(caricato, "L'utente deve essere ricaricato dal file");
         assertEquals("Persistente", caricato.getNome());
@@ -95,17 +95,17 @@ public class ArchiveUtenteTest {
         new File(FILE_NAME).delete();
         ArchiveUtenti archive = new ArchiveUtenti();
         
-        Utente u = new Utente("Delete", "Me", "666", "del@test.it");
+        Utente u = new Utente("Delete", "Me", "del@test.it", "66666666666");
         archive.aggiungi(u);
-        assertNotNull(archive.cerca("666"));
+        assertNotNull(archive.cerca("66666666666"));
         
         archive.cancella(u);
         
-        assertNull(archive.cerca("666"), "Utente deve essere rimosso dalla memoria");
+        assertNull(archive.cerca("66666666666"), "Utente deve essere rimosso dalla memoria");
         
         // Verifica su file
         ArchiveUtenti check = new ArchiveUtenti();
-        assertNull(check.cerca("666"), "Utente deve essere rimosso dal file");
+        assertNull(check.cerca("66666666666"), "Utente deve essere rimosso dal file");
         
         new File(FILE_NAME).delete();
     }

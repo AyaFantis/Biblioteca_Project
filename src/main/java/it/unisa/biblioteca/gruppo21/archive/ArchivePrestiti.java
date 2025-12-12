@@ -79,7 +79,7 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
             // 3. Creazione Oggetti "Stub" (Contenitori solo per l'ID)
             // Non abbiamo i dati completi (Nome, Titolo, ecc), ma per l'archivio basta l'ID.
             // Il Service poi userà questi ID per recuperare i dati completi dagli altri archivi se serve.
-            Utente uStub = new Utente("", "", matricola, ""); 
+            Utente uStub = new Utente("", "", "", matricola); 
             Libro lStub = new Libro("", "", isbn, 0, 0);
 
             return new Prestito(uStub, lStub, dataRestituzione, stato);
