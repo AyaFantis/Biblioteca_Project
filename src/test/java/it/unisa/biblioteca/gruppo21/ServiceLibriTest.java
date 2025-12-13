@@ -50,7 +50,7 @@ public class ServiceLibriTest {
     public void testAggiungiLibroValido() {
         inizializza();
 
-        String esito = service.aggiungi("Harry Potter", "Rowling", "978-1234567890", 2000, 10);
+        String esito = service.aggiungi("Harry Potter", "Rowling", "1234567890", 2000, 10);
         
         assertTrue(esito.contains("correttamente"), "Dovrebbe confermare l'aggiunta");
         assertEquals(1, service.getLista().size(), "La lista deve contenere 1 libro");
@@ -66,7 +66,7 @@ public class ServiceLibriTest {
         assertTrue(esitoTitolo.startsWith("Errore"), "Titolo null deve dare errore");
 
         String esitoIsbn = service.aggiungi("Titolo", "Autore", "123", 2020, 5);
-        assertTrue(esitoIsbn.contains("123"), "ISBN corto deve dare errore");
+        assertTrue(esitoIsbn.contains("ISBN"), "ISBN corto deve dare errore");
 
         int annoFuturo = Year.now().getValue() + 5;
         String esitoAnno = service.aggiungi("Titolo", "Autore", "1234567890", annoFuturo, 5);
