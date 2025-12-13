@@ -131,6 +131,16 @@ public class Biblioteca {
     public String aggiungiLibro(String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili){
         return serviceLibri.aggiungi(titolo, autore, codiceISBN, annoPubblicazione, numeroCopieDisponibili);
     }
+    
+    /**
+     * @brief Aggiorna il numero di copie disponibili di un libro.
+     * @param isbn Codice ISBN del libro.
+     * @param nuoveCopie Nuovo numero totale di copie.
+     * @return Messaggio di esito.
+     */
+    public String aggiornaCopieLibro(String isbn, int nuoveCopie) {
+        return serviceLibri.aggiornaCopie(isbn, nuoveCopie);
+    }
 
     /**
      * @brief Rimuove un libro dal catalogo.

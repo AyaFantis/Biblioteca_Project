@@ -1,4 +1,4 @@
-Harry Potter e la Pietra Filosofale;J. K. Rowling;8893814501 ;1997;2
+Harry Potter e la Pietra Filosofale;J. K. Rowling;8893814501;1997;2
 1984;George Orwell;8804668237;1949;12
 Il Piccolo Principe;Antoine de Saint-Exupéry;884529276X;1943;8
 Il Codice da Vinci;Dan Brown;8804523417;2003;4
@@ -39,3 +39,4 @@ Uno, nessuno e centomila;Luigi Pirandello;8807900344;1926;6
 Sulla strada;Jack Kerouac;8804666579;1957;3
 Delitto e castigo;Fëdor Dostoevskij;8806219462;1866;2
 La metamorfosi;Franz Kafka;8807901170;1915;7
+miao;miao;1234567890 ;2022;2

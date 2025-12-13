@@ -63,9 +63,9 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
                 return null;
             }
             
-            String titolo = parti[0];
-            String autore = parti[1];
-            String isbn = parti[2];
+            String titolo = parti[0].trim();
+            String autore = parti[1].trim();
+            String isbn = parti[2].trim();
             
             int anno = Integer.parseInt(parti[3]);
             int copie = Integer.parseInt(parti[4]);

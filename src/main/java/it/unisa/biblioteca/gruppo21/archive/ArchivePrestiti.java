@@ -62,10 +62,10 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
             String[] parti = riga.split(";");
             if (parti.length != 4) return null;
 
-            String matricola = parti[0];
-            String isbn = parti[1];
-            String dataStr = parti[2];
-            String statoStr = parti[3];
+            String matricola = parti[0].trim();
+            String isbn = parti[1].trim();
+            String dataStr = parti[2].trim();
+            String statoStr = parti[3].trim();
 
             // 1. Parsing della Data
             LocalDate dataRestituzione = null;

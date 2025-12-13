@@ -62,10 +62,10 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
                 return null;
             }
             
-            String nome = parti[0];
-            String cognome = parti[1];
-            String email = parti[2];
-            String matricola = parti[3];
+            String nome = parti[0].trim();
+            String cognome = parti[1].trim();
+            String email = parti[2].trim();
+            String matricola = parti[3].trim();
             
             return new Utente(nome, cognome, email, matricola);
         }catch(Exception e){
