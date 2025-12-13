@@ -151,6 +151,25 @@ public class Utente implements Comparable<Utente>{
     }
 
     @Override
+    public int hashCode(){
+    
+        return matricola.hashCode();
+    }
+    
+    @Override
+    public boolean equals(Object o){
+    
+        if(this == o)
+            return true;
+        
+        if(o == null || getClass() != o.getClass())
+            return false;
+        
+        Utente utente = (Utente) o;
+        return matricola.equals(utente.matricola);
+    }
+    
+    @Override
     public int compareTo(Utente u) {
         int risultatoCognome = this.cognome.compareToIgnoreCase(u.getCognome());
         
