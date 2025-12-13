@@ -163,12 +163,12 @@ public class Controller {
      * @pre matricola e isbn non nulli.
      * @post L'esito (Successo, Utente non trovato, Stock esaurito) viene mostrato all'utente.
      * @return true se l'iscrizione è avvenuta con successo; false se si è verificato un errore.
-     * @param matricola ID Utente.
+     * @param identificativo Matricola o Cognome dell'utente.
      * @param isbn ID Libro.
      * @param dataRestituzione Data restituzione del libro.
      */
-    public boolean gestisciPrestito(String matricola, String isbn, LocalDate dataRestituzione) {
-        String esito = biblioteca.effettuaPrestito(matricola, isbn, dataRestituzione);
+    public boolean gestisciPrestito(String identificativo, String isbn, LocalDate dataRestituzione) {
+        String esito = biblioteca.effettuaPrestito(identificativo, isbn, dataRestituzione);
         mostraMessaggio(esito);
         return !esito.startsWith("Errore");
     }
@@ -180,9 +180,10 @@ public class Controller {
      * @param matricola ID Utente.
      * @param isbn ID Libro.
      */
-    public void gestisciRestituzione(String matricola, String isbn) {
+    public boolean gestisciRestituzione(String matricola, String isbn) {
         String esito = biblioteca.restituisciLibro(matricola, isbn);
         mostraMessaggio(esito);
+        return !esito.startsWith("Errore");
     }
     
     /**

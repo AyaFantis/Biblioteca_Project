@@ -55,14 +55,37 @@ public class ServicePrestiti {
      * @post Viene creato un nuovo oggetto Prestito con stato ATTIVO.
      * @post Il numero di copie disponibili del libro viene decrementato di 1.
      * @post Il prestito viene aggiunto alla lista dei prestiti attivi dell'utente.
-     * @param matricola La matricola dell'utente.
+     * @param identificativo La matricola dell'utente.
      * @param codiceISBN L'ISBN del libro.
      * @param dataScadenza La data di restituzione prevista inserita dal bibliotecario.
      * @return Messaggio di esito.
      */
-    public String nuovoPrestito(String matricola, String codiceISBN, LocalDate dataScadenza){
+    public String nuovoPrestito(String identificativo, String codiceISBN, LocalDate dataScadenza){
         
-        Utente utente = arcUtenti.cerca(matricola);
+        //Cerco prima per matricola
+        Utente utente = arcUtenti.cerca(identificativo);
+        
+        //Se non ho trovato nulla per matricola, passo alla ricerca per cognome
+        if(utente == null){
+            List<Utente> candidati = new ArrayList<>();
+            List<Utente> tutti = arcUtenti.leggiTutti();
+            
+            for (Utente u : tutti){
+                if(u.getCognome().equalsIgnoreCase(identificativo)){
+                    candidati.add(u);
+                }
+            }
+            
+            if (candidati.isEmpty()) {
+                return "Errore: Utente non trovato (né come Matricola né come Cognome).";
+            } else if (candidati.size() > 1) {
+                return "Errore: Ci sono più utenti con il cognome '" + identificativo + "'. Usa la Matricola.";
+            } else {
+                // Trovato esattamente un utente con quel cognome
+                utente = candidati.get(0);
+            }
+        }
+        
         Libro libro = arcLibri.cerca(codiceISBN);
         
         if (utente == null){       

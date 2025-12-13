@@ -183,13 +183,13 @@ public class Biblioteca {
      * @brief Registra un nuovo prestito per un utente.
      * Verifica la disponibilità del libro e il limite massimo di prestiti per utente.
      * Passa l'operazione a ServicePrestiti.
-     * @param matricola La matricola dell'utente richiedente.
+     * @param identificativo Nome o cognome dell'utente richiedente.
      * @param codiceISBN L'ISBN del libro richiesto.
      * @param dataScadenza Data di restituzione.
      * @return Messaggio di esito.
      */
-    public String effettuaPrestito(String matricola, String codiceISBN, LocalDate dataScadenza){
-        return servicePrestiti.nuovoPrestito(matricola, codiceISBN, dataScadenza);
+    public String effettuaPrestito(String identificativo, String codiceISBN, LocalDate dataScadenza){
+        return servicePrestiti.nuovoPrestito(identificativo, codiceISBN, dataScadenza);
     }
     
     /**

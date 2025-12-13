@@ -162,6 +162,7 @@ public class ViewLibriController {
         if (logicController != null) {
             this.listaCompletaLibri = logicController.getListaLibri();
             handleRicerca(); 
+            tableLibri.refresh();
         }
     }
 }

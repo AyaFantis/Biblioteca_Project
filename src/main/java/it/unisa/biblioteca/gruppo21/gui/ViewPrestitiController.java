@@ -12,7 +12,7 @@ import javafx.scene.control.DatePicker;
 
 public class ViewPrestitiController {
 
-    @FXML private TextField txtMatricolaPrestito;
+    @FXML private TextField txtIdentificativoUtente;
     @FXML private TextField txtIsbnPrestito;
     
     @FXML private DatePicker pickerScadenza;
@@ -53,12 +53,12 @@ public class ViewPrestitiController {
         if (logicController != null) {
             LocalDate dataScelta = pickerScadenza.getValue();
             boolean successo = logicController.gestisciPrestito(
-                    txtMatricolaPrestito.getText(), 
+                    txtIdentificativoUtente.getText(), 
                     txtIsbnPrestito.getText(),
                     dataScelta
             );
             if(successo){
-                txtMatricolaPrestito.clear();
+                txtIdentificativoUtente.clear();
                 txtIsbnPrestito.clear();
                 pickerScadenza.setValue(LocalDate.now().plusDays(30));
                 aggiornaTabella();
@@ -69,12 +69,22 @@ public class ViewPrestitiController {
 
     @FXML private void handleRestituzione() {
         if (logicController != null) {
-            logicController.gestisciRestituzione(txtMatricolaPrestito.getText(), txtIsbnPrestito.getText());
-            aggiornaTabella();
+            boolean successo = logicController.gestisciRestituzione(
+                    txtIdentificativoUtente.getText(), 
+                    txtIsbnPrestito.getText()
+            );
+            
+            if(successo){
+                txtIdentificativoUtente.clear();
+                txtIsbnPrestito.clear();
+                aggiornaTabella();
+            }
+            
         }
     }
 
     private void aggiornaTabella() {
         if (logicController != null) tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
+        tablePrestiti.refresh();
     }
 }

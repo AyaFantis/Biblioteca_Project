@@ -22,7 +22,7 @@
             </Label>
             <HBox spacing="20.0">
                <children>
-                  <TextField fx:id="txtMatricolaPrestito" promptText="Matricola Utente" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="txtIdentificativoUtente" promptText="Matricola o Cognome" HBox.hgrow="ALWAYS" />
                   <TextField fx:id="txtIsbnPrestito" promptText="ISBN Libro" HBox.hgrow="ALWAYS" />
                   
                   <DatePicker fx:id="pickerScadenza" promptText="Data Restituzione" prefWidth="150.0" />

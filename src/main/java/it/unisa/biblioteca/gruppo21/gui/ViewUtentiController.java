@@ -159,6 +159,7 @@ public class ViewUtentiController {
         if (logicController != null) {
             this.listaCompletaUtenti = logicController.getListaUtenti();
             handleRicerca(); 
+            tableUtenti.refresh();
         }
     }
 }
