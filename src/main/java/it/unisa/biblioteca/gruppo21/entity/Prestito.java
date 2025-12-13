@@ -50,11 +50,11 @@ public class Prestito implements Comparable<Prestito>{
      * @param dataRestituzione La data prevista per la restituzione del libro.
      * @param stato Lo stato attuale del prestito.
      */
-    public Prestito(Utente utente, Libro libro, LocalDate dataRestituzione, StatoPrestito s){
+    public Prestito(Utente utente, Libro libro, LocalDate dataRestituzione, StatoPrestito stato){
         this.utente = utente;
         this.libro = libro;
         this.dataRestituzione = dataRestituzione;
-        this.stato = s;
+        this.stato = stato;
     }
 
     /**

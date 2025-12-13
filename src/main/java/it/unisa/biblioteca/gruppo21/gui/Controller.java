@@ -9,6 +9,7 @@ import it.unisa.biblioteca.gruppo21.entity.Libro;
 import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
 import it.unisa.biblioteca.gruppo21.service.Biblioteca;
+import java.time.LocalDate;
 import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -164,9 +165,10 @@ public class Controller {
      * @return true se l'iscrizione è avvenuta con successo; false se si è verificato un errore.
      * @param matricola ID Utente.
      * @param isbn ID Libro.
+     * @param dataRestituzione Data restituzione del libro.
      */
-    public boolean gestisciPrestito(String matricola, String isbn) {
-        String esito = biblioteca.effettuaPrestito(matricola, isbn);
+    public boolean gestisciPrestito(String matricola, String isbn, LocalDate dataRestituzione) {
+        String esito = biblioteca.effettuaPrestito(matricola, isbn, dataRestituzione);
         mostraMessaggio(esito);
         return !esito.startsWith("Errore");
     }

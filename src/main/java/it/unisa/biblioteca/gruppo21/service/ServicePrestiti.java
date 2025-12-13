@@ -57,9 +57,10 @@ public class ServicePrestiti {
      * @post Il prestito viene aggiunto alla lista dei prestiti attivi dell'utente.
      * @param matricola La matricola dell'utente.
      * @param codiceISBN L'ISBN del libro.
+     * @param dataScadenza La data di restituzione prevista inserita dal bibliotecario.
      * @return Messaggio di esito.
      */
-    public String nuovoPrestito(String matricola, String codiceISBN){
+    public String nuovoPrestito(String matricola, String codiceISBN, LocalDate dataScadenza){
         
         Utente utente = arcUtenti.cerca(matricola);
         Libro libro = arcLibri.cerca(codiceISBN);
@@ -76,8 +77,14 @@ public class ServicePrestiti {
         if (libro.getNumeroCopieDisponibili() <= 0){       
             return "Errore: Copie esaurite per il libro richiesto.";
         }
-        LocalDate dataScandenza = LocalDate.now().plusDays(30);       
-        Prestito nuovoPrestito = new Prestito(utente, libro, dataScandenza, Prestito.StatoPrestito.ATTIVO);       
+        if (dataScadenza == null ){
+            return "Errore: Data di restituzione obbligatoria.";
+        } 
+        if(dataScadenza.isBefore(LocalDate.now())){
+            return "Errore: Data di restituzione non può essere nel passato";
+        }
+        
+        Prestito nuovoPrestito = new Prestito(utente, libro, dataScadenza, Prestito.StatoPrestito.ATTIVO);       
         libro.setNumeroCopieDisponibili(libro.getNumeroCopieDisponibili() -1);
         utente.aggiungiPrestito(nuovoPrestito);
         

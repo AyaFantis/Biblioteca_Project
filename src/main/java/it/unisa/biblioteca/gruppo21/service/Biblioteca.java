@@ -11,6 +11,7 @@ import it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
 import it.unisa.biblioteca.gruppo21.entity.Prestito;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -184,10 +185,11 @@ public class Biblioteca {
      * Passa l'operazione a ServicePrestiti.
      * @param matricola La matricola dell'utente richiedente.
      * @param codiceISBN L'ISBN del libro richiesto.
+     * @param dataScadenza Data di restituzione.
      * @return Messaggio di esito.
      */
-    public String effettuaPrestito(String matricola, String codiceISBN){
-        return servicePrestiti.nuovoPrestito(matricola, codiceISBN);
+    public String effettuaPrestito(String matricola, String codiceISBN, LocalDate dataScadenza){
+        return servicePrestiti.nuovoPrestito(matricola, codiceISBN, dataScadenza);
     }
     
     /**
