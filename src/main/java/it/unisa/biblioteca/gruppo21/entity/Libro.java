@@ -103,6 +103,25 @@ public class Libro implements Comparable<Libro>{
     }
 
     @Override
+    public int hashCode(){
+    
+        return codiceISBN.hashCode();
+    }
+    
+    @Override 
+    public boolean equals (Object o){
+    
+        if (this == o)
+            return true;
+        
+        if (o == null || getClass() != o.getClass())
+            return false;
+        
+        Libro libro = (Libro) o;
+        return codiceISBN.equals(libro.codiceISBN);
+    }
+    
+    @Override
     public int compareTo(Libro o) {
         int esitoTitolo = this.titolo.compareToIgnoreCase(o.getTitolo());
         
@@ -114,3 +133,4 @@ public class Libro implements Comparable<Libro>{
         return this.autore.compareToIgnoreCase(o.getAutore());
     }
 }
+
