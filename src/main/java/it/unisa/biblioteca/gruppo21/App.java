@@ -51,6 +51,7 @@ public class App extends Application {
             Scene scene = new Scene(root);
             primaryStage.setTitle("GUI Test - Biblioteca UniSA");
             primaryStage.setScene(scene);
+            primaryStage.setMaximized(true);
             primaryStage.setResizable(true);
             primaryStage.show();
 

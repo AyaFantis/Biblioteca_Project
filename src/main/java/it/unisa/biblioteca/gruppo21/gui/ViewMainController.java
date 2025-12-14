@@ -94,10 +94,10 @@ public class ViewMainController {
             if (view == null){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFileName));
                 view = loader.load();
-                // Collega i sotto-controller
-                fxmlController = loader.getController();
                 
-                //Salvo per il fuuturo
+                fxmlController = loader.getController();
+                controllerCache.put(fxmlFileName, fxmlController);
+                
                 viewCache.put(fxmlFileName, view);
                 fxmlController = loader.getController();
             }

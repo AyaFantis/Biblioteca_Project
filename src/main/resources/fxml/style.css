@@ -34,7 +34,7 @@
     -fx-text-fill: white;
 }
 
-.nav-button:selected {
+.nav-button.selected {
     -fx-background-color: rgba(0, 0, 0, 0.2);
     -fx-text-fill: #FFB347; 
     -fx-border-color: #FFB347;

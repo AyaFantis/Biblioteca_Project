@@ -107,7 +107,6 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      * @brief Cerca un prestito per ID.
      * @param id Identificativo generico.
      */
-    
     @Override
     public Prestito cerca(String id) {
         return null;

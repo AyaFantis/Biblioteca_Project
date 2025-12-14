@@ -134,8 +134,9 @@ public class ServicePrestiti {
         
         for (Prestito prestitoCorrente : prestitiAttiviUtente){
         
-            if(prestitoCorrente.getStato() == Prestito.StatoPrestito.ATTIVO &&
-               prestitoCorrente.getLibro().getCodiceISBN().equals(codiceISBNLibro)){
+            if((prestitoCorrente.getStato() == Prestito.StatoPrestito.ATTIVO || prestitoCorrente.getStato() == Prestito.StatoPrestito.IN_RITARDO)
+            &&
+            prestitoCorrente.getLibro().getCodiceISBN().equals(codiceISBNLibro)){
             
                 prestitoCorrente.setStato(Prestito.StatoPrestito.RESTITUITO);
                 Libro libroRestituito = prestitoCorrente.getLibro();
@@ -181,14 +182,21 @@ public class ServicePrestiti {
     }
     
     /**
-     * @brief Recupera lo storico completo dei prestiti.
-     * @return Lista di tutti i prestiti (attivi e conclusi).
+     * @brief Recupera lo storico dei prestiti attivi.
+     * @return Lista ordinata per data di scadenza.
      */
     public List<Prestito> getLista(){
         List<Prestito> tutti = archivioPrestiti.leggiTutti();
-        Collections.sort(tutti);
+        List<Prestito> filtrata = new ArrayList<>();
         
-        return tutti;
+        for(Prestito p : tutti) {
+            if(p.getStato() == Prestito.StatoPrestito.ATTIVO || p.getStato() == Prestito.StatoPrestito.IN_RITARDO) {
+                filtrata.add(p);
+            }
+        }
+        Collections.sort(filtrata);
+        
+        return filtrata;
     }
     
 }

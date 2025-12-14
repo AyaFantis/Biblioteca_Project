@@ -54,7 +54,7 @@ public class Biblioteca {
         this.serviceLibri = new ServiceLibri(archivioLibri, archivioPrestiti);
         this.servicePrestiti = new ServicePrestiti(archivioPrestiti, archivioLibri, archivioUtenti);
         
-        
+        this.controllaRitardi();
     }
     
     //

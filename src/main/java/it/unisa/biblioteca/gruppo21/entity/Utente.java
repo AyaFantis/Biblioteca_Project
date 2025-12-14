@@ -35,7 +35,7 @@ public class Utente implements Comparable<Utente>{
     private final String matricola;
     
     /** Lista dei libri attualmente in possesso */
-    private List<Prestito> prestitiAttivi;
+    private final List<Prestito> prestitiAttivi;
     
     /**
      * @brief Costruttore completo.
