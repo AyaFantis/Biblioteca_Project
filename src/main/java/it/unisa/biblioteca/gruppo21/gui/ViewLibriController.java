@@ -57,7 +57,9 @@ public class ViewLibriController {
             txtAnno.setText(String.valueOf(l.getAnnoPubblicazione()));
             txtCopie.setText(String.valueOf(l.getNumeroCopieDisponibili()));
             
-            txtIsbn.setDisable(true);
+            txtIsbn.setEditable(false);
+            
+            
             txtTitolo.setDisable(true);
             txtAutore.setDisable(true);
             txtAnno.setDisable(true);
@@ -77,7 +79,9 @@ public class ViewLibriController {
         txtAnno.clear(); 
         txtCopie.clear();
         
-        txtIsbn.setDisable(false);
+        txtIsbn.setEditable(true);
+        
+        
         txtTitolo.setDisable(false);
         txtAutore.setDisable(false);
         txtAnno.setDisable(false);
