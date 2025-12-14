@@ -16,13 +16,16 @@ import java.util.ArrayList;
  * Questa classe fornisce l'implementazione comune per le operazioni di I/O (Input/Output),
  * gestendo una cache in memoria per ottimizzare le letture e sincronizzando le scritture su file.
  * @param <T> Il tipo di entità gestita (es. Libro, Utente).
+ * @author Gruppo 21
+ * @version 1.0
  */
 
 public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
     
-    /** Cache in memoria per accesso rapido ai dati senza leggere il disco continuamente. */
+    /** Lista in memoria per l'accesso rapido ai dati. */
     protected List<T> cache;
-    /** Riferimento al file fisico su disco. */
+    
+    /** Riferimento al file fisico. */
     protected File file;
     
     /**
@@ -44,7 +47,11 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
     }
     
     /**
-     * @brief Carica i dati dal file alla memoria.
+     * @brief Carica i dati dal file fisico alla struttura dati in memoria.
+     * Questo metodo gestisce internamente le eccezioni di Input/Output garantendo che il sistema non
+     * termini in modo anomalo in caso di errori di lettura.
+     * @pre L'oggetto File deve essere stato inizializzato nel costruttore.
+     * @post Se il file è valido, la lista interna (cache) viene popolata con i dati letti.
      */
     public void inizializzaDati() {
         try {
@@ -71,7 +78,6 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
     
    /**
      * @brief Ricerca un elemento per ID.
-     * Poiché T è generico, non sappiamo come estrarre l'ID. Le sottoclassi devono implementarlo.
      * @param id Identificativo da cercare.
      * @return L'oggetto trovato o null.
      */
@@ -79,10 +85,12 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
     public abstract T cerca(String id);
 
     /**
-     * @brief Aggiunge un elemento alla cache e appende la riga al file.
+     * @brief Aggiunge un nuovo elemento al sistema.
+     * Aggiorna sia la lista in memoria che il file persistente.
      * @pre elemento != null.
-     * @post La cache contiene l'elemento.
-     * @post Il file contiene la nuova riga serializzata.
+     * @post La cache contiene il nuovo elemento.
+     * @param elemento L'oggetto da aggiungere.
+     * @throws IOException 
      */
     @Override
     public void aggiungi(T elemento) throws IOException{
@@ -91,8 +99,11 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
     }
 
     /**
-     * @brief Rimuove un elemento e riscrive l'intero file.
+     * @brief Rimuove un elemento esistente dal sistema.
+     * @pre L'elemento deve esistere nella cache.
+     * @post L'elemento viene rimosso dalla lista in memoria.
      * @param elemento L'oggetto da rimuovere.
+     * @throws IOException
      */
     @Override
     public void cancella(T elemento)throws IOException{
@@ -102,17 +113,17 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
 
     /**
      * @brief Restituisce una copia della lista caricata in memoria.
-     * @return Una nuova ArrayList contenente gli elementi (per proteggere la cache interna).
+     * @return Una nuova istanza di ArrayList contenente tutti gli elementi caricati(per proteggere la cache interna).
      */
     @Override
     public List<T> leggiTutti(){
-        return new ArrayList <>(cache); //restituisce una coia della cache
+        return new ArrayList <>(cache); 
     }
 
     /**
-     * @throws java.io.IOException
      * @brief Metodo di utilità per riscrivere completamente il file dalla cache.
      * Usato durante le operazioni di cancellazione o modifica.
+     * @throws IOException 
      */
     public void salvaTutto() throws IOException {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
@@ -123,6 +134,12 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
         }
     }
     
+    /**
+     * @brief Legge il file fisico e popola la cache.
+     * @pre Il file deve esistere.
+     * @post La cache contiene gli oggetti deserializzati correttamente.
+     * @throws IOException.
+     */
     private void caricaDaFile() throws IOException{
         try(BufferedReader reader = new BufferedReader(new FileReader(file))){
             String riga;

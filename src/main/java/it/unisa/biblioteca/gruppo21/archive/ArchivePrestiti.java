@@ -21,11 +21,15 @@ import java.time.format.DateTimeParseException;
  */
 public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
     
+    /** Riferimento all'archivio Utenti*/
     private final ArchiveUtenti archivioUtenti;
+    /** Riferimento all'archivio Libri*/
     private final ArchiveLibri archivioLibri;
 
     /**
      * @brief Costruttore dell'archivio prestiti.
+     * @param archivioUtenti L'archivio per cercare gli utenti tramite matricola.
+     * @param archivioLibri L'archivio per cercare i libri tramite ISBN.
      * @post Viene inizializzato un archivio collegato al file fisico "Prestiti.txt".
      */
     public ArchivePrestiti(ArchiveUtenti archivioUtenti, ArchiveLibri archivioLibri){
@@ -79,7 +83,7 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
 
             LocalDate dataRestituzione = null;
             if (!dataStringa.equals("null")) {
-                dataRestituzione = LocalDate.parse(dataStringa); // Formato standard (YYYY-MM-DD)
+                dataRestituzione = LocalDate.parse(dataStringa); 
             }
 
             Prestito.StatoPrestito statoCorrente = Prestito.StatoPrestito.valueOf(statoStringa);
