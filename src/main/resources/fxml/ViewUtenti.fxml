@@ -61,6 +61,8 @@
                       <TableColumn fx:id="colCognome" text="Cognome" />
                       <TableColumn fx:id="colNome" text="Nome" />
                       <TableColumn fx:id="colEmail" text="Email" />
+                      
+                      <TableColumn fx:id="colLibri" text="Libri in Prestito (Scadenza)"/>
                     </columns>
                   </TableView>
                </content>

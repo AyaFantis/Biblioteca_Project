@@ -1,0 +1,30 @@
+1984;George Orwell;0451524934;1949;4
+Il nome della rosa;Umberto Eco;0156001314;1980;7
+Orgoglio e pregiudizio;Jane Austen;0141439513;1813;5
+Il signore degli anelli;J.R.R. Tolkien;0618640150;1954;6
+Fahrenheit 451;Ray Bradbury;1451673310;1953;3
+Il vecchio e il mare;Ernest Hemingway;0684801221;1952;8
+Delitto e castigo;Fëdor Dostoevskij;0140449132;1866;4
+Cent’anni di solitudine;Gabriel García Márquez;0060883286;1967;5
+La fattoria degli animali;George Orwell;0451526341;1945;9
+Il grande Gatsby;F. Scott Fitzgerald;0743273567;1925;6
+Moby Dick;Herman Melville;0142437247;1851;2
+Il processo;Franz Kafka;0805210407;1925;3
+Cime tempestose;Emily Brontë;0141439556;1847;4
+Don Chisciotte della Mancia;Miguel de Cervantes;0060934344;1605;5
+Dracula;Bram Stoker;014143984X;1897;6
+Frankenstein;Mary Shelley;0141439475;1818;7
+Il ritratto di Dorian Gray;Oscar Wilde;0141439572;1890;4
+Guerra e pace;Lev Tolstoj;0199232768;1869;3
+Anna Karenina;Lev Tolstoj;0140449175;1877;5
+Il buio oltre la siepe;Harper Lee;0061120081;1960;8
+Lo straniero;Albert Camus;0679720200;1942;6
+Siddhartha;Hermann Hesse;0553208845;1922;7
+Il giovane Holden;J.D. Salinger;0316769487;1951;9
+Cuore di tenebra;Joseph Conrad;0486264645;1899;3
+Le avventure di Sherlock Holmes;Arthur Conan Doyle;0553212419;1892;6
+I promessi sposi;Alessandro Manzoni;8807900338;1840;5
+Il conte di Montecristo;Alexandre Dumas;0140449264;1844;4
+Il piccolo principe;Antoine de Saint-Exupéry;0156012197;1943;10
+La coscienza di Zeno;Italo Svevo;0141199898;1923;3
+Se questo è un uomo;Primo Levi;0671727834;1947;6

@@ -1,8 +1,11 @@
 package it.unisa.biblioteca.gruppo21.gui;
 
 import it.unisa.biblioteca.gruppo21.entity.Utente;
+import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +18,9 @@ import javafx.scene.input.MouseEvent;
 
 public class ViewUtentiController {
 
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    
+    
     @FXML private TextField txtMatricola;
     @FXML private TextField txtNome;
     @FXML private TextField txtCognome;
@@ -29,6 +35,9 @@ public class ViewUtentiController {
     @FXML private TableColumn<Utente, String> colNome;
     @FXML private TableColumn<Utente, String> colCognome;
     @FXML private TableColumn<Utente, String> colEmail;
+    
+    @FXML private TableColumn<Utente, String> colLibri;
+    
 
     private Controller logicController;
     
@@ -40,6 +49,36 @@ public class ViewUtentiController {
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colCognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colLibri.setCellValueFactory(cellData -> {
+            Utente u = cellData.getValue();
+            List<Prestito> prestiti = u.getPrestitiAttivi();
+            
+            if (prestiti == null || prestiti.isEmpty()) {
+                return new SimpleStringProperty("Nessun prestito");
+            }
+            
+            StringBuilder testo = new StringBuilder();
+            
+            for (int i = 0; i < prestiti.size(); i++) {
+                Prestito p = prestiti.get(i);
+                
+                testo.append(p.getLibro().getTitolo());
+                testo.append(" (Scad: ");
+                
+                if (p.getDataRestituzione() != null) {
+                    testo.append(p.getDataRestituzione().format(formatter));
+                } else {
+                    testo.append("-");
+                }
+                testo.append(")");
+                
+                if (i < prestiti.size() - 1) {
+                    testo.append(",\n");
+                }
+            }
+            
+            return new SimpleStringProperty(testo.toString());
+        });
         tableUtenti.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
     

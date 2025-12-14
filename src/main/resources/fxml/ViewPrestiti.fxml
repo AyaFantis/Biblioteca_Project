@@ -45,8 +45,13 @@
                <content>
                   <TableView fx:id="tablePrestiti">
                      <columns>
-                        <TableColumn fx:id="colMatricolaUtente" text="Utente" />
-                        <TableColumn fx:id="colIsbnLibro" text="Libro" />
+                        <TableColumn fx:id="colMatricolaUtente" text="Matricola" />
+                        <TableColumn fx:id="colNomeUtente" text="Nome" />
+                        <TableColumn fx:id="colCognomeUtente" text="Cognome" />
+                        
+                        <TableColumn fx:id="colIsbnLibro" text="ISBN" />
+                        <TableColumn fx:id="colTitoloLibro" text="Titolo Libro" />
+                        
                         <TableColumn fx:id="colDataScadenza" text="Scadenza" />
                         <TableColumn fx:id="colStato" text="Stato" />
                      </columns>
