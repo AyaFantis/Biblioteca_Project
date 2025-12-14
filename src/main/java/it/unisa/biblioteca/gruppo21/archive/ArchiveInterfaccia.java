@@ -13,7 +13,7 @@ import java.util.List;
  * @brief Interfaccia generica per la gestione della persistenza dei dati 
  * @interface ArchiveInterfaccia
  * Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) 
- * su un archivio dati, indipendentemente dal supporto di memorizzazione (File, Database, Memoria).
+ * su un archivio dati.
  * @param <T> Il tipo di entità gestita dall'archivio.
  * @author Gruppo 21
  * @version 1.0
@@ -56,8 +56,7 @@ public interface ArchiveInterfaccia<T>{
      * @throws java.io.IOException
      * @brief Recupera tutti gli elementi presenti nell'archivio.
      * @pre Nessuna pre-condizione specifica (l'archivio può essere vuoto).
-     * @post Restituisce una List contenente tutti gli oggetti di tipo T salvati.
-     * @post La lista restituita non è mai null (se l'archivio è vuoto, restituisce una lista vuota).
+     * @post Restituisce una List non nulla contenente tutti gli oggetti di tipo T salvati.
      * @return Una lista di oggetti T.
      */
     List<T> leggiTutti() throws IOException;

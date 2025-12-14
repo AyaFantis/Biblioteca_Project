@@ -32,7 +32,7 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      * @brief Converte un oggetto Utente in una stringa CSV per il salvataggio.
      * @pre Il parametro t non deve essere null
      * @post Restituisce una stringa non nulla.
-     * @post Il formato è: Nome;Cognome;Matricola;Email.
+     * @post Il formato è: Nome;Cognome;Email;Matricola.
      * @param t L'oggetto Utente da serializzare.
      * @return Una stringa formattata pronta per la scrittura su file.
      */
