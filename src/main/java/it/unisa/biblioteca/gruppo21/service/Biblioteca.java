@@ -124,11 +124,7 @@ public class Biblioteca {
     public List<Utente> cercaUtenti(String cognome, String matricola){
         return serviceUtenti.cerca(cognome);
     }
-    
-    // public List<Utente> cercaUtenti(String matricola){ //per poter cercare con matricola
-        //return serviceUtenti.cerca(matricola);
-    //}
-    
+ 
     // 
     //   METODI LIBRO
     //
@@ -237,4 +233,5 @@ public class Biblioteca {
     public void controllaRitardi(){
        servicePrestiti.controllaRitardi();
     }  
+    
 }

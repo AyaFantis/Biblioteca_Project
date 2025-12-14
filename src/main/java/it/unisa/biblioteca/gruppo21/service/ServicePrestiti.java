@@ -66,6 +66,7 @@ public class ServicePrestiti {
         return null;
     }
     
+    
     /**
      * @brief Registra un nuovo prestito.
      * @pre Deve esistere un utente registrato con la matricola fornita.
@@ -184,7 +185,8 @@ public class ServicePrestiti {
      * @return Lista di tutti i prestiti (attivi e conclusi).
      */
     public List<Prestito> getLista(){
-        return archivioPrestiti.leggiTutti();
+        
+        return getPrestitiAttiviOrdinati();
     }
     
     public List<Prestito> getPrestitiAttiviOrdinati(){

@@ -34,29 +34,15 @@ public class ViewPrestitiController {
     
     private Controller logicController;
     
-    private List<Utente> cacheUtenti;
-    private List<Libro> cacheLibri;
 
     @FXML
     public void initialize() {
         colMatricolaUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getMatricola()));
-        colNomeUtente.setCellValueFactory(cellData ->{
-            String matricola = cellData.getValue().getUtente().getMatricola();
-            Utente u = trovaUtenteDaCache(matricola);
-            return new SimpleStringProperty(u != null ? u.getNome() : "???");
-        });
-        colCognomeUtente.setCellValueFactory(cellData ->{
-            String matricola = cellData.getValue().getUtente().getMatricola();
-            Utente utente = trovaUtenteDaCache(matricola);
-            return new SimpleStringProperty(utente != null ? utente.getCognome() : "???");
-        });
+        colNomeUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getNome()));
+        colCognomeUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getCognome()));
         
         colIsbnLibro.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getCodiceISBN()));
-        colTitoloLibro.setCellValueFactory(cellData -> {
-            String isbn = cellData.getValue().getLibro().getCodiceISBN();
-            Libro libro = trovaLibroDaCache(isbn);
-            return new SimpleStringProperty(libro != null ? libro.getTitolo() : "???");
-        });
+        colTitoloLibro.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getTitolo()));
         
         colDataScadenza.setCellValueFactory(cellData -> {
             if (cellData.getValue().getDataRestituzione() != null) {
@@ -72,22 +58,6 @@ public class ViewPrestitiController {
         pickerScadenza.setValue(LocalDate.now().plusDays(30));
     }
     
-    private Utente trovaUtenteDaCache(String matricola) {
-        if (cacheUtenti == null) return null;
-        for (Utente u : cacheUtenti) {
-            if (u.getMatricola().equals(matricola)) return u;
-        }
-        return null;
-    }
-    
-    private Libro trovaLibroDaCache(String isbn) {
-        if (cacheLibri == null) return null;
-        for (Libro l : cacheLibri) {
-            if (l.getCodiceISBN().equals(isbn)) return l;
-        }
-        return null;
-    }
-
     public void setLogicController(Controller logicController) {
         this.logicController = logicController;
         aggiornaTabella();
@@ -128,8 +98,6 @@ public class ViewPrestitiController {
 
     private void aggiornaTabella() {
         if (logicController != null){
-            this.cacheUtenti = logicController.getListaUtenti();
-            this.cacheLibri = logicController.getListaLibri();
             tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
             tablePrestiti.refresh();
         }

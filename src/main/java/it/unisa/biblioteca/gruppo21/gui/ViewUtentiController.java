@@ -41,7 +41,6 @@ public class ViewUtentiController {
     private Controller logicController;
     
     private List<Utente> listaCompletaUtenti = new ArrayList<>();
-    private List<Libro> listaCompletaLibri = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -61,33 +60,18 @@ public class ViewUtentiController {
             
             for (Prestito p : prestitiPersonali){
                 String isbn = p.getLibro().getCodiceISBN();
-                String titolo = trovaTitoloDaISBN(isbn);
+                String titolo = p.getLibro().getTitolo();
                 
                 testo.append(titolo).append(" (");
                 
                 if (p.getDataRestituzione() != null) {
-                    testo.append(p.getDataRestituzione().format(formatter));
+                    testo.append("Scad: ").append(p.getDataRestituzione().format(formatter));
                 }
                 testo.append(")\n");
             }
             return new SimpleStringProperty(testo.toString());
         });
         tableUtenti.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-    }
-    
-    /**
-     * @brief Metodo semplice per trovare il titolo di un libro dato l'ISBN.
-     * Scorre la lista dei libri caricata in memoria. Molto intuitivo per uno studente.
-     */
-    private String trovaTitoloDaISBN(String isbn) {
-        if (listaCompletaLibri == null) return "Libro sconosciuto";
-        
-        for (Libro l : listaCompletaLibri) {
-            if (l.getCodiceISBN().equals(isbn)) {
-                return l.getTitolo();
-            }
-        }
-        return "ISBN: " + isbn; // Se non lo trovo, stampo almeno l'ISBN
     }
     
     /**
