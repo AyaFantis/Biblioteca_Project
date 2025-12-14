@@ -19,6 +19,7 @@ import java.util.ArrayList;
  */
 
 public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
+    
     /** Cache in memoria per accesso rapido ai dati senza leggere il disco continuamente. */
     protected List<T> cache;
     /** Riferimento al file fisico su disco. */
@@ -34,12 +35,23 @@ public abstract class ArchiveAstratto<T> implements ArchiveInterfaccia<T> {
         this.file = new File(filename);
         this.cache = new ArrayList<>();
         try{
-            if(!file.exists()) file.createNewFile();
-            caricaDaFile();
+            if(!file.exists()){
+                file.createNewFile();
+            }
         }catch(IOException e){
             System.err.println("Errore inizializzazione file: " + filename);
         }
-        
+    }
+    
+    /**
+     * @brief Carica i dati dal file alla memoria.
+     */
+    public void inizializzaDati() {
+        try {
+            caricaDaFile();
+        } catch (IOException e) {
+            System.err.println("Errore durante il caricamento dei dati per " + file.getName() + ": " + e.getMessage());
+        }
     }
     
    /**

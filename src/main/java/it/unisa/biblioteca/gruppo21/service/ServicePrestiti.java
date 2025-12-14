@@ -30,43 +30,40 @@ import java.time.LocalDate;
  */
 public class ServicePrestiti {
 
-    private final ArchivePrestiti arcPrestiti;
-    private final ArchiveLibri arcLibri;
-    private final ArchiveUtenti arcUtenti;
+    private final ArchivePrestiti archivioPrestiti;
+    private final ArchiveLibri archivioLibri;
+    private final ArchiveUtenti archivioUtenti;
     
     /**
      * @brief Costruttore del servizio prestiti.
-     * @param arcPrestiti Archivio per la persistenza dei prestiti.
-     * @param arcLibri Archivio per l'accesso ai dati dei libri (stock).
-     * @param arcUtenti Archivio per la verifica dell'esistenza utenti.
+     * @param archivioPrestiti Archivio per la persistenza dei prestiti.
+     * @param archivioLibri Archivio per l'accesso ai dati dei libri (stock).
+     * @param archivioUtenti Archivio per la verifica dell'esistenza utenti.
      */
-    public ServicePrestiti(ArchivePrestiti arcPrestiti,  ArchiveLibri arcLibri, ArchiveUtenti arcUtenti){
-        this.arcPrestiti = arcPrestiti;
-        this.arcUtenti = arcUtenti;
-        this.arcLibri = arcLibri;
-        
-        collegaPrestitiAgliUtenti();
+    public ServicePrestiti(ArchivePrestiti archivioPrestiti,  ArchiveLibri archivioLibri, ArchiveUtenti archivioUtenti){
+        this.archivioPrestiti = archivioPrestiti;
+        this.archivioUtenti = archivioUtenti;
+        this.archivioLibri = archivioLibri;
     }
     
     /**
-     * @brief Metodo privato per sincronizzare i dati al riavvio.
-     * Scorre tutti i prestiti salvati e li ri-aggiunge alle liste degli utenti caricati.
+     * @brief Trova un utente sia per matricola che per cognome.
      */
-    private void collegaPrestitiAgliUtenti() {
-        List<Prestito> tuttiIPrestiti = arcPrestiti.leggiTutti();
+    private Utente trovaUtente(String identificativoInput) {
         
-        for (Prestito p : tuttiIPrestiti) {
-            if (p.getStato() == Prestito.StatoPrestito.ATTIVO || p.getStato() == Prestito.StatoPrestito.IN_RITARDO) {
-                
-                String matricola = p.getUtente().getMatricola();
-                
-                Utente utente = arcUtenti.cerca(matricola);
-                
-                if (utente != null) {
-                    utente.aggiungiPrestito(p);
-                }
+        Utente utenteTrovato = archivioUtenti.cerca(identificativoInput);
+        if (utenteTrovato != null) return utenteTrovato;
+
+        List<Utente> candidatiPerCognome = new ArrayList<>();
+        for (Utente u : archivioUtenti.leggiTutti()){
+            if(u.getCognome().equalsIgnoreCase(identificativoInput)){
+                candidatiPerCognome.add(u);
             }
         }
+        
+        if (candidatiPerCognome.size() == 1) return candidatiPerCognome.get(0);
+        
+        return null;
     }
     
     /**
@@ -78,49 +75,23 @@ public class ServicePrestiti {
      * @post Viene creato un nuovo oggetto Prestito con stato ATTIVO.
      * @post Il numero di copie disponibili del libro viene decrementato di 1.
      * @post Il prestito viene aggiunto alla lista dei prestiti attivi dell'utente.
-     * @param identificativo La matricola dell'utente.
-     * @param codiceISBN L'ISBN del libro.
+     * @param identificativoUtente La matricola dell'utente.
+     * @param codiceISBNLibro L'ISBN del libro.
      * @param dataScadenza La data di restituzione prevista inserita dal bibliotecario.
      * @return Messaggio di esito.
      */
-    public String nuovoPrestito(String identificativo, String codiceISBN, LocalDate dataScadenza){
+    public String nuovoPrestito(String identificativoUtente, String codiceISBNLibro, LocalDate dataScadenza){
         
-        //Cerco prima per matricola
-        Utente utente = arcUtenti.cerca(identificativo);
+        Utente utenteRichiedente = trovaUtente(identificativoUtente);
+        if(utenteRichiedente == null) return "Errore: Utente non trovato (o trovate più persone con lo stesso cognome).";
         
-        //Se non ho trovato nulla per matricola, passo alla ricerca per cognome
-        if(utente == null){
-            List<Utente> candidati = new ArrayList<>();
-            List<Utente> tutti = arcUtenti.leggiTutti();
-            
-            for (Utente u : tutti){
-                if(u.getCognome().equalsIgnoreCase(identificativo)){
-                    candidati.add(u);
-                }
-            }
-            
-            if (candidati.isEmpty()) {
-                return "Errore: Utente non trovato (né come Matricola né come Cognome).";
-            } else if (candidati.size() > 1) {
-                return "Errore: Ci sono più utenti con il cognome '" + identificativo + "'. Usa la Matricola.";
-            } else {
-                // Trovato esattamente un utente con quel cognome
-                utente = candidati.get(0);
-            }
-        }
+        Libro libroRichiesto = archivioLibri.cerca(codiceISBNLibro);
+        if (libroRichiesto == null) return "Errore: Libro non trovato.";
         
-        Libro libro = arcLibri.cerca(codiceISBN);
-        
-        if (utente == null){       
-            return "Errore: Utente non trovato.";
-        }
-        if (libro == null){       
-            return "Errore: Libro non trovato.";
-        }
-        if (utente.getNumeroLibriPossesso() >= Utente.MAX_PRESTITI){       
+        if (utenteRichiedente.getNumeroLibriPossesso() >= Utente.MAX_PRESTITI){       
             return "Errore: Limite massimo di prestiti raggiunto per questo utente.";
         }
-        if (libro.getNumeroCopieDisponibili() <= 0){       
+        if (libroRichiesto.getNumeroCopieDisponibili() <= 0){       
             return "Errore: Copie esaurite per il libro richiesto.";
         }
         if (dataScadenza == null ){
@@ -130,13 +101,13 @@ public class ServicePrestiti {
             return "Errore: Data di restituzione non può essere nel passato";
         }
         
-        Prestito nuovoPrestito = new Prestito(utente, libro, dataScadenza, Prestito.StatoPrestito.ATTIVO);       
-        libro.setNumeroCopieDisponibili(libro.getNumeroCopieDisponibili() -1);
-        utente.aggiungiPrestito(nuovoPrestito);
+        Prestito nuovoPrestito = new Prestito(utenteRichiedente, libroRichiesto, dataScadenza, Prestito.StatoPrestito.ATTIVO);       
+        libroRichiesto.setNumeroCopieDisponibili(libroRichiesto.getNumeroCopieDisponibili() -1);
+        utenteRichiedente.aggiungiPrestito(nuovoPrestito);
         
         try{
-        
-            arcPrestiti.aggiungi(nuovoPrestito);
+            archivioPrestiti.aggiungi(nuovoPrestito);
+            archivioLibri.salvaTutto();
             return "Successo: Prestito registrato correttamente.";
         } catch (IOException ex) {       
             return "Errore: Impossibile salvare il prestito su file.";
@@ -149,27 +120,35 @@ public class ServicePrestiti {
      * @pre Deve esistere un prestito ATTIVO per la coppia utente, libro specificata.
      * @post Lo stato del prestito viene modificato da ATTIVO a RESTITUITO.
      * @post La data di restituzione effettiva viene registrata.
-     * @param matricola L'utente che restituisce.
-     * @param codiceISBN Il libro restituito.
+     * @param matricola L'utente che identificativoUtente.
+     * @param codiceISBNLibro Il libro restituito.
      * @return Messaggio di esito.
      */
-    public String restituzione(String matricola, String codiceISBN){
-        List<Prestito> elenco = arcPrestiti.leggiTutti();
+    public String restituzione(String identificativoUtente, String codiceISBNLibro){
         
-        for (Prestito p : elenco){
+        Utente utenteCheRestituisce = trovaUtente(identificativoUtente);
+        if (utenteCheRestituisce == null) return "Errore: Utente non trovato.";
         
-            if(p.getStato() == Prestito.StatoPrestito.ATTIVO &&
-               p.getUtente().getMatricola().equals(matricola) &&
-               p.getLibro().getCodiceISBN().equals(codiceISBN)){
+        List<Prestito> prestitiAttiviUtente = utenteCheRestituisce.getPrestitiAttivi();
+        
+        for (Prestito prestitoCorrente : prestitiAttiviUtente){
+        
+            if(prestitoCorrente.getStato() == Prestito.StatoPrestito.ATTIVO &&
+               prestitoCorrente.getLibro().getCodiceISBN().equals(codiceISBNLibro)){
             
-                p.setStato(Prestito.StatoPrestito.RESTITUITO);
-                Libro libro = p.getLibro();
-                libro.setNumeroCopieDisponibili(libro.getNumeroCopieDisponibili() + 1);
+                prestitoCorrente.setStato(Prestito.StatoPrestito.RESTITUITO);
+                Libro libroRestituito = prestitoCorrente.getLibro();
+                libroRestituito.setNumeroCopieDisponibili(libroRestituito.getNumeroCopieDisponibili() + 1);
                 
-                Utente utente = p.getUtente();
-                utente.rimuoviPrestito(p);
+                utenteCheRestituisce.rimuoviPrestito(prestitoCorrente);
                 
-                return "Successo: Libro restituito.";
+                try{
+                    archivioPrestiti.salvaTutto();
+                    archivioLibri.salvaTutto();
+                    return "Successo: Libro restituito.";
+                } catch (IOException ex){
+                    return "Errore salvataggio";
+                }
             }
         }
         return "Errore: Nessun prestito attivo trovato per i dati forniti.";
@@ -185,7 +164,7 @@ public class ServicePrestiti {
      */
     public List<Prestito> controllaRitardi(){
         
-        List<Prestito> tutti = arcPrestiti.leggiTutti();
+        List<Prestito> tutti = archivioPrestiti.leggiTutti();
         List<Prestito> inRitardo = new ArrayList<>();
         LocalDate oggi = LocalDate.now();
         
@@ -205,12 +184,12 @@ public class ServicePrestiti {
      * @return Lista di tutti i prestiti (attivi e conclusi).
      */
     public List<Prestito> getLista(){
-        return arcPrestiti.leggiTutti();
+        return archivioPrestiti.leggiTutti();
     }
     
     public List<Prestito> getPrestitiAttiviOrdinati(){
     
-        List<Prestito> tutti = arcPrestiti.leggiTutti();        
+        List<Prestito> tutti = archivioPrestiti.leggiTutti();        
         List<Prestito> attivi = new ArrayList<>();
         
         for (Prestito p : tutti){

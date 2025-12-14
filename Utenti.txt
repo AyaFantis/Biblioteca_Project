@@ -1,4 +1,4 @@
-Manuel;Huy;m.huy@studenti.unisa.it;0612709286
+Mailnuel;Huy;m.huy@studenti.unisa.it;0612709286
 Luca;Rossi;l.rossi@studenti.unisa.it;0623457812
 Giulia;Bianchi;g.bianchi@studenti.unisa.it;0619982345
 Marco;Esposito;m.esposito@studenti.unisa.it;0631124567

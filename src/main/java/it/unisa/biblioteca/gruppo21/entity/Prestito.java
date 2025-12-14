@@ -38,6 +38,7 @@ public class Prestito implements Comparable<Prestito>{
      * @note Questa è la data di scadenza prevista, non la data effettiva di restituzione.
      */
     private final LocalDate dataRestituzione;
+    
     /** Stato corrente del prestito (es. ATTIVO, RESTITUITO, IN_RITARDO). */
     private StatoPrestito stato;
     
@@ -45,16 +46,16 @@ public class Prestito implements Comparable<Prestito>{
      * @brief Costruttore della classe Prestito.
      * Inizializza un nuovo oggetto Prestito associando un utente e un libro con una data di scadenza.
      * @note È buona norma inizializzare lo stato (es. a ATTIVO) nel costruttore per evitare valori null.
-     * @param utente L'utente che richiede il prestito.
-     * @param libro Il libro oggetto del prestito.
+     * @param utenteCoinvolto L'utente che richiede il prestito.
+     * @param libroPrestato Il libro oggetto del prestito.
      * @param dataRestituzione La data prevista per la restituzione del libro.
-     * @param stato Lo stato attuale del prestito.
+     * @param statoIniziale Lo stato attuale del prestito.
      */
-    public Prestito(Utente utente, Libro libro, LocalDate dataRestituzione, StatoPrestito stato){
-        this.utente = utente;
-        this.libro = libro;
+    public Prestito(Utente utenteCoinvolto, Libro libroPrestato, LocalDate dataRestituzione, StatoPrestito statoIniziale){
+        this.utente = utenteCoinvolto;
+        this.libro = libroPrestato;
         this.dataRestituzione = dataRestituzione;
-        this.stato = stato;
+        this.stato = statoIniziale;
     }
 
     /**
@@ -92,15 +93,15 @@ public class Prestito implements Comparable<Prestito>{
     /**
      * @brief Modifica lo stato del prestito.
      * Utilizzato per aggiornare il ciclo di vita del prestito 
-     * @param stato Il nuovo stato da assegnare al prestito.
+     * @param nuovoStato Il nuovo stato da assegnare al prestito.
      */
-    public void setStato(StatoPrestito stato) {
-        this.stato = stato;
+    public void setStato(StatoPrestito nuovoStato) {
+        this.stato = nuovoStato;
     }
     
     @Override
-    public int compareTo(Prestito p) {
-        return this.dataRestituzione.compareTo(p.dataRestituzione);
+    public int compareTo(Prestito altroPrestito) {
+        return this.dataRestituzione.compareTo(altroPrestito.dataRestituzione);
     }
    
     

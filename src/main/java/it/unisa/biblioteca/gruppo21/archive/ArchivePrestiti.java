@@ -20,13 +20,18 @@ import java.time.format.DateTimeParseException;
  * @version 1.0
  */
 public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
+    
+    private final ArchiveUtenti archivioUtenti;
+    private final ArchiveLibri archivioLibri;
 
     /**
      * @brief Costruttore dell'archivio prestiti.
      * @post Viene inizializzato un archivio collegato al file fisico "Prestiti.txt".
      */
-    public ArchivePrestiti(){
+    public ArchivePrestiti(ArchiveUtenti archivioUtenti, ArchiveLibri archivioLibri){
         super("Prestiti.txt");   
+        this.archivioUtenti = archivioUtenti;
+        this.archivioLibri = archivioLibri;
     }
     
     /**
@@ -34,17 +39,17 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      * @pre Il parametro p non deve essere null.
      * @pre L'oggetto Prestito deve contenere riferimenti validi a Utente e Libro.
      * @post Restituisce una stringa nel formato: Matricola;ISBN;DataRestituzione;Stato.
-     * @param p L'oggetto Prestito da serializzare.
+     * @param prestitoDaSalvare L'oggetto Prestito da serializzare.
      * @return Stringa formattata per il file.
      */
     @Override
-    protected String serializza(Prestito p) {
-        String mat = p.getUtente().getMatricola(); 
-        String isbn = p.getLibro().getCodiceISBN();
+    protected String serializza(Prestito prestitoDaSalvare) {
+        String matricolaUtente = prestitoDaSalvare.getUtente().getMatricola(); 
+        String isbnLibro = prestitoDaSalvare.getLibro().getCodiceISBN();
         
-        String dataStr = (p.getDataRestituzione() == null) ? "null" : p.getDataRestituzione().toString();
+        String dataRestituzioneStringa = (prestitoDaSalvare.getDataRestituzione() == null) ? "null" : prestitoDaSalvare.getDataRestituzione().toString();
 
-        return mat + ";" + isbn + ";" + dataStr + ";" + p.getStato();
+        return matricolaUtente + ";" + isbnLibro + ";" + dataRestituzioneStringa + ";" + prestitoDaSalvare.getStato();
     }
 
     /**
@@ -53,40 +58,38 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      * @pre La riga non deve essere null.
      * @post Restituisce un oggetto Prestito valido se il parsing ha successo.
      * @post Restituisce null se la data è malformata o lo stato non è valido.
-     * @param riga La stringa letta dal file.
+     * @param rigaLetta La stringa letta dal file.
      * @return L'oggetto Prestito ricostruito.
      */
     @Override
-    protected Prestito deserializza(String riga) {
+    protected Prestito deserializza(String rigaLetta) {
         try {
-            String[] parti = riga.split(";");
+            String[] parti = rigaLetta.split(";");
             if (parti.length != 4) return null;
 
-            String matricola = parti[0].trim();
-            String isbn = parti[1].trim();
-            String dataStr = parti[2].trim();
-            String statoStr = parti[3].trim();
+            String matricolaUtente = parti[0].trim();
+            String isbnLibro = parti[1].trim();
+            String dataStringa = parti[2].trim();
+            String statoStringa = parti[3].trim();
 
-            // 1. Parsing della Data
             LocalDate dataRestituzione = null;
-            if (!dataStr.equals("null")) {
-                dataRestituzione = LocalDate.parse(dataStr); // Formato ISO standard (YYYY-MM-DD)
+            if (!dataStringa.equals("null")) {
+                dataRestituzione = LocalDate.parse(dataStringa); // Formato standard (YYYY-MM-DD)
             }
 
-            // 2. Parsing dello Stato (Enum)
-            Prestito.StatoPrestito stato = Prestito.StatoPrestito.valueOf(statoStr);
+            Prestito.StatoPrestito statoCorrente = Prestito.StatoPrestito.valueOf(statoStringa);
 
-            // 3. Creazione Oggetti "Stub" (Contenitori solo per l'ID)
-            // Non abbiamo i dati completi (Nome, Titolo, ecc), ma per l'archivio basta l'ID.
-            // Il Service poi userà questi ID per recuperare i dati completi dagli altri archivi se serve.
-            Utente uStub = new Utente("", "", "", matricola); 
-            Libro lStub = new Libro("", "", isbn, 0, 0);
+            Utente utenteReale = archivioUtenti.cerca(matricolaUtente);
+            Libro libroReale = archivioLibri.cerca(isbnLibro);
+            
+            if (utenteReale == null || libroReale == null) {
+                System.err.println("Attenzione: Prestito orfano trovato nel file (Utente o Libro mancante). Riga ignorata.");
+                return null;
+            }
 
-            return new Prestito(uStub, lStub, dataRestituzione, stato);
+            return new Prestito(utenteReale, libroReale, dataRestituzione, statoCorrente);
 
         } catch (DateTimeParseException | IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
-            // DateTimeParseException: Data corrotta
-            // IllegalArgumentException: Stato enum non valido
             return null;
         }
     }
@@ -100,16 +103,4 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
     public Prestito cerca(String id) {
         return null;
     }
-    
-    public Prestito cercaPrestito(String matricola, String isbn) {
-        for (Prestito p : cache) {
-            if (p.getUtente().getMatricola().equals(matricola) && 
-                p.getLibro().getCodiceISBN().equals(isbn) &&
-                p.getStato() == Prestito.StatoPrestito.ATTIVO) {
-                return p;
-            }
-        }
-        return null;
-    }
-    
 }

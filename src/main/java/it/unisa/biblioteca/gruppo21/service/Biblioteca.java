@@ -40,12 +40,26 @@ public class Biblioteca {
     
         ArchiveUtenti archivioUtenti = new ArchiveUtenti();
         ArchiveLibri archivioLibri = new ArchiveLibri();
-        ArchivePrestiti archivioPrestiti = new ArchivePrestiti();
+        
+        archivioUtenti.inizializzaDati();
+        archivioLibri.inizializzaDati();
+        
+        ArchivePrestiti archivioPrestiti = new ArchivePrestiti(archivioUtenti, archivioLibri);
+        
+        archivioPrestiti.inizializzaDati();
+        
+        for(Prestito p : archivioPrestiti.leggiTutti()) {
+            if(p.getStato() == Prestito.StatoPrestito.ATTIVO || p.getStato() == Prestito.StatoPrestito.IN_RITARDO) {
+                
+                p.getUtente().aggiungiPrestito(p);
+            }
+        }
         
         this.serviceUtenti = new ServiceUtenti(archivioUtenti, archivioPrestiti);
         this.serviceLibri = new ServiceLibri(archivioLibri, archivioPrestiti);
         this.servicePrestiti = new ServicePrestiti(archivioPrestiti, archivioLibri, archivioUtenti);
-
+        
+        
     }
     
     //

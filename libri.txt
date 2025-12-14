@@ -8,7 +8,7 @@ Delitto e castigo;Fëdor Dostoevskij;0140449132;1866;4
 Cent’anni di solitudine;Gabriel García Márquez;0060883286;1967;5
 La fattoria degli animali;George Orwell;0451526341;1945;9
 Il grande Gatsby;F. Scott Fitzgerald;0743273567;1925;6
-Moby Dick;Herman Melville;0142437247;1851;2
+Moby Dick;Herman Melville;0142437247;1851;3
 Il processo;Franz Kafka;0805210407;1925;3
 Cime tempestose;Emily Brontë;0141439556;1847;4
 Don Chisciotte della Mancia;Miguel de Cervantes;0060934344;1605;5
