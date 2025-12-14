@@ -11,9 +11,9 @@ import java.time.LocalDate;
  * @file Prestito.java
  * @brief Rappresenta un'operazione di prestito.
  * @class Prestito
- * * Contiene i riferimenti (tramite ID) all'utente e al libro coinvolti, oltre
+ * Contiene i riferimenti (tramite ID) all'utente e al libro coinvolti, oltre
  * alle date di inizio e fine prestito e allo stato corrente.
- * * @author Gruppo 21
+ * @author Gruppo 21
  * @version 1.0
  */
 public class Prestito implements Comparable<Prestito>{
@@ -34,18 +34,14 @@ public class Prestito implements Comparable<Prestito>{
     private final Utente utente;
     /** Riferimento all'oggetto Libro prestato. */
     private final Libro libro;
-    /** Data entro la quale il libro deve essere restituito. 
-     * @note Questa è la data di scadenza prevista, non la data effettiva di restituzione.
-     */
+    /** Data entro la quale il libro deve essere restituito. */
     private final LocalDate dataRestituzione;
-    
     /** Stato corrente del prestito (es. ATTIVO, RESTITUITO, IN_RITARDO). */
     private StatoPrestito stato;
     
     /**
      * @brief Costruttore della classe Prestito.
      * Inizializza un nuovo oggetto Prestito associando un utente e un libro con una data di scadenza.
-     * @note È buona norma inizializzare lo stato (es. a ATTIVO) nel costruttore per evitare valori null.
      * @param utenteCoinvolto L'utente che richiede il prestito.
      * @param libroPrestato Il libro oggetto del prestito.
      * @param dataRestituzione La data prevista per la restituzione del libro.
@@ -103,7 +99,7 @@ public class Prestito implements Comparable<Prestito>{
      * @brief Definisce l'ordinamento naturale degli oggetti Prestito.
      * I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista.
      * Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste.
-     * * @param altroPrestito Il prestito da confrontare con l'istanza corrente.
+     * @param altroPrestito Il prestito da confrontare con l'istanza corrente.
      * @return Un valore negativo se la scadenza di questo prestito è antecedente a quella dell'altro,
      * zero se le date coicidono, un valore positivo se è successiva.
      */

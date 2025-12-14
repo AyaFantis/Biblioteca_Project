@@ -12,7 +12,7 @@ import java.util.Objects;
  * @class Libro
  * Questa classe è un'entità che incapsula le informazioni fondamentali di un libro,
  * inclusa la gestione della quantità totale di copie possedute dalla biblioteca.
- * * @author Gruppo 21
+ * @author Gruppo 21
  * @version 1.0
  */
 
@@ -80,8 +80,6 @@ public class Libro implements Comparable<Libro>{
     
     /**
      * @brief Restituisce la quantità totale di copie.
-     * * Nota: Questo valore rappresenta lo stock totale, non le copie attualmente disponibili
-     * (per quelle bisogna sottrarre i prestiti attivi).
      * @return Intero rappresentante le copie totali.
      */
     public int getNumeroCopieDisponibili(){
@@ -110,8 +108,6 @@ public class Libro implements Comparable<Libro>{
     /**
      * @brief Calcola il codice hash per l'oggetto Libro.
      * Il calcolo si basa esclusivamente sul codice ISBN. 
-     * Questo garantisce che oggetti considerati uguali dal metodo equals() abbiano lo stesso hash code,
-     * rispettando il contratto generale di Java per l'uso nelle collezioni
      * @return Intero rappresentante l'hash del codice ISBN
      */
     @Override
@@ -123,14 +119,11 @@ public class Libro implements Comparable<Libro>{
     /**
      * @brief Verifica l'ugualglianza logica tra due libri.
      * L'identità di un libro è determinata univocamente dal suo codice ISBN.
-     * Titolo, autore e altri campi vengono ignorati nel confronto poichè l'ISBN
-     * identifica univocamente l'edizione.
-     * * @param o L'oggetto con cui confrontare l'istanza corrente.
+     * @param o L'oggetto con cui confrontare l'istanza corrente.
      * @return true se l'oggetto passato è un Libro e ha lo stesso ISBN, falsa altrimenti.
      */
     @Override 
     public boolean equals (Object o){
-    
         if (this == o)
             return true;
         
@@ -144,8 +137,8 @@ public class Libro implements Comparable<Libro>{
     /**
      * @brief Definisce l'ordinamento naturale degli oggetti Libro.
      * L'ordinamento viene effettuati alfabetica per Titolo.
-     * In caso di titolo identici, viene utilizzato l'Autore come criteria secondario.
-     * * @param o Il libro da confrontare.
+     * In caso di titolo identici, viene utilizzato l'Autore come criterio secondario.
+     * @param o Il libro da confrontare.
      * @return Un numero negativo se questo libro precede l'altro, zero se sono uguali
      * (per titolo e autore), un numero positivo se segue l'altro.
      */

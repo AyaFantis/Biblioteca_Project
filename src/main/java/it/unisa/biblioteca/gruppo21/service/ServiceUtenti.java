@@ -17,10 +17,9 @@ import java.util.List;
  * @file ServiceUtenti.java
  * @brief Gestisce la logica di business relativa agli utenti (anagrafica).
  * @class ServiceUtenti
- * * Questa classe funge da intermediario tra il Controller e i dati persistenti degli utenti.
- * * Si assicura che i dati inseriti siano validi e che i vincoli di integrità (es. non cancellare
- * utenti con prestiti attivi) siano rispettati.
- * * @author Gruppo 21
+ * Questa classe funge da intermediario tra il Controller e i dati persistenti degli utenti.
+ * Si assicura che i dati inseriti siano validi e che i vincoli di integrità siano rispettati.
+ * @author Gruppo 21
  * @version 1.0
  */
 public class ServiceUtenti {

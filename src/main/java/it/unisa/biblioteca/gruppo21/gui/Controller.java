@@ -172,12 +172,14 @@ public class Controller {
         return !esito.startsWith("Errore");
     }
     
-    /**
+    /** 
      * @brief Gestisce il flusso di restituzione libro.
      * @pre matricola e isbn non nulli.
      * @post Viene mostrato il messaggio di conferma o errore.
      * @param matricola ID Utente.
      * @param isbn ID Libro.
+     * @return true se la restituzione è avvenuta con successo mentre false se l'operazione è fallita.
+     *
      */
     public boolean gestisciRestituzione(String matricola, String isbn) {
         String esito = biblioteca.restituisciLibro(matricola, isbn);
@@ -197,9 +199,9 @@ public class Controller {
  
     /**
      * @brief Visualizza un messaggio di feedback.
-     * * @pre messaggio non nullo.
-     * * @post Il messaggio viene inviato allo stream di output.
-     * * @param messaggio Testo da mostrare.
+     * @pre messaggio non nullo.
+     * @post Il messaggio viene inviato allo stream di output.
+     * @param messaggio Testo da mostrare.
      */
     private void mostraMessaggio(String messaggio) {
         Stage popupStage = new Stage();
