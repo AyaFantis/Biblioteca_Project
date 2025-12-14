@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class ViewLibriController {
+public class ViewLibriController extends AbstractViewController{
 
     @FXML private TextField txtIsbn;
     @FXML private TextField txtTitolo;
@@ -30,8 +30,6 @@ public class ViewLibriController {
     @FXML private TableColumn<Libro, String> colTitolo;
     @FXML private TableColumn<Libro, String> colAutore;
     @FXML private TableColumn<Libro, Integer> colCopieDisp;
-
-    private Controller logicController;
     
     private List<Libro> listaCompletaLibri = new ArrayList<>();
 
@@ -130,11 +128,6 @@ public class ViewLibriController {
         tableLibri.setItems(tabellaContainer);
     }
 
-    public void setLogicController(Controller logicController) {
-        this.logicController = logicController;
-        aggiornaTabella();
-    }
-
     @FXML private void handleAggiungiLibro() {
         if (logicController != null) {
             boolean successo = logicController.gestisciAggiuntaLibro(
@@ -162,7 +155,8 @@ public class ViewLibriController {
         }
     }
 
-    private void aggiornaTabella() {
+    @Override
+    protected void aggiornaTabella() {
         if (logicController != null) {
             this.listaCompletaLibri = logicController.getListaLibri();
             handleRicerca(); 

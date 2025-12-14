@@ -116,7 +116,7 @@ public class Biblioteca {
      * @param matricola Filtro sulla matricola (opzionale).
      * @return Lista degli utenti che corrispondono ai criteri specificati.
      */
-    public List<Utente> cercaUtenti(String cognome, String matricola){
+    public List<Utente> cercaUtente(String cognome, String matricola){
         return serviceUtenti.cerca(cognome);
     }
  
@@ -176,7 +176,7 @@ public class Biblioteca {
      * @param codiceISBN ISBN da cercare.
      * @return Lista dei libri trovati.
      */
-    public List<Libro> cercaLibri(String titolo, String autore, String codiceISBN) {
+    public List<Libro> cercaLibro(String titolo, String autore, String codiceISBN) {
         return serviceLibri.cerca(titolo, autore, codiceISBN);
     }
     

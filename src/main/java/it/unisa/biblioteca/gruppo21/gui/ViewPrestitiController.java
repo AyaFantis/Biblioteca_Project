@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javafx.scene.control.DatePicker;
 
-public class ViewPrestitiController {
+public class ViewPrestitiController extends AbstractViewController {
     
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -31,9 +31,6 @@ public class ViewPrestitiController {
     
     @FXML private TableColumn<Prestito, String> colDataScadenza;
     @FXML private TableColumn<Prestito, String> colStato;
-    
-    private Controller logicController;
-    
 
     @FXML
     public void initialize() {
@@ -58,11 +55,6 @@ public class ViewPrestitiController {
         pickerScadenza.setValue(LocalDate.now().plusDays(30));
     }
     
-    public void setLogicController(Controller logicController) {
-        this.logicController = logicController;
-        aggiornaTabella();
-    }
-
     @FXML private void handleEffettuaPrestito() {
         if (logicController != null) {
             
@@ -96,7 +88,8 @@ public class ViewPrestitiController {
         }
     }
 
-    private void aggiornaTabella() {
+    @Override
+    protected void aggiornaTabella() {
         if (logicController != null){
             tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
             tablePrestiti.refresh();

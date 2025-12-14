@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class ViewUtentiController {
+public class ViewUtentiController extends AbstractViewController {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
@@ -36,9 +36,6 @@ public class ViewUtentiController {
     @FXML private TableColumn<Utente, String> colEmail;
     
     @FXML private TableColumn<Utente, String> colLibri;
-    
-
-    private Controller logicController;
     
     private List<Utente> listaCompletaUtenti = new ArrayList<>();
 
@@ -138,11 +135,6 @@ public class ViewUtentiController {
         tableUtenti.setItems(tabellaContainer);
     }
 
-    public void setLogicController(Controller logicController) {
-        this.logicController = logicController;
-        aggiornaTabella();
-    }
-
     @FXML private void handleAggiungiUtente() {
         if (logicController != null) {
             boolean successo = logicController.gestisciIscrizione(
@@ -188,7 +180,8 @@ public class ViewUtentiController {
         }
     }
 
-    private void aggiornaTabella() {
+    @Override
+    protected void aggiornaTabella() {
         if (logicController != null) {
             this.listaCompletaUtenti = logicController.getListaUtenti();
             handleRicerca(); 
