@@ -17,7 +17,7 @@ Ingegneria del Software;Sommerville;9788871926;2017;4
 Python Crash Course;Matthes;9781593279;2019;6
 JavaScript: The Good Parts;Crockford;9780596517;2008;5
 Code Complete;McConnell;9780735619;2004;3
-Programmazione di base;Mazzanti;8850333331;2016;2
+Programmazione di base;Mazzanti;8850333331;2016;3
 UML Distilled;Martin Fowler;9780321193;2003;5
 Spring in Action;Walls;9781617292;2014;4
 Hibernate in Action;Bauer;9781932394;2004;2

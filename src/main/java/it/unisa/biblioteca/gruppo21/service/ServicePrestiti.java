@@ -185,24 +185,10 @@ public class ServicePrestiti {
      * @return Lista di tutti i prestiti (attivi e conclusi).
      */
     public List<Prestito> getLista(){
+        List<Prestito> tutti = archivioPrestiti.leggiTutti();
+        Collections.sort(tutti);
         
-        return getPrestitiAttiviOrdinati();
-    }
-    
-    public List<Prestito> getPrestitiAttiviOrdinati(){
-    
-        List<Prestito> tutti = archivioPrestiti.leggiTutti();        
-        List<Prestito> attivi = new ArrayList<>();
-        
-        for (Prestito p : tutti){
-        
-            if(p.getStato() == Prestito.StatoPrestito.ATTIVO){
-            
-                attivi.add(p);
-            }
-        }
-        Collections.sort(attivi);
-        return attivi;
+        return tutti;
     }
     
 }
