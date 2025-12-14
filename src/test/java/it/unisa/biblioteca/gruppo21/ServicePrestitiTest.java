@@ -13,6 +13,7 @@ import it.unisa.biblioteca.gruppo21.entity.Utente;
 import it.unisa.biblioteca.gruppo21.service.ServicePrestiti;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,7 +64,7 @@ public class ServicePrestitiTest {
     public void testNuovoPrestitoValido() throws IOException {
         inizializza();
 
-        String esito = service.nuovoPrestito("0512100001", "ISBN-HP");
+        String esito = service.nuovoPrestito("0512100001", "ISBN-HP", LocalDate.now());
 
         assertNotNull(esito, "Il metodo non deve restituire null");
         assertTrue(esito.contains("Successo") || esito.contains("registrato"), "Messaggio di successo atteso");
@@ -80,7 +81,7 @@ public class ServicePrestitiTest {
     public void testNuovoPrestitoStockEsaurito() throws IOException {
         inizializza();
 
-        String esito = service.nuovoPrestito("0512100001", "ISBN-ZERO");
+        String esito = service.nuovoPrestito("0512100001", "ISBN-ZERO", LocalDate.now());
 
         assertNotNull(esito);
         assertTrue(esito.startsWith("Errore"), "Non deve prestare libri con 0 copie");
@@ -94,10 +95,10 @@ public class ServicePrestitiTest {
     public void testNuovoPrestitoDatiErrati() throws IOException {
         inizializza();
 
-        String esitoUtente = service.nuovoPrestito("9999999999", "ISBN-HP");
+        String esitoUtente = service.nuovoPrestito("9999999999", "ISBN-HP", LocalDate.now());
         assertTrue(esitoUtente.startsWith("Errore"), "Utente inesistente deve dare errore");
 
-        String esitoLibro = service.nuovoPrestito("0512100001", "ISBN-INESISTENTE");
+        String esitoLibro = service.nuovoPrestito("0512100001", "ISBN-INESISTENTE", LocalDate.now());
         assertTrue(esitoLibro.startsWith("Errore"), "Libro inesistente deve dare errore");
 
         pulisci();
@@ -107,7 +108,7 @@ public class ServicePrestitiTest {
     public void testRestituzione() throws IOException {
         inizializza();
 
-        service.nuovoPrestito("0512100001", "ISBN-HP");
+        service.nuovoPrestito("0512100001", "ISBN-HP", LocalDate.now());
         assertEquals(1, service.getLista().size());
 
         String esito = service.restituzione("0512100001", "ISBN-HP");
