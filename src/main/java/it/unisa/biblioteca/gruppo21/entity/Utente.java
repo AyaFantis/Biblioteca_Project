@@ -145,17 +145,38 @@ public class Utente implements Comparable<Utente>{
         }
     }
     
+    /**
+     * @brief Restituisce una rappresentazione testuale dell'oggeto Utente.
+     * Formatta i dati principali in una stringa leggibile, utile per il debugging
+     * e per i log di sistema.
+     * @return Una stringa nel formato "Utente: [Nome] [Cognome] - Mat: [Matricola]".
+     */
     @Override
     public String toString() { 
         return "Utente: " + nome + " " + cognome + " - Mat: " + matricola;
     }
 
+    /**
+     * @brief Calcola il codice hash per l'oggetto Utente.
+     * Il calcolo si basa esclusivamente sul matricola. 
+     * Questo garantisce che oggetti considerati uguali dal metodo equals() 
+     * abbiano lo stesso hash code, rispettando il contratto generale di Java.
+     * @return Intero rappresentante l'hash del codice ISBN
+     */
     @Override
     public int hashCode(){
     
         return matricola.hashCode();
     }
     
+    /**
+     * @brief Verifica l'uguaglianza logica tra due utenti.
+     * L'identità di un utente è determinata univocamente dalla sua matricola.
+     * Campi mutabili come email, nome o cognome non influenzano l'uguaglianza
+     * dell'oggetto (Entity Equality).
+     * @param o L'oggetto con cui confrontare l'istanza corrente.
+     * @return true se l'oggetto passato è un Utente e ha la stessa matricola, false altrimenti.
+     */
     @Override
     public boolean equals(Object o){
     
@@ -169,6 +190,17 @@ public class Utente implements Comparable<Utente>{
         return matricola.equals(utente.matricola);
     }
     
+    /**
+     * @brief Definisce l'ordinamento naturale degli oggetti Utente.
+     * L'ordinamento viene effettuato alfabeticamente (case-insensitive) per Cognome.
+     * In caso di omonimia (cognomi uguali), viene utilizzato il Nome come criterio secondario.
+     * * @note Questo metodo è "inconsistent with equals": l'ordinamento si basa su 
+     * dati anagrafici per facilitare la visualizzazione nelle liste, mentre l'uguaglianza 
+     * si basa sulla matricola univoca.
+     * * @param u L'utente da confrontare.
+     * @return Un numero negativo se questo utente precede l'altro, zero se sono uguali 
+     * (per nome e cognome), un numero positivo se segue l'altro.
+     */
     @Override
     public int compareTo(Utente u) {
         int risultatoCognome = this.cognome.compareToIgnoreCase(u.getCognome());
