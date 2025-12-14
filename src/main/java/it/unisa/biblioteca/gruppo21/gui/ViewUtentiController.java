@@ -106,7 +106,8 @@ public class ViewUtentiController {
             txtCognome.setText(u.getCognome());
             txtEmail.setText(u.getEmail());
             
-            txtMatricola.setDisable(true);
+            txtMatricola.setEditable(false);
+            
             btnInserisci.setDisable(true);
             btnModifica.setDisable(false);
         }
@@ -120,7 +121,8 @@ public class ViewUtentiController {
         txtEmail.clear();
         
         
-        txtMatricola.setDisable(false);
+        txtMatricola.setEditable(false);
+        
         btnInserisci.setDisable(false);
         btnModifica.setDisable(true);
         
