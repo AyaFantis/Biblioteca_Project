@@ -1,7 +1,6 @@
 package it.unisa.biblioteca.gruppo21.gui;
 
-import it.unisa.biblioteca.gruppo21.entity.Utente;
-import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import it.unisa.biblioteca.gruppo21.entity.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +41,7 @@ public class ViewUtentiController {
     private Controller logicController;
     
     private List<Utente> listaCompletaUtenti = new ArrayList<>();
+    private List<Libro> listaCompletaLibri = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -51,35 +51,43 @@ public class ViewUtentiController {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colLibri.setCellValueFactory(cellData -> {
             Utente u = cellData.getValue();
-            List<Prestito> prestiti = u.getPrestitiAttivi();
+            List<Prestito> prestitiPersonali = u.getPrestitiAttivi();
             
-            if (prestiti == null || prestiti.isEmpty()) {
+            if (prestitiPersonali == null || prestitiPersonali.isEmpty()) {
                 return new SimpleStringProperty("Nessun prestito");
             }
             
             StringBuilder testo = new StringBuilder();
             
-            for (int i = 0; i < prestiti.size(); i++) {
-                Prestito p = prestiti.get(i);
+            for (Prestito p : prestitiPersonali){
+                String isbn = p.getLibro().getCodiceISBN();
+                String titolo = trovaTitoloDaISBN(isbn);
                 
-                testo.append(p.getLibro().getTitolo());
-                testo.append(" (Scad: ");
+                testo.append(titolo).append(" (");
                 
                 if (p.getDataRestituzione() != null) {
                     testo.append(p.getDataRestituzione().format(formatter));
-                } else {
-                    testo.append("-");
                 }
-                testo.append(")");
-                
-                if (i < prestiti.size() - 1) {
-                    testo.append(",\n");
-                }
+                testo.append(")\n");
             }
-            
             return new SimpleStringProperty(testo.toString());
         });
         tableUtenti.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+    
+    /**
+     * @brief Metodo semplice per trovare il titolo di un libro dato l'ISBN.
+     * Scorre la lista dei libri caricata in memoria. Molto intuitivo per uno studente.
+     */
+    private String trovaTitoloDaISBN(String isbn) {
+        if (listaCompletaLibri == null) return "Libro sconosciuto";
+        
+        for (Libro l : listaCompletaLibri) {
+            if (l.getCodiceISBN().equals(isbn)) {
+                return l.getTitolo();
+            }
+        }
+        return "ISBN: " + isbn; // Se non lo trovo, stampo almeno l'ISBN
     }
     
     /**

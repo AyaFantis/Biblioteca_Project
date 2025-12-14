@@ -1,6 +1,6 @@
 package it.unisa.biblioteca.gruppo21.gui;
 
-import it.unisa.biblioteca.gruppo21.entity.Prestito;
+import it.unisa.biblioteca.gruppo21.entity.*;
 import java.time.LocalDate;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
@@ -8,9 +8,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import javafx.scene.control.DatePicker;
 
 public class ViewPrestitiController {
+    
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @FXML private TextField txtIdentificativoUtente;
     @FXML private TextField txtIsbnPrestito;
@@ -30,16 +33,30 @@ public class ViewPrestitiController {
     @FXML private TableColumn<Prestito, String> colStato;
     
     private Controller logicController;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    
+    private List<Utente> cacheUtenti;
+    private List<Libro> cacheLibri;
 
     @FXML
     public void initialize() {
         colMatricolaUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getMatricola()));
-        colNomeUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getNome()));
-        colCognomeUtente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUtente().getCognome()));
+        colNomeUtente.setCellValueFactory(cellData ->{
+            String matricola = cellData.getValue().getUtente().getMatricola();
+            Utente u = trovaUtenteDaCache(matricola);
+            return new SimpleStringProperty(u != null ? u.getNome() : "???");
+        });
+        colCognomeUtente.setCellValueFactory(cellData ->{
+            String matricola = cellData.getValue().getUtente().getMatricola();
+            Utente utente = trovaUtenteDaCache(matricola);
+            return new SimpleStringProperty(utente != null ? utente.getCognome() : "???");
+        });
         
         colIsbnLibro.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getCodiceISBN()));
-        colTitoloLibro.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getTitolo()));
+        colTitoloLibro.setCellValueFactory(cellData -> {
+            String isbn = cellData.getValue().getLibro().getCodiceISBN();
+            Libro libro = trovaLibroDaCache(isbn);
+            return new SimpleStringProperty(libro != null ? libro.getTitolo() : "???");
+        });
         
         colDataScadenza.setCellValueFactory(cellData -> {
             if (cellData.getValue().getDataRestituzione() != null) {
@@ -54,6 +71,22 @@ public class ViewPrestitiController {
         
         pickerScadenza.setValue(LocalDate.now().plusDays(30));
     }
+    
+    private Utente trovaUtenteDaCache(String matricola) {
+        if (cacheUtenti == null) return null;
+        for (Utente u : cacheUtenti) {
+            if (u.getMatricola().equals(matricola)) return u;
+        }
+        return null;
+    }
+    
+    private Libro trovaLibroDaCache(String isbn) {
+        if (cacheLibri == null) return null;
+        for (Libro l : cacheLibri) {
+            if (l.getCodiceISBN().equals(isbn)) return l;
+        }
+        return null;
+    }
 
     public void setLogicController(Controller logicController) {
         this.logicController = logicController;
@@ -62,16 +95,15 @@ public class ViewPrestitiController {
 
     @FXML private void handleEffettuaPrestito() {
         if (logicController != null) {
-            LocalDate dataScelta = pickerScadenza.getValue();
+            
             boolean successo = logicController.gestisciPrestito(
                     txtIdentificativoUtente.getText(), 
                     txtIsbnPrestito.getText(),
-                    dataScelta
+                    pickerScadenza.getValue()
             );
             if(successo){
                 txtIdentificativoUtente.clear();
                 txtIsbnPrestito.clear();
-                pickerScadenza.setValue(LocalDate.now().plusDays(30));
                 aggiornaTabella();
             }
             
@@ -95,7 +127,11 @@ public class ViewPrestitiController {
     }
 
     private void aggiornaTabella() {
-        if (logicController != null) tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
-        tablePrestiti.refresh();
+        if (logicController != null){
+            this.cacheUtenti = logicController.getListaUtenti();
+            this.cacheLibri = logicController.getListaLibri();
+            tablePrestiti.getItems().setAll(logicController.getListaPrestiti());
+            tablePrestiti.refresh();
+        }
     }
 }

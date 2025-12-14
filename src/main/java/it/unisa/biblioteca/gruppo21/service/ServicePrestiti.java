@@ -44,6 +44,29 @@ public class ServicePrestiti {
         this.arcPrestiti = arcPrestiti;
         this.arcUtenti = arcUtenti;
         this.arcLibri = arcLibri;
+        
+        collegaPrestitiAgliUtenti();
+    }
+    
+    /**
+     * @brief Metodo privato per sincronizzare i dati al riavvio.
+     * Scorre tutti i prestiti salvati e li ri-aggiunge alle liste degli utenti caricati.
+     */
+    private void collegaPrestitiAgliUtenti() {
+        List<Prestito> tuttiIPrestiti = arcPrestiti.leggiTutti();
+        
+        for (Prestito p : tuttiIPrestiti) {
+            if (p.getStato() == Prestito.StatoPrestito.ATTIVO || p.getStato() == Prestito.StatoPrestito.IN_RITARDO) {
+                
+                String matricola = p.getUtente().getMatricola();
+                
+                Utente utente = arcUtenti.cerca(matricola);
+                
+                if (utente != null) {
+                    utente.aggiungiPrestito(p);
+                }
+            }
+        }
     }
     
     /**
