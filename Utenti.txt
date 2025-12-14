@@ -13,7 +13,6 @@ Laura;Bruno;l.bruno@studenti.unisa.it;0512100012
 Roberto;Gallo;r.gallo@studenti.unisa.it;0512100013
 Marta;Conti;m.conti@studenti.unisa.it;0512100014
 Simone;DeLuca;s.deluca@studenti.unisa.it;0512100015
-Valentina;Costa;v.costa@studenti.unisa.it;0512100016
 Giovanni;Giordano;g.giordano@studenti.unisa.it;0512100017
 Silvia;Mancini;s.mancini@studenti.unisa.it;0512100018
 Andrea;Rizzo;a.rizzo@studenti.unisa.it;0512100019

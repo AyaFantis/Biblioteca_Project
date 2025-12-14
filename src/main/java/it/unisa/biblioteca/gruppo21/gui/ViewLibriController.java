@@ -13,6 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * @file ViewLibriController.java
+ * @brief Gestisce la schermata del Catalogo Libri.
+ * @class ViewLibriController
+ * Permette di aggiungere libri, modificare il numero di copie disponibili
+ * e vedere l'elenco completo.
+ */
 public class ViewLibriController extends AbstractViewController{
 
     @FXML private TextField txtIsbn;
@@ -33,6 +40,10 @@ public class ViewLibriController extends AbstractViewController{
     
     private List<Libro> listaCompletaLibri = new ArrayList<>();
 
+    /**
+     * @brief Inizializza la tabella dei libri.
+     * @post Le colonne ISBN, Titolo, Autore e Copie sono collegate agli oggetti Libro.
+     */
     @FXML
     public void initialize() {
         colIsbn.setCellValueFactory(new PropertyValueFactory<>("codiceISBN"));
@@ -43,7 +54,12 @@ public class ViewLibriController extends AbstractViewController{
     }
     
     /**
-     * @brief Gestione semplice del click sulla tabella.
+     * @brief Seleziona un libro dalla tabella per la modifica.
+     * @pre L'utente deve cliccare su una riga valida.
+     * @post I campi di testo vengono riempiti.
+     * @post ISBN, Titolo, Autore e Anno vengono DISABILITATI (non si possono cambiare).
+     * @post Solo il campo "Copie" rimane attivo.
+     * @param event Il click del mouse.
      */
     @FXML
     private void handleSelezioneTabella(MouseEvent event) {
@@ -69,6 +85,10 @@ public class ViewLibriController extends AbstractViewController{
         }
     }
 
+    /**
+     * @brief Svuota i campi per permettere un nuovo inserimento.
+     * @post Tutti i campi di testo sono vuoti e il tasto "Salva" è attivo.
+     */
     @FXML
     private void handlePulisciCampi() {
         txtIsbn.clear(); 
@@ -89,6 +109,12 @@ public class ViewLibriController extends AbstractViewController{
         tableLibri.getSelectionModel().clearSelection();
     }
 
+    /**
+     * @brief Aggiorna lo stock (copie) di un libro.
+     * @pre Un libro deve essere selezionato.
+     * @pre Il campo Copie deve contenere un numero valido.
+     * @post Il numero di copie nel sistema viene aggiornato.
+     */
     @FXML private void handleModificaCopie() {
         if (logicController != null) {
             boolean successo = logicController.gestisciAggiornamentoCopie(
@@ -103,6 +129,11 @@ public class ViewLibriController extends AbstractViewController{
         }
     }
 
+    /**
+     * @brief Cerca libri nel catalogo.
+     * @pre La lista completa dei libri deve essere caricata.
+     * @post La tabella mostra solo i libri che contengono il testo cercato (in titolo, autore o ISBN).
+     */
     @FXML
     private void handleRicerca() {
         String testoRicerca = txtSearch.getText();
@@ -128,6 +159,11 @@ public class ViewLibriController extends AbstractViewController{
         tableLibri.setItems(tabellaContainer);
     }
 
+    /**
+     * @brief Crea un nuovo libro.
+     * @pre Tutti i campi (Titolo, Autore, ISBN, Anno, Copie) devono essere pieni.
+     * @post Il nuovo libro viene aggiunto al database se l'ISBN non esiste già.
+     */
     @FXML private void handleAggiungiLibro() {
         if (logicController != null) {
             boolean successo = logicController.gestisciAggiuntaLibro(
@@ -146,6 +182,11 @@ public class ViewLibriController extends AbstractViewController{
         }
     }
     
+    /**
+     * @brief Rimuove un libro dal catalogo.
+     * @pre Il libro deve essere selezionato.
+     * @post Il libro viene rimosso solo se non ci sono copie in prestito.
+     */
     @FXML private void handleRimuoviLibro() {
         Libro l = tableLibri.getSelectionModel().getSelectedItem();
         if(l != null && logicController != null) {
@@ -155,6 +196,9 @@ public class ViewLibriController extends AbstractViewController{
         }
     }
 
+    /**
+     * @brief Sincronizza la tabella con i dati del sistema.
+     */
     @Override
     protected void aggiornaTabella() {
         if (logicController != null) {

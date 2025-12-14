@@ -11,6 +11,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @file ViewMainController.java
+ * @brief Controller del menu principale e della navigazione.
+ * @class ViewMainController
+ * Gestisce i bottoni laterali e carica le diverse schermate (Utenti, Libri, Prestiti)
+ * nell'area centrale della finestra.
+ */
 public class ViewMainController {
 
     @FXML private StackPane contentArea;
@@ -23,26 +30,49 @@ public class ViewMainController {
     private Map<String, Parent> viewCache = new HashMap<>();
     private Map<String, Object> controllerCache = new HashMap<>();
     
+    /**
+     * @brief Imposta il controller logico e avvia la schermata iniziale.
+     * @pre logicController != null.
+     * @post Viene mostrata la schermata "Gestione Utenti" come default.
+     * @param logicController Il controller logico dell'app.
+     */
     public void setLogicController(Controller logicController) {
         this.logicController = logicController;
-        showViewUtenti(); // Default view
+        showViewUtenti();
     }
 
+    /**
+     * @brief Mostra la schermata Utenti.
+     * @post Il bottone "Area Utenti" si illumina.
+     * @post La vista Utenti appare al centro.
+     */
     @FXML private void showViewUtenti() { 
         attivaBottone(btnNavUtenti); 
         loadView("ViewUtenti.fxml"); 
     }
     
+    /**
+     * @brief Mostra la schermata Libri.
+     * @post La vista Libri appare al centro.
+     */
     @FXML private void showViewLibri() { 
         attivaBottone(btnNavLibri); 
         loadView("ViewLibri.fxml"); 
     }
     
+    /**
+     * @brief Mostra la schermata Prestiti.
+     * @post La vista Prestiti appare al centro.
+     */
     @FXML private void showViewPrestiti() { 
         attivaBottone(btnNavPrestiti); 
         loadView("ViewPrestiti.fxml"); 
     }
 
+    /**
+     * @brief Cambia colore al bottone selezionato nel menu.
+     * @param bottoneAttivo Il bottone appena cliccato.
+     */
     private void attivaBottone(Button bottoneAttivo) {
         btnNavUtenti.getStyleClass().remove("selected");
         btnNavLibri.getStyleClass().remove("selected");
@@ -50,12 +80,17 @@ public class ViewMainController {
         bottoneAttivo.getStyleClass().add("selected");
     }
 
+    /**
+     * @brief Carica un file FXML e lo mette al centro della finestra.
+     * @pre Il file specificato deve esistere nella cartella resources.
+     * @post La nuova schermata è visibile.
+     * @param fxmlFileName Nome del file.
+     */
     private void loadView(String fxmlFileName) {
         try {
             Parent view = viewCache.get(fxmlFileName);
             Object fxmlController = controllerCache.get(fxmlFileName);
             
-            // Nota il percorso /fxml/
             if (view == null){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFileName));
                 view = loader.load();

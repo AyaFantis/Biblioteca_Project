@@ -15,6 +15,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * @file ViewUtentiController.java
+ * @brief Gestisce la schermata degli Utenti.
+ * @class ViewUtentiController
+ * Permette di inserire nuovi studenti, modificarli e vedere la lista
+ * di chi è iscritto. Mostra anche quali libri hanno in prestito.
+ */
 public class ViewUtentiController extends AbstractViewController {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -39,6 +46,11 @@ public class ViewUtentiController extends AbstractViewController {
     
     private List<Utente> listaCompletaUtenti = new ArrayList<>();
 
+    /**
+     * @brief Inizializza la tabella.
+     * @post Le colonne sono collegate ai dati dell'Utente.
+     * @post La colonna 'Libri' è configurata per mostrare l'elenco dei prestiti.
+     */
     @FXML
     public void initialize() {
         colMatricola.setCellValueFactory(new PropertyValueFactory<>("matricola"));
@@ -72,9 +84,11 @@ public class ViewUtentiController extends AbstractViewController {
     }
     
     /**
-     * @brief Gestisce il click del mouse sulla tabella.
-     * Recupera l'elemento selezionato e riempie i campi di testo.
-     * @param event L'evento del mouse.
+     * @brief Riempie i campi di testo quando clicchi su un utente in tabella.
+     * @pre L'utente deve aver cliccato una riga valida (non vuota).
+     * @post I campi mostrano i dati dell'utente selezionato.
+     * @post La matricola non è modificabile.
+     * @param event Il click del mouse.
      */
     @FXML
     private void handleSelezioneTabella(MouseEvent event) {
@@ -94,6 +108,11 @@ public class ViewUtentiController extends AbstractViewController {
         }
     }
 
+    /**
+     * @brief Svuota i campi per permettere un nuovo inserimento.
+     * @post Tutti i campi di testo sono vuoti.
+     * @post Il tasto "Registra" è attivo, "Modifica" è disabilitato.
+     */
     @FXML
     private void handlePulisciCampi() {
         txtMatricola.clear();
@@ -110,6 +129,12 @@ public class ViewUtentiController extends AbstractViewController {
         tableUtenti.getSelectionModel().clearSelection();
     }
 
+    /**
+     * @brief Filtra la tabella mentre scrivi nella barra di ricerca.
+     * Cerca per nome, cognome o matricola.
+     * @pre La lista completa degli utenti deve essere caricata.
+     * @post La tabella mostra solo gli utenti che corrispondono al filtro.
+     */
     @FXML
     private void handleRicerca() {
         String testoRicerca = txtSearch.getText();
@@ -135,6 +160,11 @@ public class ViewUtentiController extends AbstractViewController {
         tableUtenti.setItems(tabellaContainer);
     }
 
+    /**
+     * @brief Registri un nuovo utente.
+     * @pre I campi Nome, Cognome, Matricola ed Email devono essere compilati.
+     * @post Se l'operazione ha successo, i campi vengono puliti e la tabella aggiornata.
+     */
     @FXML private void handleAggiungiUtente() {
         if (logicController != null) {
             boolean successo = logicController.gestisciIscrizione(
@@ -153,6 +183,11 @@ public class ViewUtentiController extends AbstractViewController {
         }
     }
     
+    /**
+     * @brief Invia la richiesta di modifica utente.
+     * @pre Un utente deve essere stato selezionato dalla tabella.
+     * @post I dati aggiornati vengono salvati nel sistema.
+     */
     @FXML
     private void handleModificaUtente() {
         if (logicController != null) {
@@ -171,6 +206,11 @@ public class ViewUtentiController extends AbstractViewController {
         }
     }
     
+    /**
+     * @brief Cancella l'utente selezionato in tabella.
+     * @pre Un utente deve essere selezionato.
+     * @post L'utente viene rimosso se non ha prestiti pendenti.
+     */
     @FXML private void handleRimuoviUtente() {
         Utente u = tableUtenti.getSelectionModel().getSelectedItem();
         if (u != null && logicController != null) {
@@ -180,6 +220,10 @@ public class ViewUtentiController extends AbstractViewController {
         }
     }
 
+    /**
+     * @brief Aggiorna i dati della tabella.
+     * @post La lista locale viene sincronizzata con il database.
+     */
     @Override
     protected void aggiornaTabella() {
         if (logicController != null) {

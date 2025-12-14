@@ -8,9 +8,8 @@ Head First Design Patterns;Eric Freeman;9780596007;2004;5
 Refactoring;Martin Fowler;9780201485;1999;3
 Introduction to Algorithms;Cormen;9780262033;2009;5
 Domain-Driven Design;Eric Evans;9780321125;2003;2
-Sistemi Operativi;Silberschatz;9788820391;2019;1
+Sistemi Operativi;Silberschatz;9788820391;2019;2
 Reti di Calcolatori;Tanenbaum;9788891902;2018;2
-Architettura dei Calcolatori;Hennessy;9780128119;2017;3
 Il linguaggio C++;Stroustrup;9780321563;2013;4
 The Pragmatic Programmer;Andrew Hunt;9780201616;1999;2
 Ingegneria del Software;Sommerville;9788871926;2017;4

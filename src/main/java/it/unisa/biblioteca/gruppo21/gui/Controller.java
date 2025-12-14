@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unisa.biblioteca.gruppo21.gui;
 
 import it.unisa.biblioteca.gruppo21.entity.Libro;
@@ -61,7 +56,11 @@ public class Controller {
     
     /**
      * @brief Modifica un utente esistente.
-     * @return true se successo, false se errore.
+     * @param nome Nuovo nome.
+     * @param cognome Nuovo cognome.
+     * @param email Nuova email.
+     * @param matricola Matricola per identificare l'utente.
+     * @return true se successo.
      */
     public boolean gestisciModificaUtente(String nome, String cognome, String email, String matricola) {
         String esito = biblioteca.modificaUtente(nome, cognome, email, matricola);
@@ -71,9 +70,9 @@ public class Controller {
     
     /**
      * @brief Gestisce il flusso di rimozione utente.
-     * @pre matricola non dovrebbe essere null.
+     * @pre Matricola non deve essere null.
      * @post L'esito dell'operazione viene mostrato all'utente.
-     * @param matricola La matricola dell'utente.
+     * @param matricola La matricola dell'utente da cancellare.
      */
     public void gestisciRimozioneUtente(String matricola) {
         String esito = biblioteca.rimuoviUtente(matricola);
