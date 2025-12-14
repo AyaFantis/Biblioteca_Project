@@ -16,6 +16,8 @@ package it.unisa.biblioteca.gruppo21.gui;
  * @class AbstractViewController
  * Serve a non ripetere codice: gestisce il collegamento col Controller Logico
  * e obbliga le sottoclassi a definire come aggiornare le loro tabelle.
+ * @author Gruppo 21
+ * @version 1.0
  */
 public abstract class AbstractViewController {
     

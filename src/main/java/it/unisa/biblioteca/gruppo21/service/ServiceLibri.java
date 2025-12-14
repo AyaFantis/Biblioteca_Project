@@ -18,12 +18,16 @@ import java.util.List;
  * @file ServiceUtenti.java
  * @brief Gestisce tutte le operazioni relative agli utenti (Studenti/Docenti).
  * @class ServiceUtenti
- * * Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti
+ * Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti
  * e di rimuoverli, ma solo se non hanno libri ancora da restituire.
+ * @author Gruppo 21
+ * @version 1.0
  */
 public class ServiceLibri {
 
+    /** Riferimento all'archivio dei Libri. */
     private final ArchiveLibri arcLibri;
+    /** Riferimento all'archivio dei Prestiti. */
     private final ArchivePrestiti arcPrestiti;
     
     /**
@@ -77,7 +81,6 @@ public class ServiceLibri {
             return "Errore: Un libro con questo ISBN è già presente in catalogo.";
         }
 
-        // 3. Creazione e Persistenza
         Libro nuovoLibro = new Libro(titolo, autore, codiceISBN, annoPubblicazione, numeroCopieDisponibili);
         
         try {
@@ -98,7 +101,7 @@ public class ServiceLibri {
      * @return Messaggio di esito.
      */
    public String aggiornaCopie(String codiceISBN, int nuoveCopie) {
-        // 1. Validazione Input
+       
         if (codiceISBN == null || codiceISBN.length() == 0) {
             return "Errore: ISBN non specificato.";
         }
@@ -106,16 +109,13 @@ public class ServiceLibri {
             return "Errore: Il numero di copie non può essere negativo.";
         }
 
-        // 2. Verifica Esistenza
         Libro libro = arcLibri.cerca(codiceISBN);
         if (libro == null) {
             return "Errore: Nessun libro trovato con questo ISBN.";
         }
 
-        // 3. Aggiornamento e Persistenza
         try {
             libro.setNumeroCopieDisponibili(nuoveCopie);
-            // Ipotizziamo che salvaTutto renda persistenti le modifiche in memoria
             arcLibri.salvaTutto(); 
             return "Copie aggiornate con successo. Totale attuale: " + nuoveCopie;
         } catch (IOException e) {
@@ -182,34 +182,32 @@ public class ServiceLibri {
         List<Libro> tutti = getLista();
         List<Libro> risultati = new ArrayList<>();
 
-        // Se non viene passato nessun filtro, restituire tutto o niente.
         if ((titolo == null || titolo.isEmpty()) && 
             (autore == null || autore.isEmpty()) && 
             (isbn == null || isbn.isEmpty())) {
             return new ArrayList<>(tutti);
         }
 
-        for (Libro l : tutti) {
+         for(Libro l : tutti){
             boolean match = true;
-            //Filtro su ISBN (ricerca esatta o parziale)
             if (isbn != null && !isbn.isEmpty()) {
-                if (!l.getCodiceISBN().equals(isbn)) { // O contains, se parziale
+                if (!l.getCodiceISBN().equals(isbn)) { 
                     match = false;
                 }
             }
-            //Filtro su Titolo
+            
             if (match && titolo != null && !titolo.isEmpty()) {
                 if (!l.getTitolo().toLowerCase().contains(titolo.toLowerCase())) {
                     match = false;
                 }
             }
-            //Filtro su Autore 
+            
             if (match && autore != null && !autore.isEmpty()) {
                 if (!l.getAutore().toLowerCase().contains(autore.toLowerCase())) {
                     match = false;
                 }
             }
-            // Se il libro ha superato tutti i filtri attivi, lo aggiungiamo
+            
             if (match) {
                 risultati.add(l);
             }
