@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ViewMainController {
 
@@ -17,7 +19,10 @@ public class ViewMainController {
     @FXML private Button btnNavPrestiti;
 
     private Controller logicController;
-
+    
+    private Map<String, Parent> viewCache = new HashMap<>();
+    private Map<String, Object> controllerCache = new HashMap<>();
+    
     public void setLogicController(Controller logicController) {
         this.logicController = logicController;
         showViewUtenti(); // Default view
@@ -47,12 +52,21 @@ public class ViewMainController {
 
     private void loadView(String fxmlFileName) {
         try {
+            Parent view = viewCache.get(fxmlFileName);
+            Object fxmlController = controllerCache.get(fxmlFileName);
+            
             // Nota il percorso /fxml/
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFileName));
-            Parent view = loader.load();
-
-            // Collega i sotto-controller
-            Object fxmlController = loader.getController();
+            if (view == null){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFileName));
+                view = loader.load();
+                // Collega i sotto-controller
+                fxmlController = loader.getController();
+                
+                //Salvo per il fuuturo
+                viewCache.put(fxmlFileName, view);
+                fxmlController = loader.getController();
+            }
+            
             if (fxmlController instanceof ViewUtentiController) {
                 ((ViewUtentiController) fxmlController).setLogicController(this.logicController);
             } else if (fxmlController instanceof ViewLibriController) {

@@ -32,6 +32,7 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
         super("Prestiti.txt");   
         this.archivioUtenti = archivioUtenti;
         this.archivioLibri = archivioLibri;
+        this.inizializzaDati();
     }
     
     /**
@@ -63,6 +64,10 @@ public class ArchivePrestiti extends ArchiveAstratto<Prestito> {
      */
     @Override
     protected Prestito deserializza(String rigaLetta) {
+        if (archivioUtenti == null || archivioLibri == null) {
+            return null;
+        }
+        
         try {
             String[] parti = rigaLetta.split(";");
             if (parti.length != 4) return null;

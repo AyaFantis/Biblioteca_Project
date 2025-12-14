@@ -25,6 +25,7 @@ public class ArchiveUtenti extends ArchiveAstratto<Utente> {
      */
     public ArchiveUtenti(){
         super("Utenti.txt");
+        this.inizializzaDati();
     }
     
     /**

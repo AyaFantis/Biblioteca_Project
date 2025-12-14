@@ -5,8 +5,7 @@
  */
 package it.unisa.biblioteca.gruppo21;
 
-import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
-import it.unisa.biblioteca.gruppo21.archive.ArchiveUtenti;
+import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Utente;
 import it.unisa.biblioteca.gruppo21.service.ServiceUtenti;
 import java.io.File;
@@ -23,6 +22,7 @@ public class ServiceUtentiTest {
     private ServiceUtenti service;
     private ArchiveUtenti arcUtenti;
     private ArchivePrestiti arcPrestiti;
+    private ArchiveLibri arcLibri;
 
     private final String FILE_UTENTI = "Utenti.txt";
     private final String FILE_PRESTITI = "Prestiti.txt";
@@ -32,7 +32,7 @@ public class ServiceUtentiTest {
         new File(FILE_PRESTITI).delete();
 
         arcUtenti = new ArchiveUtenti();
-        arcPrestiti = new ArchivePrestiti();
+        arcPrestiti = new ArchivePrestiti(arcUtenti, arcLibri);
         service = new ServiceUtenti(arcUtenti, arcPrestiti);
     }
 

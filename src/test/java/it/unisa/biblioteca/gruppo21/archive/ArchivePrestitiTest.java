@@ -18,12 +18,26 @@ import org.junit.jupiter.api.Test;
  */
 public class ArchivePrestitiTest {
     
-    private final String FILE_NAME = "Prestiti.txt";
+    private final String FILE_PRESTITI = "Prestiti.txt";
+    private final String FILE_UTENTI = "Utenti.txt";
+    private final String FILE_LIBRI = "libri.txt";
+    
+    private ArchiveUtenti arcUtenti;
+    private ArchiveLibri arcLibri;
+    
+    private void pulisciFiles() {
+        new File(FILE_PRESTITI).delete();
+        new File(FILE_UTENTI).delete();
+        new File(FILE_LIBRI).delete();
+    }
 
     @Test
     public void testSerializza() {
-        new File("dummy.txt").delete();
-        ArchivePrestiti archive = new ArchivePrestiti();
+        pulisciFiles();
+        
+        arcUtenti = new ArchiveUtenti();
+        arcLibri = new ArchiveLibri();
+        ArchivePrestiti archive = new ArchivePrestiti(arcUtenti, arcLibri);
         
         Utente u = new Utente("M", "R", "email", "001");
         Libro l = new Libro("T", "A", "ISBN-1", 2020, 5);
@@ -37,13 +51,22 @@ public class ArchivePrestitiTest {
         
         assertEquals(atteso, risultato);
         
-        new File(FILE_NAME).delete();
+        pulisciFiles();
     }
 
     @Test
-    public void testDeserializza() {
-        new File(FILE_NAME).delete();
-        ArchivePrestiti archive = new ArchivePrestiti();
+    public void testDeserializza() throws IOException {
+        pulisciFiles();
+        
+        arcUtenti = new ArchiveUtenti();
+        Utente u = new Utente("Mario", "Rossi", "m.rossi@studenti.unisa.it", "001");
+        arcUtenti.aggiungi(u);
+        
+        arcLibri = new ArchiveLibri();
+        Libro l = new Libro("Titolo", "Autore", "ISBN-1", 2020, 5);
+        arcLibri.aggiungi(l);
+        
+        ArchivePrestiti archive = new ArchivePrestiti(arcUtenti, arcLibri);
         
         String riga = "001;ISBN-1;2025-12-31;ATTIVO";
         
@@ -55,21 +78,27 @@ public class ArchivePrestitiTest {
         assertEquals(LocalDate.of(2025, 12, 31), p.getDataRestituzione());
         assertEquals(StatoPrestito.ATTIVO, p.getStato());
         
-        new File(FILE_NAME).delete();
+        pulisciFiles();
     }
     
     @Test
     public void testPersistenzaCompleta() throws IOException {
-        new File(FILE_NAME).delete();
-        ArchivePrestiti sessione1 = new ArchivePrestiti();
+        pulisciFiles();
         
+        arcUtenti = new ArchiveUtenti();
         Utente u = new Utente("M", "R", "email", "999");
-        Libro l = new Libro("T", "A", "ISBN-999", 2020, 5);
-        Prestito p = new Prestito(u, l, LocalDate.now(), StatoPrestito.IN_RITARDO);
+        arcUtenti.aggiungi(u);
         
+        arcLibri = new ArchiveLibri();
+        Libro l = new Libro("T", "A", "ISBN-999", 2020, 5);
+        arcLibri.aggiungi(l);
+        
+        ArchivePrestiti sessione1 = new ArchivePrestiti(arcUtenti, arcLibri);
+        
+        Prestito p = new Prestito(u, l, LocalDate.now(), StatoPrestito.IN_RITARDO);
         sessione1.aggiungi(p);
         
-        ArchivePrestiti sessione2 = new ArchivePrestiti();
+        ArchivePrestiti sessione2 = new ArchivePrestiti(arcUtenti, arcLibri);
         
         assertEquals(1, sessione2.leggiTutti().size());
         
@@ -77,17 +106,23 @@ public class ArchivePrestitiTest {
         assertEquals("999", caricato.getUtente().getMatricola());
         assertEquals(StatoPrestito.IN_RITARDO, caricato.getStato());
         
-        new File(FILE_NAME).delete();
+        pulisciFiles();
     }
 
     @Test
     public void testDeserializzaCorrotta() {
-        ArchivePrestiti archive = new ArchivePrestiti();
+        pulisciFiles();
+        
+        arcUtenti = new ArchiveUtenti();
+        arcLibri = new ArchiveLibri();
+        ArchivePrestiti archive = new ArchivePrestiti(arcUtenti, arcLibri);
         
         assertNull(archive.deserializza("001;ISBN;DataSbagliata;ATTIVO"));
         
         assertNull(archive.deserializza("001;ISBN;2020-01-01;STATO_ASSURDO"));
         
         assertNull(archive.deserializza("001;ISBN"));
+        
+        pulisciFiles();
     }
 }

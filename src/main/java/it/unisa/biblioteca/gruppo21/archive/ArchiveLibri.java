@@ -25,6 +25,7 @@ public class ArchiveLibri extends ArchiveAstratto<Libro> {
      */
     public ArchiveLibri() {
         super("libri.txt");
+        this.inizializzaDati();
     }
 
 

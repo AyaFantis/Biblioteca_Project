@@ -5,8 +5,7 @@
  */
 package it.unisa.biblioteca.gruppo21;
 
-import it.unisa.biblioteca.gruppo21.archive.ArchiveLibri;
-import it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti;
+import it.unisa.biblioteca.gruppo21.archive.*;
 import it.unisa.biblioteca.gruppo21.entity.Libro;
 import it.unisa.biblioteca.gruppo21.service.ServiceLibri;
 import java.io.File;
@@ -26,6 +25,7 @@ public class ServiceLibriTest {
     private ServiceLibri service;
     private ArchiveLibri arcLibri;
     private ArchivePrestiti arcPrestiti;
+    private ArchiveUtenti arcUtenti;
     
     private final String FILE_LIBRI = "libri.txt";
     private final String FILE_PRESTITI = "Prestiti.txt";
@@ -37,7 +37,7 @@ public class ServiceLibriTest {
         
         // 2. Crea i nuovi oggetti
         arcLibri = new ArchiveLibri();
-        arcPrestiti = new ArchivePrestiti();
+        arcPrestiti = new ArchivePrestiti(arcUtenti, arcLibri);
         service = new ServiceLibri(arcLibri, arcPrestiti);
     }
 

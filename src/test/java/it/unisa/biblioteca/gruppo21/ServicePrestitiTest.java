@@ -38,7 +38,7 @@ public class ServicePrestitiTest {
         new File(FILE_LIBRI).delete();
         new File(FILE_UTENTI).delete();
 
-        arcPrestiti = new ArchivePrestiti();
+        arcPrestiti = new ArchivePrestiti(arcUtenti, arcLibri);
         arcLibri = new ArchiveLibri();
         arcUtenti = new ArchiveUtenti();
 
@@ -74,6 +74,9 @@ public class ServicePrestitiTest {
         Libro l = arcLibri.cerca("ISBN-HP");
         assertEquals(4, l.getNumeroCopieDisponibili(), "Le copie devono scendere da 5 a 4");
 
+        Utente u = arcUtenti.cerca("0512100001");
+        assertEquals(1, u.getNumeroLibriPossesso(), "L'utente deve avere 1 libro in possesso");
+        
         pulisci();
     }
 
@@ -100,7 +103,10 @@ public class ServicePrestitiTest {
 
         String esitoLibro = service.nuovoPrestito("0512100001", "ISBN-INESISTENTE", LocalDate.now());
         assertTrue(esitoLibro.startsWith("Errore"), "Libro inesistente deve dare errore");
-
+        
+        String esitoData = service.nuovoPrestito("0512100001", "ISBN-HP", LocalDate.now().minusDays(1));
+        assertTrue(esitoData.startsWith("Errore"), "Data nel passato deve dare errore");
+        
         pulisci();
     }
 
@@ -110,6 +116,9 @@ public class ServicePrestitiTest {
 
         service.nuovoPrestito("0512100001", "ISBN-HP", LocalDate.now());
         assertEquals(1, service.getLista().size());
+        
+        Utente u = arcUtenti.cerca("0512100001");
+        assertEquals(1, u.getNumeroLibriPossesso(), "Pre-condizione: utente ha 1 prestito");
 
         String esito = service.restituzione("0512100001", "ISBN-HP");
         
@@ -119,6 +128,7 @@ public class ServicePrestitiTest {
         Libro l = arcLibri.cerca("ISBN-HP");
         assertEquals(5, l.getNumeroCopieDisponibili(), "Le copie devono tornare a 5 dopo la restituzione");
 
+        assertEquals(0, u.getNumeroLibriPossesso(), "il contatore prestiti utente deve essere decrementato");
         pulisci();
     }
 }
