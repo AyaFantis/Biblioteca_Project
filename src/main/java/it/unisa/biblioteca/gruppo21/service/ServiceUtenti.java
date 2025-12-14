@@ -25,7 +25,9 @@ import java.util.List;
  */
 public class ServiceUtenti {
    
+   /** Riferimento all'archivio degli Utenti */
     private final ArchiveUtenti arcUtenti;
+   /** Riferimento all'archivio dei Prestiti */
     private final ArchivePrestiti arcPrestiti;
     
     /**
@@ -60,7 +62,6 @@ public class ServiceUtenti {
             return "Errore: Il cognome è obbligatorio.";
         }
         
-        // 2. Validazione Formale (Tramite classe Validatore)
         if (!Validatore.validaMatricola(matricola)) {
             return "Errore: Matricola non valida (deve essere composta da 10 cifre).";
         }
@@ -68,12 +69,10 @@ public class ServiceUtenti {
             return "Errore: Email non valida (formato errato o dominio non istituzionale).";
         }
 
-        // 3. Controllo Esistenza (Pre-condizione: matricola univoca)
         if (arcUtenti.cerca(matricola) != null) {
             return "Errore: Utente già registrato con questa matricola.";
         }
 
-        // 4. Creazione e Persistenza
         Utente nuovoUtente = new Utente(nome, cognome, email, matricola);
         
         try {
@@ -115,7 +114,6 @@ public class ServiceUtenti {
         }
 
         try {
-            // Aggiorniamo l'oggetto in memoria (che è lo stesso contenuto nella lista dell'archivio)
             utente.setNome(nuovoNome);
             utente.setCognome(nuovoCognome);
             utente.setEmail(nuovaEmail);
@@ -182,7 +180,7 @@ public class ServiceUtenti {
         List<Utente> risultati = new ArrayList<>();
         String filtroLower = filtro.toLowerCase();
         
-        for (Utente u : tutti){
+        for(Utente u : tutti){
         
             boolean isMatricola = u.getMatricola().contains(filtro);
             

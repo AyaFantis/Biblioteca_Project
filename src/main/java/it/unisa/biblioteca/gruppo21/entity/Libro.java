@@ -96,18 +96,38 @@ public class Libro implements Comparable<Libro>{
         numeroCopieDisponibili = newNum;
     }
     
+     /**
+     * @brief Restituisce una rappresentazione testuale del libro.
+     * Restituisce una stringa formattata come "Titolo - Autore".
+     * @return Una stringa contenente titolo e autore separati da un trattino.
+     */
     @Override
     public String toString(){
         
         return titolo + " - " + autore;
     }
-
+    
+    /**
+     * @brief Calcola il codice hash per l'oggetto Libro.
+     * Il calcolo si basa esclusivamente sul codice ISBN. 
+     * Questo garantisce che oggetti considerati uguali dal metodo equals() abbiano lo stesso hash code,
+     * rispettando il contratto generale di Java per l'uso nelle collezioni
+     * @return Intero rappresentante l'hash del codice ISBN
+     */
     @Override
     public int hashCode(){
     
         return codiceISBN.hashCode();
     }
     
+    /**
+     * @brief Verifica l'ugualglianza logica tra due libri.
+     * L'identità di un libro è determinata univocamente dal suo codice ISBN.
+     * Titolo, autore e altri campi vengono ignorati nel confronto poichè l'ISBN
+     * identifica univocamente l'edizione.
+     * * @param o L'oggetto con cui confrontare l'istanza corrente.
+     * @return true se l'oggetto passato è un Libro e ha lo stesso ISBN, falsa altrimenti.
+     */
     @Override 
     public boolean equals (Object o){
     
@@ -121,6 +141,14 @@ public class Libro implements Comparable<Libro>{
         return codiceISBN.equals(libro.codiceISBN);
     }
     
+    /**
+     * @brief Definisce l'ordinamento naturale degli oggetti Libro.
+     * L'ordinamento viene effettuati alfabetica per Titolo.
+     * In caso di titolo identici, viene utilizzato l'Autore come criteria secondario.
+     * * @param o Il libro da confrontare.
+     * @return Un numero negativo se questo libro precede l'altro, zero se sono uguali
+     * (per titolo e autore), un numero positivo se segue l'altro.
+     */
     @Override
     public int compareTo(Libro o) {
         int esitoTitolo = this.titolo.compareToIgnoreCase(o.getTitolo());

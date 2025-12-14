@@ -30,8 +30,11 @@ import java.time.LocalDate;
  */
 public class ServicePrestiti {
 
+    /** Riferimento all'archivio dei Prestiti */
     private final ArchivePrestiti archivioPrestiti;
+    /** Riferimento all'archivio dei Libri */
     private final ArchiveLibri archivioLibri;
+    /** Riferimento all'archivio degli Utenti */
     private final ArchiveUtenti archivioUtenti;
     
     /**
@@ -48,6 +51,8 @@ public class ServicePrestiti {
     
     /**
      * @brief Trova un utente sia per matricola che per cognome.
+     * @param identificativoInput La stringa di input.
+     * @return L'oggetto Utente se identificato univocamente, altrimenti null.
      */
     private Utente trovaUtente(String identificativoInput) {
         
@@ -121,7 +126,7 @@ public class ServicePrestiti {
      * @pre Deve esistere un prestito ATTIVO per la coppia utente, libro specificata.
      * @post Lo stato del prestito viene modificato da ATTIVO a RESTITUITO.
      * @post La data di restituzione effettiva viene registrata.
-     * @param matricola L'utente che identificativoUtente.
+     * @param identificativoUtente stringa che identifica l'utente.
      * @param codiceISBNLibro Il libro restituito.
      * @return Messaggio di esito.
      */

@@ -28,22 +28,18 @@ public class Validatore {
      * @return Esito della validazione.
      */
     public static boolean validaEmail(String email){
-        //Controllo base
             if (email == null){
             return false;
         }
-
-        //Controllo dominio 
+ 
         if (!email.endsWith(DOMINIO_RICHIESTO)) {
             return false;
         }
-
-        //Controllo lunghezza (deve esserci almeno un carattere prima della @)
+        
         if (email.length() <= DOMINIO_RICHIESTO.length()) {
             return false;
         }
 
-       // Scansione per Spazi
         for (int i = 0; i < email.length(); i++) {
             if (Character.isWhitespace(email.charAt(i))) {
                 return false;
@@ -64,12 +60,10 @@ public class Validatore {
      */
     
     public static boolean validaMatricola(String matricola){
-      // Controllo null e lunghezza esatta
         if (matricola == null || matricola.length() != 10) {
             return false;
         }
 
-         //Scansione caratteri
         for (int i = 0; i < matricola.length(); i++) {
             if (!Character.isDigit(matricola.charAt(i))) {
                 return false;
@@ -86,7 +80,6 @@ public class Validatore {
      * @return Esito della validazione.
      */
     public static boolean validaISBN(String isbn){
-      // Controllo base
         if (isbn == null) {
             return false;
         }
@@ -95,15 +88,12 @@ public class Validatore {
         for (int i = 0; i < isbn.length(); i++) {
             char c = isbn.charAt(i);
 
-            //Se è una cifra numerica standard
             if (Character.isDigit(c)) {
                 digitCount++;
             } 
-            //Se è un separatore ammesso (trattino o spazio)
             else if (c == '-' || Character.isWhitespace(c)) {
                 continue; 
             } 
-            //Qualsiasi altro carattere rende il codice invalido.
             else {
                 return false; 
             }

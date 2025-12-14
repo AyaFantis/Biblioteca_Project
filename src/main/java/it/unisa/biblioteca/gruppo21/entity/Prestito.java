@@ -99,6 +99,14 @@ public class Prestito implements Comparable<Prestito>{
         this.stato = nuovoStato;
     }
     
+    /**
+     * @brief Definisce l'ordinamento naturale degli oggetti Prestito.
+     * I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista.
+     * Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste.
+     * * @param altroPrestito Il prestito da confrontare con l'istanza corrente.
+     * @return Un valore negativo se la scadenza di questo prestito è antecedente a quella dell'altro,
+     * zero se le date coicidono, un valore positivo se è successiva.
+     */
     @Override
     public int compareTo(Prestito altroPrestito) {
         return this.dataRestituzione.compareTo(altroPrestito.dataRestituzione);
