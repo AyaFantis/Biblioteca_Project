@@ -1,0 +1,167 @@
+\doxysection{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller Class Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller}\index{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}}
+
+
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_abfa13210859d8fb36a496222d96f83fd}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Configura la tabella e la data di default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_ad380d361d47da3f0ee1cdef057e0f522}{set\+Logic\+Controller}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2}{logic\+Controller}})
+\begin{DoxyCompactList}\small\item\em Collega il \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller} Logico alla vista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a05ac55af1ed920605e245e4c5ac33ed1}{aggiorna\+Tabella}} ()
+\begin{DoxyCompactList}\small\item\em Ricarica lo storico dei movimenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a5295674a11d6a8b62be2994ad42959ac}{handle\+Effettua\+Prestito}} ()
+\begin{DoxyCompactList}\small\item\em Registra un prestito nel sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_aebf26da91049bb68464be2c5fa986c54}{handle\+Restituzione}} ()
+\begin{DoxyCompactList}\small\item\em Registra la restituzione di un libro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a065a8c5600509be308fac9cf49b4bc4d}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a065a8c5600509be308fac9cf49b4bc4d} 
+final Date\+Time\+Formatter {\bfseries formatter} = Date\+Time\+Formatter.\+of\+Pattern("{}dd/MM/yyyy"{})
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a7c99af9a7217ac7ce4db2b3573f1c5ed}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a7c99af9a7217ac7ce4db2b3573f1c5ed} 
+Text\+Field {\bfseries txt\+Identificativo\+Utente}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a596059e37b1a6b9ac481c9f8fbe993df}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a596059e37b1a6b9ac481c9f8fbe993df} 
+Text\+Field {\bfseries txt\+Isbn\+Prestito}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_abaf495bcacb97accb4080c6f8ebb63b2}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_abaf495bcacb97accb4080c6f8ebb63b2} 
+Date\+Picker {\bfseries picker\+Scadenza}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_aca9523cd70a74d20cd5fd0c3ad40eb4b}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_aca9523cd70a74d20cd5fd0c3ad40eb4b} 
+Table\+View$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ {\bfseries table\+Prestiti}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a21bb8a63bd100bbb73c55bcdae387b98}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a21bb8a63bd100bbb73c55bcdae387b98} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Matricola\+Utente}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a97b97e8ab815bcbc66dbe99e9665602d}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a97b97e8ab815bcbc66dbe99e9665602d} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Nome\+Utente}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a064d287570f1cf2b73bc6dacce7a1ad3}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a064d287570f1cf2b73bc6dacce7a1ad3} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Cognome\+Utente}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a1dfddf23252944a05778031dfd27d972}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a1dfddf23252944a05778031dfd27d972} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Isbn\+Libro}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_af8ad3b030ec202c069a7d45cd24f7bd7}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_af8ad3b030ec202c069a7d45cd24f7bd7} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Titolo\+Libro}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a3f2cfd65cc84b1469b1ab25a470700ac}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a3f2cfd65cc84b1469b1ab25a470700ac} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Data\+Scadenza}
+\item 
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a1e63ace24031c3ce1772a2af457a0cab}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a1e63ace24031c3ce1772a2af457a0cab} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}, String $>$ {\bfseries col\+Stato}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2}{logic\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce la registrazione dei prestiti e delle restituzioni. 
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a05ac55af1ed920605e245e4c5ac33ed1}\index{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}!aggiornaTabella@{aggiornaTabella}}
+\index{aggiornaTabella@{aggiornaTabella}!it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}}
+\doxysubsubsection{\texorpdfstring{aggiornaTabella()}{aggiornaTabella()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a05ac55af1ed920605e245e4c5ac33ed1} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller.\+aggiorna\+Tabella (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ricarica lo storico dei movimenti. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a5068656386e3e1bafe42c8aae48a6b6d}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a5295674a11d6a8b62be2994ad42959ac}\index{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}!handleEffettuaPrestito@{handleEffettuaPrestito}}
+\index{handleEffettuaPrestito@{handleEffettuaPrestito}!it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}}
+\doxysubsubsection{\texorpdfstring{handleEffettuaPrestito()}{handleEffettuaPrestito()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a5295674a11d6a8b62be2994ad42959ac} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller.\+handle\+Effettua\+Prestito (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Registra un prestito nel sistema. 
+
+\begin{DoxyPrecond}{Precondition}
+Il campo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} (matricola o cognome) non deve essere vuoto. 
+
+Il campo ISBN non deve essere vuoto. 
+
+La data di restituzione deve essere valida. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Se successo\+: un nuovo prestito viene creato, le copie scalate e la tabella aggiornata. 
+\end{DoxyPostcond}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_aebf26da91049bb68464be2c5fa986c54}\index{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}!handleRestituzione@{handleRestituzione}}
+\index{handleRestituzione@{handleRestituzione}!it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}}
+\doxysubsubsection{\texorpdfstring{handleRestituzione()}{handleRestituzione()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_aebf26da91049bb68464be2c5fa986c54} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller.\+handle\+Restituzione (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Registra la restituzione di un libro. 
+
+\begin{DoxyPrecond}{Precondition}
+Il campo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} e il campo ISBN devono identificare un prestito attivo. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Se successo\+: lo stato del prestito diventa RESTITUITO e le copie aumentano. 
+\end{DoxyPostcond}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_abfa13210859d8fb36a496222d96f83fd}\index{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}!initialize@{initialize}}
+\index{initialize@{initialize}!it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController@{it.unisa.biblioteca.gruppo21.gui.ViewPrestitiController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_abfa13210859d8fb36a496222d96f83fd} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller.\+initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Configura la tabella e la data di default. 
+
+\begin{DoxyPostcond}{Postcondition}
+Le colonne mostrano i dettagli di \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} e \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. 
+
+Il campo data è impostato automaticamente . 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/gruppo21/gui/\mbox{\hyperlink{_view_prestiti_controller_8java}{View\+Prestiti\+Controller.\+java}}\end{DoxyCompactItemize}

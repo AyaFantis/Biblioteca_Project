@@ -1,0 +1,9 @@
+<map id="it.unisa.biblioteca.gruppo21.gui.AbstractViewController" name="it.unisa.biblioteca.gruppo21.gui.AbstractViewController">
+<area shape="rect" id="Node000001" title=" " alt="" coords="223,5,416,112"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libri_controller.html" title=" " alt="" coords="5,171,199,683"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,125,212,162,201,178,197,176,208,158,244,120"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller.html" title=" " alt="" coords="223,235,416,619"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="320,124,322,236,317,234,319,129"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_utenti_controller.html" title=" " alt="" coords="440,160,634,693"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="397,120,431,158,443,177,437,177,427,162,397,125"/>
+</map>

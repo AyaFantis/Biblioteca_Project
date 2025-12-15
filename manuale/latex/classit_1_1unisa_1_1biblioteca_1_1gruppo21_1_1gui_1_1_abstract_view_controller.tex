@@ -1,0 +1,110 @@
+\doxysection{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller Class Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller}\index{it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}}
+
+
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_ad380d361d47da3f0ee1cdef057e0f522}{set\+Logic\+Controller}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2}{logic\+Controller}})
+\begin{DoxyCompactList}\small\item\em Collega il \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller} Logico alla vista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a5068656386e3e1bafe42c8aae48a6b6d}{aggiorna\+Tabella}} ()
+\begin{DoxyCompactList}\small\item\em Metodo che ogni vista deve implementare per garantire che, appena si apre una schermata, la tabella sia sempre aggiornata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2}{logic\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serve a non ripetere codice\+: gestisce il collegamento col \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller} Logico e obbliga le sottoclassi a definire come aggiornare le loro tabelle. \begin{DoxyAuthor}{Author}
+Gruppo 21 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a5068656386e3e1bafe42c8aae48a6b6d}\index{it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}!aggiornaTabella@{aggiornaTabella}}
+\index{aggiornaTabella@{aggiornaTabella}!it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}}
+\doxysubsubsection{\texorpdfstring{aggiornaTabella()}{aggiornaTabella()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a5068656386e3e1bafe42c8aae48a6b6d} 
+abstract void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller.\+aggiorna\+Tabella (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Metodo che ogni vista deve implementare per garantire che, appena si apre una schermata, la tabella sia sempre aggiornata. 
+
+\begin{DoxyPrecond}{Precondition}
+Il logic\+Controller deve essere stato impostato. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+La tabella della schermata mostra i dati aggiornati. 
+\end{DoxyPostcond}
+
+
+Reimplemented in \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libri_controller_ad3d82739105258850da18918b5e91abd}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Libri\+Controller}}, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller_a05ac55af1ed920605e245e4c5ac33ed1}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Prestiti\+Controller}}, and \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_utenti_controller_a24568f1edebd64d07b9c65998b6b0cf9}{it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+View\+Utenti\+Controller}}.
+
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_ad380d361d47da3f0ee1cdef057e0f522}\index{it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}!setLogicController@{setLogicController}}
+\index{setLogicController@{setLogicController}!it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}}
+\doxysubsubsection{\texorpdfstring{setLogicController()}{setLogicController()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_ad380d361d47da3f0ee1cdef057e0f522} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller.\+set\+Logic\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}}}]{logic\+Controller}{}\end{DoxyParamCaption})}
+
+
+
+Collega il \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller} Logico alla vista. 
+
+\begin{DoxyPrecond}{Precondition}
+Il parametro logic\+Controller non deve essere null. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+La variabile logic\+Controller è inizializzata. 
+
+Viene chiamato automaticamente \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a5068656386e3e1bafe42c8aae48a6b6d}{aggiorna\+Tabella()} per mostrare i dati. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em logic\+Controller} & Il controller principale. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2}\index{it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}!logicController@{logicController}}
+\index{logicController@{logicController}!it.unisa.biblioteca.gruppo21.gui.AbstractViewController@{it.unisa.biblioteca.gruppo21.gui.AbstractViewController}}
+\doxysubsubsection{\texorpdfstring{logicController}{logicController}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller_a45cc5775eece42b7801eb1348ec185b2} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}} it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Abstract\+View\+Controller.\+logic\+Controller\hspace{0.3cm}{\ttfamily [protected]}}
+
+Riferimento al controller che contiene la logica. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/gruppo21/gui/\mbox{\hyperlink{_abstract_view_controller_8java}{Abstract\+View\+Controller.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+<map id="src/main/java/it/unisa/biblioteca/gruppo21/gui/ViewPrestitiController.java" name="src/main/java/it/unisa/biblioteca/gruppo21/gui/ViewPrestitiController.java">
+<area shape="rect" id="Node000001" title="Controller delle operazioni di sportello." alt="" coords="879,5,1059,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,120,229,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,44,594,74,240,115,206,120,205,114,239,109,593,68,882,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="252,120,390,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="876,45,661,74,403,115,384,119,383,113,402,109,661,69,881,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="414,112,604,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="881,55,620,112,619,106,876,55"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="628,120,752,147"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="889,64,742,117,740,112,884,65"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="777,112,950,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="940,63,898,104,896,99,935,65"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="974,120,1177,147"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1001,62,1053,110,1048,109,999,67"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1201,112,1369,155"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1060,61,1206,107,1200,107,1059,66"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1393,112,1569,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1059,50,1381,111,1375,111,1059,55"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1593,120,1684,147"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1059,39,1297,61,1440,81,1582,109,1594,115,1589,114,1580,115,1439,87,1297,66,1059,44"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1708,112,1878,155"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1059,40,1338,65,1513,85,1695,112,1690,112,1512,90,1337,70,1059,45"/>
+</map>
