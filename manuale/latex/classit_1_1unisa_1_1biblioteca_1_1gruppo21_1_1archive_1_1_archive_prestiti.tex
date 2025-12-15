@@ -17,13 +17,13 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti__coll__graph}
+\includegraphics[width=350pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a9903354dc549ed8d33911c109423e262}{Archive\+Prestiti}} ()
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_ad1a16eb71b247209d595f8ced1b94cef}{Archive\+Prestiti}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_abf47ca770a59d65eac77a6cd2349373f}{archivio\+Utenti}}, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a2c415f864acb05add68ea838462e3e99}{archivio\+Libri}})
 \begin{DoxyCompactList}\small\item\em Costruttore dell\textquotesingle{}archivio prestiti. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a362c09a45f9dc5eb8a29a440b13bd67f}{cerca}} (String id)
 \begin{DoxyCompactList}\small\item\em Cerca un prestito per ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -32,20 +32,24 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive
 \item 
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a8de3d5f8e4213d5065375e5cab6975c0}{Archive\+Astratto}} (String filename)
 \begin{DoxyCompactList}\small\item\em Costruttore che inizializza l\textquotesingle{}archivio. Tenta di creare il file se non esiste e carica immediatamente i dati in memoria (Cache). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a99bb5a507e737f6dfd814ad66259419f}{inizializza\+Dati}} ()
+\begin{DoxyCompactList}\small\item\em Carica i dati dal file fisico alla struttura dati in memoria. Questo metodo gestisce internamente le eccezioni di Input/\+Output garantendo che il sistema non termini in modo anomalo in caso di errori di lettura. \end{DoxyCompactList}\item 
 abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_ac8a0b71d40af11743de530698a78ad3a}{cerca}} (String id)
-\begin{DoxyCompactList}\small\item\em Ricerca un elemento per ID. Poiché T è generico, non sappiamo come estrarre l\textquotesingle{}ID. Le sottoclassi devono implementarlo. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717}{aggiungi}} (T elemento)
-\begin{DoxyCompactList}\small\item\em Aggiunge un elemento alla cache e appende la riga al file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad}{cancella}} (T elemento)
-\begin{DoxyCompactList}\small\item\em Rimuove un elemento e riscrive l\textquotesingle{}intero file. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Ricerca un elemento per ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a6436799b88407022c503b38283dad717}{aggiungi}} (T elemento)  throws IOException
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo elemento al sistema. Aggiorna sia la lista in memoria che il file persistente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a26ede520b6e802edd7c46d70aeddfdad}{cancella}} (T elemento)  throws IOException
+\begin{DoxyCompactList}\small\item\em Rimuove un elemento esistente dal sistema. \end{DoxyCompactList}\item 
 List$<$ T $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a898a2d71184286ba3c49936ec1d2e6a1}{leggi\+Tutti}} ()
-\begin{DoxyCompactList}\small\item\em Restituisce una copia della lista caricata in memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Restituisce una copia della lista caricata in memoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a95377ef20517d42919bef79849d8d4a5}{salva\+Tutto}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a46ce0c6066760a1def398732667809b7}{serializza}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} p)
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8de1e197353490d07ae5b15943f4328b}{serializza}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} prestito\+Da\+Salvare)
 \begin{DoxyCompactList}\small\item\em Converte un oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} in una stringa CSV. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a351ade5856239616eefa998a5bb7582a}{deserializza}} (String riga)
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8f74a0b70946ea60a51d66d82948329f}{deserializza}} (String riga\+Letta)
 \begin{DoxyCompactList}\small\item\em Ricostruisce un oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} da una riga CSV. Crea oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} e \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro} contenenti solo gli ID (Matricola/\+ISBN). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ Prestito $>$}}}
 \begin{DoxyCompactItemize}
@@ -53,9 +57,14 @@ String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_
 abstract String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a5cb50e2d2a1da90033140be5f719da6d}{serializza}} (T t)
 \begin{DoxyCompactList}\small\item\em Converte un oggetto in una stringa per il salvataggio. Deve essere implementato dalle sottoclassi per definire il formato (es. CSV). \end{DoxyCompactList}\item 
 abstract T \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a826730cc6d2a67da94ee8bed8de2e852}{deserializza}} (String riga)
-\begin{DoxyCompactList}\small\item\em Ricostruisce un oggetto da una stringa letta dal file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto_a95377ef20517d42919bef79849d8d4a5}{salva\+Tutto}} ()  throws IOException 
-\begin{DoxyCompactList}\small\item\em Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ricostruisce un oggetto da una stringa letta dal file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_abf47ca770a59d65eac77a6cd2349373f}{archivio\+Utenti}}
+\item 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a2c415f864acb05add68ea838462e3e99}{archivio\+Libri}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto}{it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Astratto$<$ Prestito $>$}}}
 \begin{DoxyCompactItemize}
@@ -78,16 +87,23 @@ Gruppo 21
 \label{doc-constructors}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a9903354dc549ed8d33911c109423e262}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!ArchivePrestiti@{ArchivePrestiti}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_ad1a16eb71b247209d595f8ced1b94cef}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!ArchivePrestiti@{ArchivePrestiti}}
 \index{ArchivePrestiti@{ArchivePrestiti}!it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}}
 \doxysubsubsection{\texorpdfstring{ArchivePrestiti()}{ArchivePrestiti()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a9903354dc549ed8d33911c109423e262} 
-it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+Archive\+Prestiti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_ad1a16eb71b247209d595f8ced1b94cef} 
+it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+Archive\+Prestiti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}}}]{archivio\+Utenti}{, }\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}}}]{archivio\+Libri}{}\end{DoxyParamCaption})}
 
 
 
 Costruttore dell\textquotesingle{}archivio prestiti. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em archivio\+Utenti} & L\textquotesingle{}archivio per cercare gli utenti tramite matricola. \\
+\hline
+{\em archivio\+Libri} & L\textquotesingle{}archivio per cercare i libri tramite ISBN. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
 Viene inizializzato un archivio collegato al file fisico "{}\+Prestiti.\+txt"{}. 
 \end{DoxyPostcond}
@@ -111,11 +127,11 @@ Cerca un prestito per ID.
 {\em id} & Identificativo generico. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a351ade5856239616eefa998a5bb7582a}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!deserializza@{deserializza}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8f74a0b70946ea60a51d66d82948329f}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!deserializza@{deserializza}}
 \index{deserializza@{deserializza}!it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}}
 \doxysubsubsection{\texorpdfstring{deserializza()}{deserializza()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a351ade5856239616eefa998a5bb7582a} 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+deserializza (\begin{DoxyParamCaption}\item[{String}]{riga}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8f74a0b70946ea60a51d66d82948329f} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+deserializza (\begin{DoxyParamCaption}\item[{String}]{riga\+Letta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -131,17 +147,17 @@ Restituisce null se la data è malformata o lo stato non è valido.
 \end{DoxyPostcond}
 
 \begin{DoxyParams}{Parameters}
-{\em riga} & La stringa letta dal file. \\
+{\em riga\+Letta} & La stringa letta dal file. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 L\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} ricostruito. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a46ce0c6066760a1def398732667809b7}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!serializza@{serializza}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8de1e197353490d07ae5b15943f4328b}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!serializza@{serializza}}
 \index{serializza@{serializza}!it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}}
 \doxysubsubsection{\texorpdfstring{serializza()}{serializza()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a46ce0c6066760a1def398732667809b7} 
-String it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+serializza (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a8de1e197353490d07ae5b15943f4328b} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+serializza (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}}]{prestito\+Da\+Salvare}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -157,13 +173,30 @@ Restituisce una stringa nel formato\+: Matricola;ISBN;Data\+Restituzione;Stato.
 \end{DoxyPostcond}
 
 \begin{DoxyParams}{Parameters}
-{\em p} & L\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} da serializzare. \\
+{\em prestito\+Da\+Salvare} & L\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} da serializzare. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Stringa formattata per il file. 
 \end{DoxyReturn}
 
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a2c415f864acb05add68ea838462e3e99}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!archivioLibri@{archivioLibri}}
+\index{archivioLibri@{archivioLibri}!it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}}
+\doxysubsubsection{\texorpdfstring{archivioLibri}{archivioLibri}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_a2c415f864acb05add68ea838462e3e99} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+archivio\+Libri\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio Libri \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_abf47ca770a59d65eac77a6cd2349373f}\index{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}!archivioUtenti@{archivioUtenti}}
+\index{archivioUtenti@{archivioUtenti}!it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti@{it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti}}
+\doxysubsubsection{\texorpdfstring{archivioUtenti}{archivioUtenti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti_abf47ca770a59d65eac77a6cd2349373f} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} it.\+unisa.\+biblioteca.\+gruppo21.\+archive.\+Archive\+Prestiti.\+archivio\+Utenti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio Utenti 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,6 +1,12 @@
 var searchData=
 [
   ['annopubblicazione_0',['annoPubblicazione',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#a158ea935c9b0d96abb5e4b35f6a349a6',1,'it::unisa::biblioteca::gruppo21::entity::Libro']]],
-  ['attivo_1',['ATTIVO',['../enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html#a9f12e86418348989ecd0a1e3fab81ea7',1,'it::unisa::biblioteca::gruppo21::entity::Prestito::StatoPrestito']]],
-  ['autore_2',['autore',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#a94f9208987bc417fb6dc36b4d4da538f',1,'it::unisa::biblioteca::gruppo21::entity::Libro']]]
+  ['archiviolibri_1',['archivioLibri',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti.html#a2c415f864acb05add68ea838462e3e99',1,'it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti.archivioLibri'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html#a40320e55a888ae34d433cf3e46ed68d0',1,'it.unisa.biblioteca.gruppo21.service.ServicePrestiti.archivioLibri']]],
+  ['archivioprestiti_2',['archivioPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html#adad5cd242aa155759414c00349c8942c',1,'it::unisa::biblioteca::gruppo21::service::ServicePrestiti']]],
+  ['archivioutenti_3',['archivioUtenti',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti.html#abf47ca770a59d65eac77a6cd2349373f',1,'it.unisa.biblioteca.gruppo21.archive.ArchivePrestiti.archivioUtenti'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html#af04ac239dd052b3105301ba8fea012ad',1,'it.unisa.biblioteca.gruppo21.service.ServicePrestiti.archivioUtenti']]],
+  ['arclibri_4',['arcLibri',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html#a44a6752c5f477be63646c03e41f742db',1,'it::unisa::biblioteca::gruppo21::service::ServiceLibri']]],
+  ['arcprestiti_5',['arcPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html#aaf1f815f51fe94b9fcacdd7f48f289a1',1,'it.unisa.biblioteca.gruppo21.service.ServiceLibri.arcPrestiti'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html#a5bb2efbddc0fc977a92d757e5acc0886',1,'it.unisa.biblioteca.gruppo21.service.ServiceUtenti.arcPrestiti']]],
+  ['arcutenti_6',['arcUtenti',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html#abdea4d9caf833b891a74fdb0a02f868d',1,'it::unisa::biblioteca::gruppo21::service::ServiceUtenti']]],
+  ['attivo_7',['ATTIVO',['../enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html#a9f12e86418348989ecd0a1e3fab81ea7',1,'it::unisa::biblioteca::gruppo21::entity::Prestito::StatoPrestito']]],
+  ['autore_8',['autore',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#a94f9208987bc417fb6dc36b4d4da538f',1,'it::unisa::biblioteca::gruppo21::entity::Libro']]]
 ];

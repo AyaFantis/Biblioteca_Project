@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html" target="_top" xlink:title=" ">
+<g id="a_Node000000"><a xlink:href="enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html" target="_top" xlink:title="Enumerazione che definisce gli stati possibili del ciclo di vita di un prestito.">
 <polygon fill="white" stroke="#666666" points="163.75,-32 0,-32 0,0 163.75,0 163.75,-32"/>
 <text xml:space="preserve" text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">it.unisa.biblioteca.gruppo21.entity.</text>
-<text xml:space="preserve" text-anchor="middle" x="81.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Prestito</text>
+<text xml:space="preserve" text-anchor="middle" x="81.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Prestito.StatoPrestito</text>
 </a>
 </g>
 </g>

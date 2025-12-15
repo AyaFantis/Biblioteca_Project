@@ -95,26 +95,30 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_
 <div class="dynheader">
 Inheritance diagram for it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__inherit__graph.svg" width="230" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__inherit__graph.svg" width="230" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__coll__graph.svg" width="230" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto__coll__graph.svg" width="230" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8de3d5f8e4213d5065375e5cab6975c0" id="r_a8de3d5f8e4213d5065375e5cab6975c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8de3d5f8e4213d5065375e5cab6975c0">ArchiveAstratto</a> (String filename)</td></tr>
 <tr class="memdesc:a8de3d5f8e4213d5065375e5cab6975c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore che inizializza l'archivio. Tenta di creare il file se non esiste e carica immediatamente i dati in memoria (Cache).  <br /></td></tr>
+<tr class="memitem:a99bb5a507e737f6dfd814ad66259419f" id="r_a99bb5a507e737f6dfd814ad66259419f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99bb5a507e737f6dfd814ad66259419f">inizializzaDati</a> ()</td></tr>
+<tr class="memdesc:a99bb5a507e737f6dfd814ad66259419f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica i dati dal file fisico alla struttura dati in memoria. Questo metodo gestisce internamente le eccezioni di Input/Output garantendo che il sistema non termini in modo anomalo in caso di errori di lettura.  <br /></td></tr>
 <tr class="memitem:ac8a0b71d40af11743de530698a78ad3a" id="r_ac8a0b71d40af11743de530698a78ad3a"><td class="memItemLeft" align="right" valign="top">abstract T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8a0b71d40af11743de530698a78ad3a">cerca</a> (String id)</td></tr>
-<tr class="memdesc:ac8a0b71d40af11743de530698a78ad3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricerca un elemento per ID. Poiché T è generico, non sappiamo come estrarre l'ID. Le sottoclassi devono implementarlo.  <br /></td></tr>
-<tr class="memitem:a6436799b88407022c503b38283dad717" id="r_a6436799b88407022c503b38283dad717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6436799b88407022c503b38283dad717">aggiungi</a> (T elemento)</td></tr>
-<tr class="memdesc:a6436799b88407022c503b38283dad717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un elemento alla cache e appende la riga al file.  <br /></td></tr>
-<tr class="memitem:a26ede520b6e802edd7c46d70aeddfdad" id="r_a26ede520b6e802edd7c46d70aeddfdad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26ede520b6e802edd7c46d70aeddfdad">cancella</a> (T elemento)</td></tr>
-<tr class="memdesc:a26ede520b6e802edd7c46d70aeddfdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un elemento e riscrive l'intero file.  <br /></td></tr>
+<tr class="memdesc:ac8a0b71d40af11743de530698a78ad3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricerca un elemento per ID.  <br /></td></tr>
+<tr class="memitem:a6436799b88407022c503b38283dad717" id="r_a6436799b88407022c503b38283dad717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6436799b88407022c503b38283dad717">aggiungi</a> (T elemento)  throws IOException</td></tr>
+<tr class="memdesc:a6436799b88407022c503b38283dad717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nuovo elemento al sistema. Aggiorna sia la lista in memoria che il file persistente.  <br /></td></tr>
+<tr class="memitem:a26ede520b6e802edd7c46d70aeddfdad" id="r_a26ede520b6e802edd7c46d70aeddfdad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26ede520b6e802edd7c46d70aeddfdad">cancella</a> (T elemento)  throws IOException</td></tr>
+<tr class="memdesc:a26ede520b6e802edd7c46d70aeddfdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un elemento esistente dal sistema.  <br /></td></tr>
 <tr class="memitem:a898a2d71184286ba3c49936ec1d2e6a1" id="r_a898a2d71184286ba3c49936ec1d2e6a1"><td class="memItemLeft" align="right" valign="top">List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a898a2d71184286ba3c49936ec1d2e6a1">leggiTutti</a> ()</td></tr>
 <tr class="memdesc:a898a2d71184286ba3c49936ec1d2e6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una copia della lista caricata in memoria.  <br /></td></tr>
+<tr class="memitem:a95377ef20517d42919bef79849d8d4a5" id="r_a95377ef20517d42919bef79849d8d4a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95377ef20517d42919bef79849d8d4a5">salvaTutto</a> ()  throws IOException </td></tr>
+<tr class="memdesc:a95377ef20517d42919bef79849d8d4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -122,13 +126,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a5cb50e2d2a1da90033140be5f719da6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte un oggetto in una stringa per il salvataggio. Deve essere implementato dalle sottoclassi per definire il formato (es. CSV).  <br /></td></tr>
 <tr class="memitem:a826730cc6d2a67da94ee8bed8de2e852" id="r_a826730cc6d2a67da94ee8bed8de2e852"><td class="memItemLeft" align="right" valign="top">abstract T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826730cc6d2a67da94ee8bed8de2e852">deserializza</a> (String riga)</td></tr>
 <tr class="memdesc:a826730cc6d2a67da94ee8bed8de2e852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricostruisce un oggetto da una stringa letta dal file.  <br /></td></tr>
-<tr class="memitem:a95377ef20517d42919bef79849d8d4a5" id="r_a95377ef20517d42919bef79849d8d4a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95377ef20517d42919bef79849d8d4a5">salvaTutto</a> ()  throws IOException </td></tr>
-<tr class="memdesc:a95377ef20517d42919bef79849d8d4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a9759280567211b94342e97109c7bcbad" id="r_a9759280567211b94342e97109c7bcbad"><td class="memItemLeft" align="right" valign="top">List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9759280567211b94342e97109c7bcbad">cache</a></td></tr>
 <tr class="memitem:aa1a300da7c75e6230d06cf3131f842a9" id="r_aa1a300da7c75e6230d06cf3131f842a9"><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1a300da7c75e6230d06cf3131f842a9">file</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3b1cb3e7a777167f4aae2a0b9afa9570" id="r_a3b1cb3e7a777167f4aae2a0b9afa9570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b1cb3e7a777167f4aae2a0b9afa9570">caricaDaFile</a> ()  throws IOException</td></tr>
+<tr class="memdesc:a3b1cb3e7a777167f4aae2a0b9afa9570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legge il file fisico e popola la cache.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Questa classe fornisce l'implementazione comune per le operazioni di I/O (Input/Output), gestendo una cache in memoria per ottimizzare le letture e sincronizzando le scritture su file. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -137,6 +144,8 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8de3d5f8e4213d5065375e5cab6975c0" name="a8de3d5f8e4213d5065375e5cab6975c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8de3d5f8e4213d5065375e5cab6975c0">&#9670;&#160;</a></span>ArchiveAstratto()</h2>
@@ -174,16 +183,26 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto</a>&lt; T &gt;.aggiungi </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>elemento</em></span></td><td>)</td>
-          <td></td>
+          <td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Aggiunge un elemento alla cache e appende la riga al file. </p>
+<p>Aggiunge un nuovo elemento al sistema. Aggiorna sia la lista in memoria che il file persistente. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>elemento != null. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>La cache contiene l'elemento. </dd>
-<dd>
-Il file contiene la nuova riga serializzata. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>La cache contiene il nuovo elemento. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elemento</td><td>L'oggetto da aggiungere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia.html#a0c443ee8a7868bf401b09dc56d2a0dd4">it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia&lt; T &gt;</a>.</p>
 
@@ -199,20 +218,63 @@ Il file contiene la nuova riga serializzata. </dd></dl>
           <td class="memname">void <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto</a>&lt; T &gt;.cancella </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>elemento</em></span></td><td>)</td>
-          <td></td>
+          <td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rimuove un elemento e riscrive l'intero file. </p>
+<p>Rimuove un elemento esistente dal sistema. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>L'elemento deve esistere nella cache. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>L'elemento viene rimosso dalla lista in memoria. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">elemento</td><td>L'oggetto da rimuovere. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia.html#af06c80c815b146bf00c91410f29373a5">it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a3b1cb3e7a777167f4aae2a0b9afa9570" name="a3b1cb3e7a777167f4aae2a0b9afa9570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1cb3e7a777167f4aae2a0b9afa9570">&#9670;&#160;</a></span>caricaDaFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto</a>&lt; T &gt;.caricaDaFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws IOException</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legge il file fisico e popola la cache. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il file deve esistere. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>La cache contiene gli oggetti deserializzati correttamente. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -239,7 +301,7 @@ Il file contiene la nuova riga serializzata. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Ricerca un elemento per ID. Poiché T è generico, non sappiamo come estrarre l'ID. Le sottoclassi devono implementarlo. </p>
+<p>Ricerca un elemento per ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Identificativo da cercare. </td></tr>
@@ -286,6 +348,27 @@ Il file contiene la nuova riga serializzata. </dd></dl>
 
 </div>
 </div>
+<a id="a99bb5a507e737f6dfd814ad66259419f" name="a99bb5a507e737f6dfd814ad66259419f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99bb5a507e737f6dfd814ad66259419f">&#9670;&#160;</a></span>inizializzaDati()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto</a>&lt; T &gt;.inizializzaDati </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica i dati dal file fisico alla struttura dati in memoria. Questo metodo gestisce internamente le eccezioni di Input/Output garantendo che il sistema non termini in modo anomalo in caso di errori di lettura. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>L'oggetto File deve essere stato inizializzato nel costruttore. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Se il file è valido, la lista interna (cache) viene popolata con i dati letti. </dd></dl>
+
+</div>
+</div>
 <a id="a898a2d71184286ba3c49936ec1d2e6a1" name="a898a2d71184286ba3c49936ec1d2e6a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a898a2d71184286ba3c49936ec1d2e6a1">&#9670;&#160;</a></span>leggiTutti()</h2>
 
@@ -302,7 +385,7 @@ Il file contiene la nuova riga serializzata. </dd></dl>
 </div><div class="memdoc">
 
 <p>Restituisce una copia della lista caricata in memoria. </p>
-<dl class="section return"><dt>Returns</dt><dd>Una nuova ArrayList contenente gli elementi (per proteggere la cache interna). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una nuova istanza di ArrayList contenente tutti gli elementi caricati(per proteggere la cache interna). </dd></dl>
 
 <p>Implements <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia.html#a9042a19d773f983f56e60d7888f07a82">it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia&lt; T &gt;</a>.</p>
 
@@ -313,9 +396,6 @@ Il file contiene la nuova riga serializzata. </dd></dl>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto</a>&lt; T &gt;.salvaTutto </td>
@@ -324,17 +404,12 @@ Il file contiene la nuova riga serializzata. </dd></dl>
           <td> throws IOException</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Metodo di utilità per riscrivere completamente il file dalla cache. Usato durante le operazioni di cancellazione o modifica. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">java.io.IOException</td><td></td></tr>
+    <tr><td class="paramname">IOException</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -395,7 +470,7 @@ Il file contiene la nuova riga serializzata. </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Cache in memoria per accesso rapido ai dati senza leggere il disco continuamente. </p>
+<p>Lista in memoria per l'accesso rapido ai dati. </p>
 
 </div>
 </div>
@@ -418,7 +493,7 @@ Il file contiene la nuova riga serializzata. </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Riferimento al file fisico su disco. </p>
+<p>Riferimento al file fisico. </p>
 
 </div>
 </div>

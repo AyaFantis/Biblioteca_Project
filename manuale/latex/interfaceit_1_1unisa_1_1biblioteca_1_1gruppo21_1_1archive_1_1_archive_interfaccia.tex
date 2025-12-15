@@ -34,7 +34,7 @@ List$<$ T $>$ \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_
 
 
 \doxysubsection{Detailed Description}
-Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) su un archivio dati, indipendentemente dal supporto di memorizzazione (File, Database, Memoria). 
+Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) su un archivio dati. 
 \begin{DoxyParams}{Parameters}
 {\em $<$\+T$>$} & Il tipo di entità gestita dall\textquotesingle{}archivio. \\
 \hline
@@ -165,9 +165,7 @@ Recupera tutti gli elementi presenti nell\textquotesingle{}archivio.
 Nessuna pre-\/condizione specifica (l\textquotesingle{}archivio può essere vuoto). 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-Restituisce una List contenente tutti gli oggetti di tipo T salvati. 
-
-La lista restituita non è mai null (se l\textquotesingle{}archivio è vuoto, restituisce una lista vuota). 
+Restituisce una List non nulla contenente tutti gli oggetti di tipo T salvati. 
 \end{DoxyPostcond}
 \begin{DoxyReturn}{Returns}
 Una lista di oggetti T. 

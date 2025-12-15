@@ -95,49 +95,48 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
 <div class="dynheader">
 Collaboration diagram for it.unisa.biblioteca.gruppo21.service.Biblioteca:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca__coll__graph.svg" width="763" height="1164"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca__coll__graph.svg" width="778" height="1599"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa66e42c90e7ad657467db3724f9a12ed" id="r_aa66e42c90e7ad657467db3724f9a12ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa66e42c90e7ad657467db3724f9a12ed">Biblioteca</a> ()</td></tr>
-<tr class="memdesc:aa66e42c90e7ad657467db3724f9a12ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html">Biblioteca</a>. Inizializza gli archivi, collegando le dipendenze.  <br /></td></tr>
+<tr class="memdesc:aa66e42c90e7ad657467db3724f9a12ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html">Biblioteca</a>. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l'inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria.  <br /></td></tr>
 <tr class="memitem:a95906d56abf64c0a04f8820b145157da" id="r_a95906d56abf64c0a04f8820b145157da"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95906d56abf64c0a04f8820b145157da">iscriviUtente</a> (String nome, String cognome, String matricola, String email)</td></tr>
-<tr class="memdesc:a95906d56abf64c0a04f8820b145157da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
+<tr class="memdesc:a95906d56abf64c0a04f8820b145157da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. Vengono effettiati controlli sulla validità della matricola e dell'email.  <br /></td></tr>
 <tr class="memitem:ac97c22dfbd3e906add74796657d61180" id="r_ac97c22dfbd3e906add74796657d61180"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97c22dfbd3e906add74796657d61180">modificaUtente</a> (String nuovoNome, String nuovoCognome, String nuovaEmail, String matricola)</td></tr>
 <tr class="memdesc:ac97c22dfbd3e906add74796657d61180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
 <tr class="memitem:a33cf0aa9c50f39be468db4e55dcb67cd" id="r_a33cf0aa9c50f39be468db4e55dcb67cd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33cf0aa9c50f39be468db4e55dcb67cd">rimuoviUtente</a> (String matricola)</td></tr>
 <tr class="memdesc:a33cf0aa9c50f39be468db4e55dcb67cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un utente dal sistema. L'operazione viene rifiutata se l'utente ha ancora prestiti attivi. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
 <tr class="memitem:aab32f3238782c006969697c755426aa3" id="r_aab32f3238782c006969697c755426aa3"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab32f3238782c006969697c755426aa3">getElencoUtenti</a> ()</td></tr>
 <tr class="memdesc:aab32f3238782c006969697c755426aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera l'elenco completo degli utenti registrati. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
-<tr class="memitem:ae6ed2bc3a7112b87d9c3e5d395a0b516" id="r_ae6ed2bc3a7112b87d9c3e5d395a0b516"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6ed2bc3a7112b87d9c3e5d395a0b516">cercaUtenti</a> (String nome, String cognome, String matricola)</td></tr>
-<tr class="memdesc:ae6ed2bc3a7112b87d9c3e5d395a0b516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca utenti in base a criteri anagrafici. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
+<tr class="memitem:adfffa09122b9b43c6cee0ee2cab62e3b" id="r_adfffa09122b9b43c6cee0ee2cab62e3b"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfffa09122b9b43c6cee0ee2cab62e3b">cercaUtente</a> (String cognome, String matricola)</td></tr>
+<tr class="memdesc:adfffa09122b9b43c6cee0ee2cab62e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca utenti in base a criteri anagrafici. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
 <tr class="memitem:a51c5bfd6d2062819c47fa76d11865e47" id="r_a51c5bfd6d2062819c47fa76d11865e47"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51c5bfd6d2062819c47fa76d11865e47">aggiungiLibro</a> (String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili)</td></tr>
 <tr class="memdesc:a51c5bfd6d2062819c47fa76d11865e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nuovo libro al catalogo. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
+<tr class="memitem:a73176a2e137280439980e78a400a6fb0" id="r_a73176a2e137280439980e78a400a6fb0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73176a2e137280439980e78a400a6fb0">aggiornaCopieLibro</a> (String isbn, int nuoveCopie)</td></tr>
+<tr class="memdesc:a73176a2e137280439980e78a400a6fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna il numero di copie disponibili di un libro.  <br /></td></tr>
 <tr class="memitem:a9f7ecba2c29c27e8a3d60064f18dc902" id="r_a9f7ecba2c29c27e8a3d60064f18dc902"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f7ecba2c29c27e8a3d60064f18dc902">rimuoviLibro</a> (String codiceISBN)</td></tr>
 <tr class="memdesc:a9f7ecba2c29c27e8a3d60064f18dc902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un libro dal catalogo. Operazione consentita solo se non ci sono copie in prestito. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
 <tr class="memitem:aea13ef39a6726460f6241f15938e1a1c" id="r_aea13ef39a6726460f6241f15938e1a1c"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea13ef39a6726460f6241f15938e1a1c">getElencoLibri</a> ()</td></tr>
 <tr class="memdesc:aea13ef39a6726460f6241f15938e1a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera l'elenco completo dei libri nel catalogo. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
-<tr class="memitem:a345ebad9bffe937587f3798a4233845a" id="r_a345ebad9bffe937587f3798a4233845a"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a345ebad9bffe937587f3798a4233845a">cercaLibri</a> (String titolo, String autore, String codiceISBN)</td></tr>
-<tr class="memdesc:a345ebad9bffe937587f3798a4233845a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca libri per titolo, autore o ISBN. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
-<tr class="memitem:a8983ab85efa09925972f8bdd061319b9" id="r_a8983ab85efa09925972f8bdd061319b9"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8983ab85efa09925972f8bdd061319b9">effettuaPrestito</a> (String matricola, String codiceISBN)</td></tr>
-<tr class="memdesc:a8983ab85efa09925972f8bdd061319b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
+<tr class="memitem:a1dd86ef4e009f4fb8461e1b130c952f4" id="r_a1dd86ef4e009f4fb8461e1b130c952f4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd86ef4e009f4fb8461e1b130c952f4">cercaLibro</a> (String titolo, String autore, String codiceISBN)</td></tr>
+<tr class="memdesc:a1dd86ef4e009f4fb8461e1b130c952f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca libri per titolo, autore o ISBN. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
+<tr class="memitem:aa1e70ee8e9c07d3736c009bfc3272cdb" id="r_aa1e70ee8e9c07d3736c009bfc3272cdb"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1e70ee8e9c07d3736c009bfc3272cdb">effettuaPrestito</a> (String identificativo, String codiceISBN, LocalDate dataScadenza)</td></tr>
+<tr class="memdesc:aa1e70ee8e9c07d3736c009bfc3272cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
 <tr class="memitem:a79b71f182769bdd35ee83deb80a9f8f5" id="r_a79b71f182769bdd35ee83deb80a9f8f5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79b71f182769bdd35ee83deb80a9f8f5">restituisciLibro</a> (String matricola, String codiceISBN)</td></tr>
-<tr class="memdesc:a79b71f182769bdd35ee83deb80a9f8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra la restituzione di un libro. Libera una copia del libro. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
+<tr class="memdesc:a79b71f182769bdd35ee83deb80a9f8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
 <tr class="memitem:a2b2fd662d11d6460109f791541fda36e" id="r_a2b2fd662d11d6460109f791541fda36e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2fd662d11d6460109f791541fda36e">getStoricoPrestiti</a> ()</td></tr>
-<tr class="memdesc:a2b2fd662d11d6460109f791541fda36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
+<tr class="memdesc:a2b2fd662d11d6460109f791541fda36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera lo storico completo di tutti i prestiti registrati. *Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. *.  <br /></td></tr>
 <tr class="memitem:a0673e368c3c4c206cf831f8c1be93e80" id="r_a0673e368c3c4c206cf831f8c1be93e80"><td class="memItemLeft" align="right" valign="top"><a id="a0673e368c3c4c206cf831f8c1be93e80" name="a0673e368c3c4c206cf831f8c1be93e80"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>controllaRitardi</b> ()</td></tr>
-<tr class="memdesc:a0673e368c3c4c206cf831f8c1be93e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN_RITARDO se la data di scadenza è superata. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. Può innescare l'invio di notifiche. <br /></td></tr>
+<tr class="memdesc:a0673e368c3c4c206cf831f8c1be93e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN_RITARDO se la data di scadenza è superata. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4d843a739c3cdde91b3c3374c4f211bf" id="r_a4d843a739c3cdde91b3c3374c4f211bf"><td class="memItemLeft" align="right" valign="top"><a id="a4d843a739c3cdde91b3c3374c4f211bf" name="a4d843a739c3cdde91b3c3374c4f211bf"></a>
-final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>&#160;</td><td class="memItemRight" valign="bottom"><b>serviceUtenti</b></td></tr>
-<tr class="memitem:a5d0670ffe10615d54f047162d80aa0c4" id="r_a5d0670ffe10615d54f047162d80aa0c4"><td class="memItemLeft" align="right" valign="top"><a id="a5d0670ffe10615d54f047162d80aa0c4" name="a5d0670ffe10615d54f047162d80aa0c4"></a>
-final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>&#160;</td><td class="memItemRight" valign="bottom"><b>serviceLibri</b></td></tr>
-<tr class="memitem:abac8e3e1a5452d8350bd61cff5d81cc8" id="r_abac8e3e1a5452d8350bd61cff5d81cc8"><td class="memItemLeft" align="right" valign="top"><a id="abac8e3e1a5452d8350bd61cff5d81cc8" name="abac8e3e1a5452d8350bd61cff5d81cc8"></a>
-final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>&#160;</td><td class="memItemRight" valign="bottom"><b>servicePrestiti</b></td></tr>
+<tr class="memitem:a4d843a739c3cdde91b3c3374c4f211bf" id="r_a4d843a739c3cdde91b3c3374c4f211bf"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d843a739c3cdde91b3c3374c4f211bf">serviceUtenti</a></td></tr>
+<tr class="memitem:a5d0670ffe10615d54f047162d80aa0c4" id="r_a5d0670ffe10615d54f047162d80aa0c4"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d0670ffe10615d54f047162d80aa0c4">serviceLibri</a></td></tr>
+<tr class="memitem:abac8e3e1a5452d8350bd61cff5d81cc8" id="r_abac8e3e1a5452d8350bd61cff5d81cc8"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abac8e3e1a5452d8350bd61cff5d81cc8">servicePrestiti</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Questa classe agisce come un "pannello di controllo" unificato nascondendo la complessità dei sottosistemi (Archivi e Servizi) al livello superiore (Controller/ViewLibreria). Gestisce il ciclo di vita (creazione e iniezione delle dipendenze) dei componenti di backend. </p><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
@@ -158,12 +157,43 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
       </table>
 </div><div class="memdoc">
 
-<p>Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html">Biblioteca</a>. Inizializza gli archivi, collegando le dipendenze. </p>
+<p>Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html">Biblioteca</a>. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l'inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria. </p>
 <dl class="section post"><dt>Postcondition</dt><dd>Il sistema è pronto per elaborare richieste. </dd></dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a73176a2e137280439980e78a400a6fb0" name="a73176a2e137280439980e78a400a6fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73176a2e137280439980e78a400a6fb0">&#9670;&#160;</a></span>aggiornaCopieLibro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.gruppo21.service.Biblioteca.aggiornaCopieLibro </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>isbn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nuoveCopie</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiorna il numero di copie disponibili di un libro. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isbn</td><td>Codice ISBN del libro. </td></tr>
+    <tr><td class="paramname">nuoveCopie</td><td>Nuovo numero totale di copie. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenente </dd></dl>
+
+</div>
+</div>
 <a id="a51c5bfd6d2062819c47fa76d11865e47" name="a51c5bfd6d2062819c47fa76d11865e47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51c5bfd6d2062819c47fa76d11865e47">&#9670;&#160;</a></span>aggiungiLibro()</h2>
 
@@ -209,18 +239,18 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio che descrive l'esito dell'operazione. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa che descrive l'esito dell'operazione. </dd></dl>
 
 </div>
 </div>
-<a id="a345ebad9bffe937587f3798a4233845a" name="a345ebad9bffe937587f3798a4233845a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a345ebad9bffe937587f3798a4233845a">&#9670;&#160;</a></span>cercaLibri()</h2>
+<a id="a1dd86ef4e009f4fb8461e1b130c952f4" name="a1dd86ef4e009f4fb8461e1b130c952f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd86ef4e009f4fb8461e1b130c952f4">&#9670;&#160;</a></span>cercaLibro()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.gruppo21.service.Biblioteca.cercaLibri </td>
+          <td class="memname">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.gruppo21.service.Biblioteca.cercaLibro </td>
           <td>(</td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>titolo</em></span>, </td>
         </tr>
@@ -250,20 +280,15 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
 
 </div>
 </div>
-<a id="ae6ed2bc3a7112b87d9c3e5d395a0b516" name="ae6ed2bc3a7112b87d9c3e5d395a0b516"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ed2bc3a7112b87d9c3e5d395a0b516">&#9670;&#160;</a></span>cercaUtenti()</h2>
+<a id="adfffa09122b9b43c6cee0ee2cab62e3b" name="adfffa09122b9b43c6cee0ee2cab62e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfffa09122b9b43c6cee0ee2cab62e3b">&#9670;&#160;</a></span>cercaUtente()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt; it.unisa.biblioteca.gruppo21.service.Biblioteca.cercaUtenti </td>
+          <td class="memname">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt; it.unisa.biblioteca.gruppo21.service.Biblioteca.cercaUtente </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>cognome</em></span>, </td>
         </tr>
         <tr>
@@ -277,7 +302,6 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
 <p>Cerca utenti in base a criteri anagrafici. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Filtro sul nome (opzionale). </td></tr>
     <tr><td class="paramname">cognome</td><td>Filtro sul cognome (opzionale). </td></tr>
     <tr><td class="paramname">matricola</td><td>Filtro sulla matricola (opzionale). </td></tr>
   </table>
@@ -287,8 +311,8 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
 
 </div>
 </div>
-<a id="a8983ab85efa09925972f8bdd061319b9" name="a8983ab85efa09925972f8bdd061319b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8983ab85efa09925972f8bdd061319b9">&#9670;&#160;</a></span>effettuaPrestito()</h2>
+<a id="aa1e70ee8e9c07d3736c009bfc3272cdb" name="aa1e70ee8e9c07d3736c009bfc3272cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e70ee8e9c07d3736c009bfc3272cdb">&#9670;&#160;</a></span>effettuaPrestito()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,12 +320,17 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
         <tr>
           <td class="memname">String it.unisa.biblioteca.gruppo21.service.Biblioteca.effettuaPrestito </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>matricola</em></span>, </td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>identificativo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>codiceISBN</em></span>&#160;)</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>codiceISBN</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDate</td>          <td class="paramname"><span class="paramname"><em>dataScadenza</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -309,12 +338,13 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
 <p>Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">matricola</td><td>La matricola dell'utente richiedente. </td></tr>
+    <tr><td class="paramname">identificativo</td><td>Nome o cognome dell'utente richiedente. </td></tr>
     <tr><td class="paramname">codiceISBN</td><td>L'ISBN del libro richiesto. </td></tr>
+    <tr><td class="paramname">dataScadenza</td><td>Data di restituzione. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio di esito. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenete l'esito (Successo o Errore). </dd></dl>
 
 </div>
 </div>
@@ -373,7 +403,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
       </table>
 </div><div class="memdoc">
 
-<p>Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
+<p>Recupera lo storico completo di tutti i prestiti registrati. *Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. *. </p>
 <dl class="section return"><dt>Returns</dt><dd>Lista di oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>. </dd></dl>
 
 </div>
@@ -407,7 +437,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
       </table>
 </div><div class="memdoc">
 
-<p>Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. </p>
+<p>Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. Vengono effettiati controlli sulla validità della matricola e dell'email. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nome dell'utente. </td></tr>
@@ -417,7 +447,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio di esito. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenete un messaggio di successo o la descrizione dell'errore </dd></dl>
 
 </div>
 </div>
@@ -460,7 +490,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio di esito. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenete l'esito dell'operazione </dd></dl>
 
 </div>
 </div>
@@ -483,7 +513,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
       </table>
 </div><div class="memdoc">
 
-<p>Registra la restituzione di un libro. Libera una copia del libro. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
+<p>Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matricola</td><td>La matricola dell'utente che restituisce. </td></tr>
@@ -491,7 +521,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio di esito. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenete l'esito dell'operazione </dd></dl>
 
 </div>
 </div>
@@ -517,7 +547,7 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio di esito. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa contenete l'esito dell'operazione. </dd></dl>
 
 </div>
 </div>
@@ -543,7 +573,77 @@ final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Messaggio che descrive l'esito dell'operazione. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa che descrive l'esito dell'operazione. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a5d0670ffe10615d54f047162d80aa0c4" name="a5d0670ffe10615d54f047162d80aa0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0670ffe10615d54f047162d80aa0c4">&#9670;&#160;</a></span>serviceLibri</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a> it.unisa.biblioteca.gruppo21.service.Biblioteca.serviceLibri</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Riferimento al service per la gestione dei libri </p>
+
+</div>
+</div>
+<a id="abac8e3e1a5452d8350bd61cff5d81cc8" name="abac8e3e1a5452d8350bd61cff5d81cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac8e3e1a5452d8350bd61cff5d81cc8">&#9670;&#160;</a></span>servicePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a> it.unisa.biblioteca.gruppo21.service.Biblioteca.servicePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Riferimento al service per la gestione dei prestiti </p>
+
+</div>
+</div>
+<a id="a4d843a739c3cdde91b3c3374c4f211bf" name="a4d843a739c3cdde91b3c3374c4f211bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d843a739c3cdde91b3c3374c4f211bf">&#9670;&#160;</a></span>serviceUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a> it.unisa.biblioteca.gruppo21.service.Biblioteca.serviceUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Riferimento al service per la gestione degli utenti </p>
 
 </div>
 </div>

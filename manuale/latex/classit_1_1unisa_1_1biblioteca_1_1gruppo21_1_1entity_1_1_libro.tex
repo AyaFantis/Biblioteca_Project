@@ -2,6 +2,16 @@
 \hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 
 
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro\+:
 \nopagebreak
 \begin{figure}[H]
@@ -26,7 +36,15 @@ int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_li
 int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_afd52bcfb3e0b8a203f52cdd05b0842b8}{get\+Numero\+Copie\+Disponibili}} ()
 \begin{DoxyCompactList}\small\item\em Restituisce la quantità totale di copie. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a43a5900a913083aedda029bbc82d6267}{set\+Numero\+Copie\+Disponibili}} (int new\+Num)
-\begin{DoxyCompactList}\small\item\em Aggiorna il numero di copie disponibili del libro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Aggiorna il numero di copie disponibili del libro. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ae4fe92409e041ab97f0d1b5d19b326ae}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce una rappresentazione testuale del libro. Restituisce una stringa formattata come "{}\+Titolo -\/ Autore"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ad01474116ca4bde34c8698bbbe1c1533}{hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java per l\textquotesingle{}uso nelle collezioni. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals}} (Object o)
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l\textquotesingle{}ISBN identifica univocamente l\textquotesingle{}edizione. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a307995441ab36fb859a5135a440359e5}{compare\+To}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ab1eaf4e09994d057ac39eb13e0072232}{Libro}} o)
+\begin{DoxyCompactList}\small\item\em Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criteria secondario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -85,7 +103,49 @@ Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_
 \label{doc-func-members}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getAnnoPubblicazione@{getAnnoPubblicazione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a307995441ab36fb859a5135a440359e5}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
+\doxysubsubsection{\texorpdfstring{compareTo()}{compareTo()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a307995441ab36fb859a5135a440359e5} 
+int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+compare\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ab1eaf4e09994d057ac39eb13e0072232}{Libro}}}]{o}{}\end{DoxyParamCaption})}
+
+
+
+Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criteria secondario. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em o} & Il libro da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un numero negativo se questo libro precede l\textquotesingle{}altro, zero se sono uguali (per titolo e autore), un numero positivo se segue l\textquotesingle{}altro. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!equals@{equals}}
+\index{equals@{equals}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o}{}\end{DoxyParamCaption})}
+
+
+
+Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l\textquotesingle{}ISBN identifica univocamente l\textquotesingle{}edizione. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em o} & L\textquotesingle{}oggetto con cui confrontare l\textquotesingle{}istanza corrente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}oggetto passato è un \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro} e ha lo stesso ISBN, falsa altrimenti. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getAnnoPubblicazione@{getAnnoPubblicazione}}
 \index{getAnnoPubblicazione@{getAnnoPubblicazione}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 \doxysubsubsection{\texorpdfstring{getAnnoPubblicazione()}{getAnnoPubblicazione()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9} 
@@ -153,6 +213,19 @@ Restituisce il titolo del libro.
 \begin{DoxyReturn}{Returns}
 Una stringa rappresentante il titolo. 
 \end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ad01474116ca4bde34c8698bbbe1c1533}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
+\doxysubsubsection{\texorpdfstring{hashCode()}{hashCode()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ad01474116ca4bde34c8698bbbe1c1533} 
+int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java per l\textquotesingle{}uso nelle collezioni. 
+
+\begin{DoxyReturn}{Returns}
+Intero rappresentante l\textquotesingle{}hash del codice ISBN 
+\end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a43a5900a913083aedda029bbc82d6267}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!setNumeroCopieDisponibili@{setNumeroCopieDisponibili}}
 \index{setNumeroCopieDisponibili@{setNumeroCopieDisponibili}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 \doxysubsubsection{\texorpdfstring{setNumeroCopieDisponibili()}{setNumeroCopieDisponibili()}}
@@ -168,6 +241,19 @@ Aggiorna il numero di copie disponibili del libro.
 {\em new\+Num} & Il nuovo numero di copie disponibili da impostare. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ae4fe92409e041ab97f0d1b5d19b326ae}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!toString@{toString}}
+\index{toString@{toString}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ae4fe92409e041ab97f0d1b5d19b326ae} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce una rappresentazione testuale del libro. Restituisce una stringa formattata come "{}\+Titolo -\/ Autore"{}. 
+
+\begin{DoxyReturn}{Returns}
+Una stringa contenente titolo e autore separati da un trattino. 
+\end{DoxyReturn}
 
 
 \label{doc-variable-members}

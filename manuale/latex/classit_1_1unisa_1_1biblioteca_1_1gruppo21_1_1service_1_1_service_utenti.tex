@@ -13,7 +13,7 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aeb4b84ca2e26f8e35560a65f7e9e0041}{Service\+Utenti}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} arc\+Utenti, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} arc\+Prestiti)
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_aeb4b84ca2e26f8e35560a65f7e9e0041}{Service\+Utenti}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d}{arc\+Utenti}}, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886}{arc\+Prestiti}})
 \begin{DoxyCompactList}\small\item\em Costruttore del servizio utenti. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_ad5b743295dc54c5831ec2912f530eaf6}{iscrivi}} (String nome, String cognome, String matricola, String email)
 \begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. \end{DoxyCompactList}\item 
@@ -28,18 +28,21 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} {\bfseries arc\+Utenti}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d}{arc\+Utenti}}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} {\bfseries arc\+Prestiti}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886}{arc\+Prestiti}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti e di rimuoverli, ma solo se non hanno libri ancora da restituire. \begin{DoxyAuthor}{Author}
+Gruppo 21 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
 
 \begin{DoxyItemize}
-\item Si occupa di iscrivere nuovi utenti controllando che i dati siano corretti e di rimuoverli, ma solo se non hanno libri ancora da restituire.
 \item Questa classe funge da intermediario tra il Controller e i dati persistenti degli utenti.
 \item Si assicura che i dati inseriti siano validi e che i vincoli di integrità (es. non cancellare utenti con prestiti attivi) siano rispettati.
 \item \begin{DoxyAuthor}{Author}
@@ -214,6 +217,23 @@ La dimensione dell\textquotesingle{}archivio utenti diminuisce di 1.
 Messaggio di esito 
 \end{DoxyReturn}
 
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!arcPrestiti@{arcPrestiti}}
+\index{arcPrestiti@{arcPrestiti}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{arcPrestiti}{arcPrestiti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_a5bb2efbddc0fc977a92d757e5acc0886} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+arc\+Prestiti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio dei Prestiti \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d}\index{it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}!arcUtenti@{arcUtenti}}
+\index{arcUtenti@{arcUtenti}!it.unisa.biblioteca.gruppo21.service.ServiceUtenti@{it.unisa.biblioteca.gruppo21.service.ServiceUtenti}}
+\doxysubsubsection{\texorpdfstring{arcUtenti}{arcUtenti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti_abdea4d9caf833b891a74fdb0a02f868d} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti}{Archive\+Utenti}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Utenti.\+arc\+Utenti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio degli Utenti 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

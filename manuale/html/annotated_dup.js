@@ -17,8 +17,12 @@ var annotated_dup =
               [ "Utente", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente" ]
             ] ],
             [ "gui", null, [
+              [ "AbstractViewController", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller" ],
               [ "Controller", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller" ],
-              [ "ViewLibreria", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libreria.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libreria" ]
+              [ "ViewLibriController", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libri_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libri_controller" ],
+              [ "ViewMainController", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_main_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_main_controller" ],
+              [ "ViewPrestitiController", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller" ],
+              [ "ViewUtentiController", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_utenti_controller.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_utenti_controller" ]
             ] ],
             [ "service", null, [
               [ "Biblioteca", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html", "classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca" ],

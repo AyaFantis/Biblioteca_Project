@@ -93,9 +93,14 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
+Inheritance diagram for it.unisa.biblioteca.gruppo21.entity.Utente:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente__inherit__graph.svg" width="219" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Collaboration diagram for it.unisa.biblioteca.gruppo21.entity.Utente:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente__coll__graph.svg" width="219" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente__coll__graph.svg" width="219" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -124,6 +129,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9cd737f5cd9190db0c582610394b69e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un prestito alla lista dei libri attualmente in possesso dell'utente.  <br /></td></tr>
 <tr class="memitem:ac14ce891e5fd7b5101402deb82d3dccd" id="r_ac14ce891e5fd7b5101402deb82d3dccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac14ce891e5fd7b5101402deb82d3dccd">rimuoviPrestito</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> prestito)</td></tr>
 <tr class="memdesc:ac14ce891e5fd7b5101402deb82d3dccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un prestito dalla lista dei prestiti attivi. Viene utilizzato quando un libro viene restituito, per aggiornare la lista dei libri attualmente in possesso dell'utente.  <br /></td></tr>
+<tr class="memitem:aa1b5c0469311946cfcdfb7d74fadbece" id="r_aa1b5c0469311946cfcdfb7d74fadbece"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1b5c0469311946cfcdfb7d74fadbece">toString</a> ()</td></tr>
+<tr class="memdesc:aa1b5c0469311946cfcdfb7d74fadbece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una rappresentazione testuale dell'oggeto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. Formatta i dati principali in una stringa leggibile, utile per il debugging e per i log di sistema.  <br /></td></tr>
+<tr class="memitem:ac3daa95d3bffff5704ca38530ceaa828" id="r_ac3daa95d3bffff5704ca38530ceaa828"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3daa95d3bffff5704ca38530ceaa828">hashCode</a> ()</td></tr>
+<tr class="memdesc:ac3daa95d3bffff5704ca38530ceaa828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. Il calcolo si basa esclusivamente sul matricola. Questo garantisce che oggetti considerati uguali dal metodo <a class="el" href="#a9a3dde85681f9d61db3497e0753ec90c" title="Verifica l&#39;uguaglianza logica tra due utenti. L&#39;identità di un utente è determinata univocamente dall...">equals()</a> abbiano lo stesso hash code, rispettando il contratto generale di Java.  <br /></td></tr>
+<tr class="memitem:a9a3dde85681f9d61db3497e0753ec90c" id="r_a9a3dde85681f9d61db3497e0753ec90c"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a3dde85681f9d61db3497e0753ec90c">equals</a> (Object o)</td></tr>
+<tr class="memdesc:a9a3dde85681f9d61db3497e0753ec90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'uguaglianza logica tra due utenti. L'identità di un utente è determinata univocamente dalla sua matricola. Campi mutabili come email, nome o cognome non influenzano l'uguaglianza dell'oggetto (Entity Equality).  <br /></td></tr>
+<tr class="memitem:a2465f939651386de3cc5f5ae631263a7" id="r_a2465f939651386de3cc5f5ae631263a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2465f939651386de3cc5f5ae631263a7">compareTo</a> (<a class="el" href="#a61837ce5f5e9833246261e16b19eb281">Utente</a> u)</td></tr>
+<tr class="memdesc:a2465f939651386de3cc5f5ae631263a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. L'ordinamento viene effettuato alfabeticamente (case-insensitive) per Cognome. In caso di omonimia (cognomi uguali), viene utilizzato il Nome come criterio secondario.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -135,7 +148,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5b9bd16ad50fa70216e5461bbe1a9e72" id="r_a5b9bd16ad50fa70216e5461bbe1a9e72"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b9bd16ad50fa70216e5461bbe1a9e72">cognome</a></td></tr>
 <tr class="memitem:a3f6c10aafedaef91d2df820e7f2cf7a3" id="r_a3f6c10aafedaef91d2df820e7f2cf7a3"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f6c10aafedaef91d2df820e7f2cf7a3">email</a></td></tr>
 <tr class="memitem:a005126c7d92ad4be941ac5b935beee22" id="r_a005126c7d92ad4be941ac5b935beee22"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a005126c7d92ad4be941ac5b935beee22">matricola</a></td></tr>
-<tr class="memitem:a15bbfd5d6923cf59397aff8d4e8bc148" id="r_a15bbfd5d6923cf59397aff8d4e8bc148"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15bbfd5d6923cf59397aff8d4e8bc148">prestitiAttivi</a></td></tr>
+<tr class="memitem:a85ce1e57436d80508c87f232ce55b158" id="r_a85ce1e57436d80508c87f232ce55b158"><td class="memItemLeft" align="right" valign="top">final List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85ce1e57436d80508c87f232ce55b158">prestitiAttivi</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Un utente è identificato univocamente dalla matricola e possiede dati anagrafici e di contatto. </p><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
@@ -206,6 +219,63 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2465f939651386de3cc5f5ae631263a7" name="a2465f939651386de3cc5f5ae631263a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2465f939651386de3cc5f5ae631263a7">&#9670;&#160;</a></span>compareTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int it.unisa.biblioteca.gruppo21.entity.Utente.compareTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a61837ce5f5e9833246261e16b19eb281">Utente</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. L'ordinamento viene effettuato alfabeticamente (case-insensitive) per Cognome. In caso di omonimia (cognomi uguali), viene utilizzato il Nome come criterio secondario. </p>
+<ul>
+<li><dl class="section note"><dt>Note</dt><dd>Questo metodo è "inconsistent with equals": l'ordinamento si basa su dati anagrafici per facilitare la visualizzazione nelle liste, mentre l'uguaglianza si basa sulla matricola univoca.</dd></dl>
+</li>
+<li><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>L'utente da confrontare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Un numero negativo se questo utente precede l'altro, zero se sono uguali (per nome e cognome), un numero positivo se segue l'altro. </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a9a3dde85681f9d61db3497e0753ec90c" name="a9a3dde85681f9d61db3497e0753ec90c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3dde85681f9d61db3497e0753ec90c">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean it.unisa.biblioteca.gruppo21.entity.Utente.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object</td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica l'uguaglianza logica tra due utenti. L'identità di un utente è determinata univocamente dalla sua matricola. Campi mutabili come email, nome o cognome non influenzano l'uguaglianza dell'oggetto (Entity Equality). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>L'oggetto con cui confrontare l'istanza corrente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true se l'oggetto passato è un <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> e ha la stessa matricola, false altrimenti. </dd></dl>
 
 </div>
 </div>
@@ -329,6 +399,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac3daa95d3bffff5704ca38530ceaa828" name="ac3daa95d3bffff5704ca38530ceaa828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3daa95d3bffff5704ca38530ceaa828">&#9670;&#160;</a></span>hashCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int it.unisa.biblioteca.gruppo21.entity.Utente.hashCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. Il calcolo si basa esclusivamente sul matricola. Questo garantisce che oggetti considerati uguali dal metodo <a class="el" href="#a9a3dde85681f9d61db3497e0753ec90c" title="Verifica l&#39;uguaglianza logica tra due utenti. L&#39;identità di un utente è determinata univocamente dall...">equals()</a> abbiano lo stesso hash code, rispettando il contratto generale di Java. </p>
+<dl class="section return"><dt>Returns</dt><dd>Intero rappresentante l'hash del codice ISBN </dd></dl>
+
+</div>
+</div>
 <a id="ac14ce891e5fd7b5101402deb82d3dccd" name="ac14ce891e5fd7b5101402deb82d3dccd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac14ce891e5fd7b5101402deb82d3dccd">&#9670;&#160;</a></span>rimuoviPrestito()</h2>
 
@@ -426,6 +516,26 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aa1b5c0469311946cfcdfb7d74fadbece" name="aa1b5c0469311946cfcdfb7d74fadbece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b5c0469311946cfcdfb7d74fadbece">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.gruppo21.entity.Utente.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce una rappresentazione testuale dell'oggeto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. Formatta i dati principali in una stringa leggibile, utile per il debugging e per i log di sistema. </p>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa nel formato "Utente: [Nome] [Cognome] - Mat: [Matricola]". </dd></dl>
 
 </div>
 </div>
@@ -545,8 +655,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a15bbfd5d6923cf59397aff8d4e8bc148" name="a15bbfd5d6923cf59397aff8d4e8bc148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15bbfd5d6923cf59397aff8d4e8bc148">&#9670;&#160;</a></span>prestitiAttivi</h2>
+<a id="a85ce1e57436d80508c87f232ce55b158" name="a85ce1e57436d80508c87f232ce55b158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ce1e57436d80508c87f232ce55b158">&#9670;&#160;</a></span>prestitiAttivi</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +665,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>&gt; it.unisa.biblioteca.gruppo21.entity.Utente.prestitiAttivi</td>
+          <td class="memname">final List&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>&gt; it.unisa.biblioteca.gruppo21.entity.Utente.prestitiAttivi</td>
         </tr>
       </table>
   </td>

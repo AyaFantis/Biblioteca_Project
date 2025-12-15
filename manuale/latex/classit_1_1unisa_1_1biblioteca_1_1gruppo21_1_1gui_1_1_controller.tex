@@ -15,21 +15,25 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller\
 \item 
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_acb84c9c60e279ded49d8636fdca1ef7e}{Controller}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}} biblioteca)
 \begin{DoxyCompactList}\small\item\em Costruttore del \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller}{Controller}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a3404553a5ce2513f06cae8618343a697}{gestisci\+Iscrizione}} (String nome, String cognome, String matricola, String email)
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e1f525be7392421610310860adf97a9}{gestisci\+Iscrizione}} (String nome, String cognome, String matricola, String email)
 \begin{DoxyCompactList}\small\item\em Gestisce la richiesta di iscrizione di un nuovo utente. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a384624e06650db578c460deae82b23b9}{gestisci\+Modifica\+Utente}} (String nome, String cognome, String email, String matricola)
+\begin{DoxyCompactList}\small\item\em Modifica un utente esistente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a9d00ea82df8afbd4ffffc4768a72b4b7}{gestisci\+Rimozione\+Utente}} (String matricola)
 \begin{DoxyCompactList}\small\item\em Gestisce il flusso di rimozione utente. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a18b9e159771111778c43acc80519d26b}{get\+Lista\+Utenti}} ()
 \begin{DoxyCompactList}\small\item\em Recupera i dati per la visualizzazione della tabella utenti. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a975dbbd4e4c2993e782a08e3c4584b93}{gestisci\+Aggiunta\+Libro}} (String titolo, String autore, String isbn, String anno\+Str, String copie\+Str)
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e0cdcd990304c989c160e4260417753}{gestisci\+Aggiunta\+Libro}} (String titolo, String autore, String isbn, String anno\+Str, String copie\+Str)
 \begin{DoxyCompactList}\small\item\em Gestisce l\textquotesingle{}aggiunta di un libro, occupandosi del parsing dei dati numerici. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a1d468e338f46291ae60cbff68166905e}{gestisci\+Aggiornamento\+Copie}} (String isbn, String copie\+Str)
+\begin{DoxyCompactList}\small\item\em Gestisce l\textquotesingle{}aggiornamento del numero di copie di un libro. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a8edadd3474c27ddd580496146fdfa3d6}{gestisci\+Rimozione\+Libro}} (String isbn)
 \begin{DoxyCompactList}\small\item\em Gestisce la rimozione di un libro. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a5c03593beb918df3b78df7f49ce9da0a}{get\+Lista\+Libri}} ()
 \begin{DoxyCompactList}\small\item\em Recupera i dati per la tabella libri. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a847f825eb1506960adbfb538bfeffc61}{gestisci\+Prestito}} (String matricola, String isbn)
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a4df25cbb5c6899ee5d0de125b558af72}{gestisci\+Prestito}} (String identificativo, String isbn, Local\+Date data\+Restituzione)
 \begin{DoxyCompactList}\small\item\em Gestisce il flusso di creazione prestito. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a95ae3872c921cfbe97d549b8d1a96176}{gestisci\+Restituzione}} (String matricola, String isbn)
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a6e4e0b92b4243adbf8c730214e29244f}{gestisci\+Restituzione}} (String matricola, String isbn)
 \begin{DoxyCompactList}\small\item\em Gestisce il flusso di restituzione libro. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7a648eac09d87162cefd969c35ce56da}{get\+Lista\+Prestiti}} ()
 \begin{DoxyCompactList}\small\item\em Recupera lo storico prestiti. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -84,11 +88,31 @@ Il controller è inizializzato e collegato all\textquotesingle{}istanza del mode
 \label{doc-func-members}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a975dbbd4e4c2993e782a08e3c4584b93}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciAggiuntaLibro@{gestisciAggiuntaLibro}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a1d468e338f46291ae60cbff68166905e}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciAggiornamentoCopie@{gestisciAggiornamentoCopie}}
+\index{gestisciAggiornamentoCopie@{gestisciAggiornamentoCopie}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
+\doxysubsubsection{\texorpdfstring{gestisciAggiornamentoCopie()}{gestisciAggiornamentoCopie()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a1d468e338f46291ae60cbff68166905e} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Aggiornamento\+Copie (\begin{DoxyParamCaption}\item[{String}]{isbn}{, }\item[{String}]{copie\+Str}{}\end{DoxyParamCaption})}
+
+
+
+Gestisce l\textquotesingle{}aggiornamento del numero di copie di un libro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isbn} & Codice ISBN del libro da modificare. \\
+\hline
+{\em copie\+Str} & Nuovo numero di copie. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}operazione ha successo, false altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e0cdcd990304c989c160e4260417753}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciAggiuntaLibro@{gestisciAggiuntaLibro}}
 \index{gestisciAggiuntaLibro@{gestisciAggiuntaLibro}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
 \doxysubsubsection{\texorpdfstring{gestisciAggiuntaLibro()}{gestisciAggiuntaLibro()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a975dbbd4e4c2993e782a08e3c4584b93} 
-void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Aggiunta\+Libro (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{isbn}{, }\item[{String}]{anno\+Str}{, }\item[{String}]{copie\+Str}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e0cdcd990304c989c160e4260417753} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Aggiunta\+Libro (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{isbn}{, }\item[{String}]{anno\+Str}{, }\item[{String}]{copie\+Str}{}\end{DoxyParamCaption})}
 
 
 
@@ -102,6 +126,9 @@ Caso 1 Se anno\+Str e copie\+Str sono interi validi, viene chiamato il servizio 
 
 Caso 2 Se i campi numerici non sono validi, viene mostrato un messaggio di errore specifico senza invocare il servizio. 
 \end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}iscrizione è avvenuta con successo; false se si è verificato un errore. 
+\end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
 {\em titolo} & Titolo del libro. \\
@@ -115,11 +142,11 @@ Caso 2 Se i campi numerici non sono validi, viene mostrato un messaggio di error
 {\em copie\+Str} & Copie. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a3404553a5ce2513f06cae8618343a697}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciIscrizione@{gestisciIscrizione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e1f525be7392421610310860adf97a9}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciIscrizione@{gestisciIscrizione}}
 \index{gestisciIscrizione@{gestisciIscrizione}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
 \doxysubsubsection{\texorpdfstring{gestisciIscrizione()}{gestisciIscrizione()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a3404553a5ce2513f06cae8618343a697} 
-void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Iscrizione (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{matricola}{, }\item[{String}]{email}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a7e1f525be7392421610310860adf97a9} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Iscrizione (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{matricola}{, }\item[{String}]{email}{}\end{DoxyParamCaption})}
 
 
 
@@ -131,6 +158,9 @@ I parametri non dovrebbero essere null.
 \begin{DoxyPostcond}{Postcondition}
 Viene mostrato un messaggio all\textquotesingle{}utente con l\textquotesingle{}esito dell\textquotesingle{}operazione. 
 \end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}iscrizione è avvenuta con successo; false se si è verificato un errore. 
+\end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
 {\em nome} & Nome dell\textquotesingle{}utente. \\
@@ -142,11 +172,35 @@ Viene mostrato un messaggio all\textquotesingle{}utente con l\textquotesingle{}e
 {\em email} & Email (deve essere istituzionale). \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a847f825eb1506960adbfb538bfeffc61}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciPrestito@{gestisciPrestito}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a384624e06650db578c460deae82b23b9}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciModificaUtente@{gestisciModificaUtente}}
+\index{gestisciModificaUtente@{gestisciModificaUtente}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
+\doxysubsubsection{\texorpdfstring{gestisciModificaUtente()}{gestisciModificaUtente()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a384624e06650db578c460deae82b23b9} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Modifica\+Utente (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{email}{, }\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Modifica un utente esistente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nuovo nome. \\
+\hline
+{\em cognome} & Nuovo cognome. \\
+\hline
+{\em email} & Nuova email. \\
+\hline
+{\em matricola} & Matricola per identificare l\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se successo. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a4df25cbb5c6899ee5d0de125b558af72}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciPrestito@{gestisciPrestito}}
 \index{gestisciPrestito@{gestisciPrestito}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
 \doxysubsubsection{\texorpdfstring{gestisciPrestito()}{gestisciPrestito()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a847f825eb1506960adbfb538bfeffc61} 
-void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Prestito (\begin{DoxyParamCaption}\item[{String}]{matricola}{, }\item[{String}]{isbn}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a4df25cbb5c6899ee5d0de125b558af72} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Prestito (\begin{DoxyParamCaption}\item[{String}]{identificativo}{, }\item[{String}]{isbn}{, }\item[{Local\+Date}]{data\+Restituzione}{}\end{DoxyParamCaption})}
 
 
 
@@ -158,18 +212,23 @@ matricola e isbn non nulli.
 \begin{DoxyPostcond}{Postcondition}
 L\textquotesingle{}esito (Successo, \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} non trovato, Stock esaurito) viene mostrato all\textquotesingle{}utente. 
 \end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}iscrizione è avvenuta con successo; false se si è verificato un errore. 
+\end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-{\em matricola} & ID \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. \\
+{\em identificativo} & Matricola o Cognome dell\textquotesingle{}utente. \\
 \hline
 {\em isbn} & ID \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. \\
 \hline
+{\em data\+Restituzione} & Data restituzione del libro. \\
+\hline
 \end{DoxyParams}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a95ae3872c921cfbe97d549b8d1a96176}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciRestituzione@{gestisciRestituzione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a6e4e0b92b4243adbf8c730214e29244f}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciRestituzione@{gestisciRestituzione}}
 \index{gestisciRestituzione@{gestisciRestituzione}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
 \doxysubsubsection{\texorpdfstring{gestisciRestituzione()}{gestisciRestituzione()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a95ae3872c921cfbe97d549b8d1a96176} 
-void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Restituzione (\begin{DoxyParamCaption}\item[{String}]{matricola}{, }\item[{String}]{isbn}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a6e4e0b92b4243adbf8c730214e29244f} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Restituzione (\begin{DoxyParamCaption}\item[{String}]{matricola}{, }\item[{String}]{isbn}{}\end{DoxyParamCaption})}
 
 
 
@@ -220,14 +279,14 @@ void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+gestisci\+Rimozione
 Gestisce il flusso di rimozione utente. 
 
 \begin{DoxyPrecond}{Precondition}
-matricola non dovrebbe essere null. 
+Matricola non deve essere null. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 L\textquotesingle{}esito dell\textquotesingle{}operazione viene mostrato all\textquotesingle{}utente. 
 \end{DoxyPostcond}
 
 \begin{DoxyParams}{Parameters}
-{\em matricola} & La matricola dell\textquotesingle{}utente. \\
+{\em matricola} & La matricola dell\textquotesingle{}utente da cancellare. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a5c03593beb918df3b78df7f49ce9da0a}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!getListaLibri@{getListaLibri}}

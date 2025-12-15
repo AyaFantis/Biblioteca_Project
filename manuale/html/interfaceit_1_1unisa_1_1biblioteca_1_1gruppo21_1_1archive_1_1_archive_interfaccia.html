@@ -95,7 +95,7 @@ $(function(){initNavTree('interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1arch
 <div class="dynheader">
 Inheritance diagram for it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia__inherit__graph.svg" width="230" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia__inherit__graph.svg" width="230" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia&lt; T &gt;:</div>
@@ -115,7 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9042a19d773f983f56e60d7888f07a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera tutti gli elementi presenti nell'archivio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) su un archivio dati, indipendentemente dal supporto di memorizzazione (File, Database, Memoria). </p><dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Definisce il contratto standard per le operazioni CRUD (Create, Read, Delete) su un archivio dati. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;T&gt;</td><td>Il tipo di entità gestita dall'archivio. </td></tr>
   </table>
@@ -255,9 +255,7 @@ Se non esiste alcun elemento con l'ID specificato, il metodo restituisce null. <
   </dd>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd>Nessuna pre-condizione specifica (l'archivio può essere vuoto). </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Restituisce una List contenente tutti gli oggetti di tipo T salvati. </dd>
-<dd>
-La lista restituita non è mai null (se l'archivio è vuoto, restituisce una lista vuota). </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce una List non nulla contenente tutti gli oggetti di tipo T salvati. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Una lista di oggetti T. </dd></dl>
 
 <p>Implemented in <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html#a898a2d71184286ba3c49936ec1d2e6a1">it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto&lt; T &gt;</a>.</p>

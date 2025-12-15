@@ -7,52 +7,51 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Bibliot
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca__coll__graph}
+\includegraphics[height=550pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa66e42c90e7ad657467db3724f9a12ed}{Biblioteca}} ()
-\begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}. Inizializza gli archivi, collegando le dipendenze. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l\textquotesingle{}inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a95906d56abf64c0a04f8820b145157da}{iscrivi\+Utente}} (String nome, String cognome, String matricola, String email)
-\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ac97c22dfbd3e906add74796657d61180}{modifica\+Utente}} (String nuovo\+Nome, String nuovo\+Cognome, String nuova\+Email, String matricola)
 \begin{DoxyCompactList}\small\item\em Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a33cf0aa9c50f39be468db4e55dcb67cd}{rimuovi\+Utente}} (String matricola)
 \begin{DoxyCompactList}\small\item\em Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se l\textquotesingle{}utente ha ancora prestiti attivi. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aab32f3238782c006969697c755426aa3}{get\+Elenco\+Utenti}} ()
 \begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo degli utenti registrati. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ae6ed2bc3a7112b87d9c3e5d395a0b516}{cerca\+Utenti}} (String nome, String cognome, String matricola)
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_adfffa09122b9b43c6cee0ee2cab62e3b}{cerca\+Utente}} (String cognome, String matricola)
 \begin{DoxyCompactList}\small\item\em Cerca utenti in base a criteri anagrafici. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a51c5bfd6d2062819c47fa76d11865e47}{aggiungi\+Libro}} (String titolo, String autore, String codice\+ISBN, int anno\+Pubblicazione, int numero\+Copie\+Disponibili)
 \begin{DoxyCompactList}\small\item\em Aggiunge un nuovo libro al catalogo. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a73176a2e137280439980e78a400a6fb0}{aggiorna\+Copie\+Libro}} (String isbn, int nuove\+Copie)
+\begin{DoxyCompactList}\small\item\em Aggiorna il numero di copie disponibili di un libro. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a9f7ecba2c29c27e8a3d60064f18dc902}{rimuovi\+Libro}} (String codice\+ISBN)
 \begin{DoxyCompactList}\small\item\em Rimuove un libro dal catalogo. Operazione consentita solo se non ci sono copie in prestito. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aea13ef39a6726460f6241f15938e1a1c}{get\+Elenco\+Libri}} ()
 \begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo dei libri nel catalogo. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a345ebad9bffe937587f3798a4233845a}{cerca\+Libri}} (String titolo, String autore, String codice\+ISBN)
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a1dd86ef4e009f4fb8461e1b130c952f4}{cerca\+Libro}} (String titolo, String autore, String codice\+ISBN)
 \begin{DoxyCompactList}\small\item\em Cerca libri per titolo, autore o ISBN. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
-String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a8983ab85efa09925972f8bdd061319b9}{effettua\+Prestito}} (String matricola, String codice\+ISBN)
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa1e70ee8e9c07d3736c009bfc3272cdb}{effettua\+Prestito}} (String identificativo, String codice\+ISBN, Local\+Date data\+Scadenza)
 \begin{DoxyCompactList}\small\item\em Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a79b71f182769bdd35ee83deb80a9f8f5}{restituisci\+Libro}} (String matricola, String codice\+ISBN)
-\begin{DoxyCompactList}\small\item\em Registra la restituzione di un libro. Libera una copia del libro. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a2b2fd662d11d6460109f791541fda36e}{get\+Storico\+Prestiti}} ()
-\begin{DoxyCompactList}\small\item\em Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Recupera lo storico completo di tutti i prestiti registrati. \texorpdfstring{$\ast$}{*}\+Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a0673e368c3c4c206cf831f8c1be93e80}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a0673e368c3c4c206cf831f8c1be93e80} 
 void {\bfseries controlla\+Ritardi} ()
-\begin{DoxyCompactList}\small\item\em Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN\+\_\+\+RITARDO se la data di scadenza è superata. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. Può innescare l\textquotesingle{}invio di notifiche. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN\+\_\+\+RITARDO se la data di scadenza è superata. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a4d843a739c3cdde91b3c3374c4f211bf}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a4d843a739c3cdde91b3c3374c4f211bf} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}} {\bfseries service\+Utenti}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a4d843a739c3cdde91b3c3374c4f211bf}{service\+Utenti}}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a5d0670ffe10615d54f047162d80aa0c4}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a5d0670ffe10615d54f047162d80aa0c4} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}} {\bfseries service\+Libri}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a5d0670ffe10615d54f047162d80aa0c4}{service\+Libri}}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_abac8e3e1a5452d8350bd61cff5d81cc8}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_abac8e3e1a5452d8350bd61cff5d81cc8} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}} {\bfseries service\+Prestiti}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_abac8e3e1a5452d8350bd61cff5d81cc8}{service\+Prestiti}}
 \end{DoxyCompactItemize}
 
 
@@ -76,7 +75,7 @@ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+Biblioteca (\begin{D
 
 
 
-Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}. Inizializza gli archivi, collegando le dipendenze. 
+Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l\textquotesingle{}inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria. 
 
 \begin{DoxyPostcond}{Postcondition}
 Il sistema è pronto per elaborare richieste. 
@@ -86,6 +85,26 @@ Il sistema è pronto per elaborare richieste.
 \label{doc-func-members}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a73176a2e137280439980e78a400a6fb0}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!aggiornaCopieLibro@{aggiornaCopieLibro}}
+\index{aggiornaCopieLibro@{aggiornaCopieLibro}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{aggiornaCopieLibro()}{aggiornaCopieLibro()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a73176a2e137280439980e78a400a6fb0} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+aggiorna\+Copie\+Libro (\begin{DoxyParamCaption}\item[{String}]{isbn}{, }\item[{int}]{nuove\+Copie}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna il numero di copie disponibili di un libro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isbn} & Codice ISBN del libro. \\
+\hline
+{\em nuove\+Copie} & Nuovo numero totale di copie. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una stringa contenente 
+\end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a51c5bfd6d2062819c47fa76d11865e47}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!aggiungiLibro@{aggiungiLibro}}
 \index{aggiungiLibro@{aggiungiLibro}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
 \doxysubsubsection{\texorpdfstring{aggiungiLibro()}{aggiungiLibro()}}
@@ -110,13 +129,13 @@ Aggiunge un nuovo libro al catalogo. Passa l\textquotesingle{}operazione a \doxy
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio che descrive l\textquotesingle{}esito dell\textquotesingle{}operazione. 
+Una stringa che descrive l\textquotesingle{}esito dell\textquotesingle{}operazione. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a345ebad9bffe937587f3798a4233845a}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!cercaLibri@{cercaLibri}}
-\index{cercaLibri@{cercaLibri}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
-\doxysubsubsection{\texorpdfstring{cercaLibri()}{cercaLibri()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a345ebad9bffe937587f3798a4233845a} 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+cerca\+Libri (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{codice\+ISBN}{}\end{DoxyParamCaption})}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a1dd86ef4e009f4fb8461e1b130c952f4}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!cercaLibro@{cercaLibro}}
+\index{cercaLibro@{cercaLibro}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaLibro()}{cercaLibro()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a1dd86ef4e009f4fb8461e1b130c952f4} 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+cerca\+Libro (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{codice\+ISBN}{}\end{DoxyParamCaption})}
 
 
 
@@ -134,11 +153,11 @@ Cerca libri per titolo, autore o ISBN. Passa l\textquotesingle{}operazione a \do
 \begin{DoxyReturn}{Returns}
 Lista dei libri trovati. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ae6ed2bc3a7112b87d9c3e5d395a0b516}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!cercaUtenti@{cercaUtenti}}
-\index{cercaUtenti@{cercaUtenti}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
-\doxysubsubsection{\texorpdfstring{cercaUtenti()}{cercaUtenti()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ae6ed2bc3a7112b87d9c3e5d395a0b516} 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+cerca\+Utenti (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_adfffa09122b9b43c6cee0ee2cab62e3b}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!cercaUtente@{cercaUtente}}
+\index{cercaUtente@{cercaUtente}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaUtente()}{cercaUtente()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_adfffa09122b9b43c6cee0ee2cab62e3b} 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+cerca\+Utente (\begin{DoxyParamCaption}\item[{String}]{cognome}{, }\item[{String}]{matricola}{}\end{DoxyParamCaption})}
 
 
 
@@ -146,8 +165,6 @@ Cerca utenti in base a criteri anagrafici. Passa l\textquotesingle{}operazione a
 
 
 \begin{DoxyParams}{Parameters}
-{\em nome} & Filtro sul nome (opzionale). \\
-\hline
 {\em cognome} & Filtro sul cognome (opzionale). \\
 \hline
 {\em matricola} & Filtro sulla matricola (opzionale). \\
@@ -156,11 +173,11 @@ Cerca utenti in base a criteri anagrafici. Passa l\textquotesingle{}operazione a
 \begin{DoxyReturn}{Returns}
 Lista degli utenti che corrispondono ai criteri specificati. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a8983ab85efa09925972f8bdd061319b9}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!effettuaPrestito@{effettuaPrestito}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa1e70ee8e9c07d3736c009bfc3272cdb}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!effettuaPrestito@{effettuaPrestito}}
 \index{effettuaPrestito@{effettuaPrestito}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
 \doxysubsubsection{\texorpdfstring{effettuaPrestito()}{effettuaPrestito()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a8983ab85efa09925972f8bdd061319b9} 
-String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+effettua\+Prestito (\begin{DoxyParamCaption}\item[{String}]{matricola}{, }\item[{String}]{codice\+ISBN}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa1e70ee8e9c07d3736c009bfc3272cdb} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+effettua\+Prestito (\begin{DoxyParamCaption}\item[{String}]{identificativo}{, }\item[{String}]{codice\+ISBN}{, }\item[{Local\+Date}]{data\+Scadenza}{}\end{DoxyParamCaption})}
 
 
 
@@ -168,13 +185,15 @@ Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e
 
 
 \begin{DoxyParams}{Parameters}
-{\em matricola} & La matricola dell\textquotesingle{}utente richiedente. \\
+{\em identificativo} & Nome o cognome dell\textquotesingle{}utente richiedente. \\
 \hline
 {\em codice\+ISBN} & L\textquotesingle{}ISBN del libro richiesto. \\
 \hline
+{\em data\+Scadenza} & Data di restituzione. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio di esito. 
+Una stringa contenete l\textquotesingle{}esito (Successo o Errore). 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aea13ef39a6726460f6241f15938e1a1c}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!getElencoLibri@{getElencoLibri}}
 \index{getElencoLibri@{getElencoLibri}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
@@ -210,7 +229,7 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 
 
 
-Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. 
+Recupera lo storico completo di tutti i prestiti registrati. \texorpdfstring{$\ast$}{*}\+Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \texorpdfstring{$\ast$}{*}. 
 
 \begin{DoxyReturn}{Returns}
 Lista di oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. 
@@ -223,7 +242,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+iscrivi\+Uten
 
 
 
-Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. 
+Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -237,7 +256,7 @@ Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \do
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio di esito. 
+Una stringa contenete un messaggio di successo o la descrizione dell\textquotesingle{}errore 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ac97c22dfbd3e906add74796657d61180}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!modificaUtente@{modificaUtente}}
 \index{modificaUtente@{modificaUtente}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
@@ -261,7 +280,7 @@ Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio di esito. 
+Una stringa contenete l\textquotesingle{}esito dell\textquotesingle{}operazione 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a79b71f182769bdd35ee83deb80a9f8f5}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!restituisciLibro@{restituisciLibro}}
 \index{restituisciLibro@{restituisciLibro}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
@@ -271,7 +290,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+restituisci\+
 
 
 
-Registra la restituzione di un libro. Libera una copia del libro. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. 
+Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -281,7 +300,7 @@ Registra la restituzione di un libro. Libera una copia del libro. Passa l\textqu
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio di esito. 
+Una stringa contenete l\textquotesingle{}esito dell\textquotesingle{}operazione 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a9f7ecba2c29c27e8a3d60064f18dc902}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!rimuoviLibro@{rimuoviLibro}}
 \index{rimuoviLibro@{rimuoviLibro}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
@@ -299,7 +318,7 @@ Rimuove un libro dal catalogo. Operazione consentita solo se non ci sono copie i
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio di esito. 
+Una stringa contenete l\textquotesingle{}esito dell\textquotesingle{}operazione. 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a33cf0aa9c50f39be468db4e55dcb67cd}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!rimuoviUtente@{rimuoviUtente}}
 \index{rimuoviUtente@{rimuoviUtente}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
@@ -317,9 +336,32 @@ Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Messaggio che descrive l\textquotesingle{}esito dell\textquotesingle{}operazione. 
+Una stringa che descrive l\textquotesingle{}esito dell\textquotesingle{}operazione. 
 \end{DoxyReturn}
 
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a5d0670ffe10615d54f047162d80aa0c4}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!serviceLibri@{serviceLibri}}
+\index{serviceLibri@{serviceLibri}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{serviceLibri}{serviceLibri}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a5d0670ffe10615d54f047162d80aa0c4} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+service\+Libri\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento al service per la gestione dei libri \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_abac8e3e1a5452d8350bd61cff5d81cc8}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!servicePrestiti@{servicePrestiti}}
+\index{servicePrestiti@{servicePrestiti}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{servicePrestiti}{servicePrestiti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_abac8e3e1a5452d8350bd61cff5d81cc8} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+service\+Prestiti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento al service per la gestione dei prestiti \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a4d843a739c3cdde91b3c3374c4f211bf}\index{it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}!serviceUtenti@{serviceUtenti}}
+\index{serviceUtenti@{serviceUtenti}!it.unisa.biblioteca.gruppo21.service.Biblioteca@{it.unisa.biblioteca.gruppo21.service.Biblioteca}}
+\doxysubsubsection{\texorpdfstring{serviceUtenti}{serviceUtenti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a4d843a739c3cdde91b3c3374c4f211bf} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+service\+Utenti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento al service per la gestione degli utenti 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html" title="Enumerazione che definisce gli stati possibili del ciclo di vita di un prestito." alt="" coords="5,5,224,48"/>
+<area shape="rect" id="Node000000" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller.html" title=" " alt="" coords="5,72,210,115"/>
+<area shape="rect" id="Node000001" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libri_controller.html" title=" " alt="" coords="258,5,462,48"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="204,65,279,47,274,50,206,70"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_prestiti_controller.html" title=" " alt="" coords="258,72,462,115"/>
+<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="225,91,260,93,255,94,225,96"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_utenti_controller.html" title=" " alt="" coords="258,139,462,181"/>
+<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="206,116,279,138,274,138,205,122"/>
 </map>

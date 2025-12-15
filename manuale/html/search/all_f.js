@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['utente_0',['Utente',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html',1,'it.unisa.biblioteca.gruppo21.entity.Utente'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html#a61837ce5f5e9833246261e16b19eb281',1,'it.unisa.biblioteca.gruppo21.entity.Utente.Utente()']]],
-  ['utente_1',['utente',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html#a57779acaf40873f30d806e802a2da654',1,'it::unisa::biblioteca::gruppo21::entity::Prestito']]],
-  ['utente_2ejava_2',['Utente.java',['../_utente_8java.html',1,'']]]
+  ['titolo_0',['titolo',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#a40cd4d829cfe59fb525d8265dbfc3f7f',1,'it::unisa::biblioteca::gruppo21::entity::Libro']]],
+  ['tostring_1',['toString',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#ae4fe92409e041ab97f0d1b5d19b326ae',1,'it.unisa.biblioteca.gruppo21.entity.Libro.toString()'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html#aa1b5c0469311946cfcdfb7d74fadbece',1,'it.unisa.biblioteca.gruppo21.entity.Utente.toString()']]],
+  ['trovautente_2',['trovaUtente',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html#af174dbcd4baea64d1bbc372a73a7bfa7',1,'it::unisa::biblioteca::gruppo21::service::ServicePrestiti']]]
 ];

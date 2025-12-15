@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="it.unisa.biblioteca.gruppo21.gui.\lViewLibreria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_libreria.html",tooltip=" "];
+  Node0 [id="Node000000",label="it.unisa.biblioteca.gruppo21.service.\lBiblioteca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html",tooltip=" "];
 }

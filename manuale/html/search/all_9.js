@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['main_0',['main',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1_app.html#a3e8b1cffed36bddd45fa0023e3b0acf3',1,'it::unisa::biblioteca::gruppo21::App']]],
-  ['matricola_1',['matricola',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html#a005126c7d92ad4be941ac5b935beee22',1,'it::unisa::biblioteca::gruppo21::entity::Utente']]],
-  ['max_5fprestiti_2',['MAX_PRESTITI',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html#a243329a8da4b5f5c30b64ab31d938b5d',1,'it::unisa::biblioteca::gruppo21::entity::Utente']]],
-  ['modificadatiutente_3',['modificaDatiUtente',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html#a3f1aed1385b413eb10ca249a2d2e4156',1,'it::unisa::biblioteca::gruppo21::service::ServiceUtenti']]],
-  ['modificautente_4',['modificaUtente',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html#ac97c22dfbd3e906add74796657d61180',1,'it::unisa::biblioteca::gruppo21::service::Biblioteca']]],
-  ['mostramessaggio_5',['mostraMessaggio',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller.html#a4d658277f19e75d5004e61a8fd022a16',1,'it::unisa::biblioteca::gruppo21::gui::Controller']]]
+  ['leggitutti_0',['leggiTutti',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html#a898a2d71184286ba3c49936ec1d2e6a1',1,'it.unisa.biblioteca.gruppo21.archive.ArchiveAstratto.leggiTutti()'],['../interfaceit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_interfaccia.html#a9042a19d773f983f56e60d7888f07a82',1,'it.unisa.biblioteca.gruppo21.archive.ArchiveInterfaccia.leggiTutti()']]],
+  ['libro_1',['Libro',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html',1,'it.unisa.biblioteca.gruppo21.entity.Libro'],['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html#ab1eaf4e09994d057ac39eb13e0072232',1,'it.unisa.biblioteca.gruppo21.entity.Libro.Libro()']]],
+  ['libro_2',['libro',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html#a052e2e61e5201c0c173464945f5bf989',1,'it::unisa::biblioteca::gruppo21::entity::Prestito']]],
+  ['libro_2ejava_3',['Libro.java',['../_libro_8java.html',1,'']]],
+  ['loadview_4',['loadView',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_view_main_controller.html#a658009e01dcbb19e0361736c6621f194',1,'it::unisa::biblioteca::gruppo21::gui::ViewMainController']]],
+  ['logiccontroller_5',['logicController',['../classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_abstract_view_controller.html#a45cc5775eece42b7801eb1348ec185b2',1,'it::unisa::biblioteca::gruppo21::gui::AbstractViewController']]]
 ];

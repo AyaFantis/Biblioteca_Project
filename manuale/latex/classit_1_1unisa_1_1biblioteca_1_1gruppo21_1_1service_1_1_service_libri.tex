@@ -13,7 +13,7 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_ab580e8ff43ef21dc27593b527fb6e9d9}{Service\+Libri}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} arc\+Libri, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} arc\+Prestiti)
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_ab580e8ff43ef21dc27593b527fb6e9d9}{Service\+Libri}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db}{arc\+Libri}}, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1}{arc\+Prestiti}})
 \begin{DoxyCompactList}\small\item\em Costruisce il servizio libri (Catalogo). \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a51af4260cb917c1fb402a6f7912fc86c}{aggiungi}} (String titolo, String autore, String codice\+ISBN, int anno\+Pubblicazione, int numero\+Copie\+Disponibili)
 \begin{DoxyCompactList}\small\item\em Aggiunge un nuovo libro al catalogo. \end{DoxyCompactList}\item 
@@ -21,18 +21,16 @@ String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_
 \begin{DoxyCompactList}\small\item\em Aggiorna il numero di copie disponibili di un libro. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a230771fcb8849349fd84083f377ae690}{rimuovi}} (String codice\+ISBN)
 \begin{DoxyCompactList}\small\item\em Rimuove un libro dal catalogo. \end{DoxyCompactList}\item 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a4b4b4aba9ad6110558cb7b5e905213c4}{cerca}} (String titolo, String autore, String codice\+ISBN)
-\begin{DoxyCompactList}\small\item\em Cerca libri per titolo, autore o ISBN. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_afef53c6a40eb758a1d4989d2f088ea3a}{get\+Lista}} ()
-\begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo dei libri. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo dei libri. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a480f86a544f621158a4715b2d6b351bc}{cerca}} (String titolo, String autore, String isbn)
+\begin{DoxyCompactList}\small\item\em Cerca libri per titolo, autore e/o ISBN. I parametri null o vuoti vengono ignorati nella ricerca. Se tutti i parametri sono null, restituisce la lista completa. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} {\bfseries arc\+Libri}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db}{arc\+Libri}}
 \item 
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1} 
-final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} {\bfseries arc\+Prestiti}
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1}{arc\+Prestiti}}
 \end{DoxyCompactItemize}
 
 
@@ -127,30 +125,27 @@ Il libro viene memorizzato nell\textquotesingle{}archivio persistente.
 \begin{DoxyReturn}{Returns}
 Messaggio di esito. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a4b4b4aba9ad6110558cb7b5e905213c4}\index{it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}!cerca@{cerca}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a480f86a544f621158a4715b2d6b351bc}\index{it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}!cerca@{cerca}}
 \index{cerca@{cerca}!it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}}
 \doxysubsubsection{\texorpdfstring{cerca()}{cerca()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a4b4b4aba9ad6110558cb7b5e905213c4} 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Libri.\+cerca (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{codice\+ISBN}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a480f86a544f621158a4715b2d6b351bc} 
+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Libri.\+cerca (\begin{DoxyParamCaption}\item[{String}]{titolo}{, }\item[{String}]{autore}{, }\item[{String}]{isbn}{}\end{DoxyParamCaption})}
 
 
 
-Cerca libri per titolo, autore o ISBN. 
+Cerca libri per titolo, autore e/o ISBN. I parametri null o vuoti vengono ignorati nella ricerca. Se tutti i parametri sono null, restituisce la lista completa. 
 
-\begin{DoxyPostcond}{Postcondition}
-Restituisce una lista di libri che corrispondono ai criteri di ricerca. 
-\end{DoxyPostcond}
 
 \begin{DoxyParams}{Parameters}
-{\em titolo} & Filtro titolo (opzionale) \\
+{\em titolo} & Titolo (o parte di esso) da cercare. \\
 \hline
-{\em autore} & Filtro autore (opzionale) \\
+{\em autore} & Autore (o parte di esso) da cercare. \\
 \hline
-{\em codice\+ISBN} & Filtro ISBN (opzionale) \\
+{\em isbn} & ISBN da cercare. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Lista dei libri trovati. 
+Lista dei libri che soddisfano tutti i criteri specificati. 
 \end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_afef53c6a40eb758a1d4989d2f088ea3a}\index{it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}!getLista@{getLista}}
 \index{getLista@{getLista}!it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}}
@@ -192,6 +187,23 @@ Il libro è rimosso fisicamente dall\textquotesingle{}archivio.
 Messaggio di esito. 
 \end{DoxyReturn}
 
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db}\index{it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}!arcLibri@{arcLibri}}
+\index{arcLibri@{arcLibri}!it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}}
+\doxysubsubsection{\texorpdfstring{arcLibri}{arcLibri}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_a44a6752c5f477be63646c03e41f742db} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_libri}{Archive\+Libri}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Libri.\+arc\+Libri\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio dei Libri. \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1}\index{it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}!arcPrestiti@{arcPrestiti}}
+\index{arcPrestiti@{arcPrestiti}!it.unisa.biblioteca.gruppo21.service.ServiceLibri@{it.unisa.biblioteca.gruppo21.service.ServiceLibri}}
+\doxysubsubsection{\texorpdfstring{arcPrestiti}{arcPrestiti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri_aaf1f815f51fe94b9fcacdd7f48f289a1} 
+final \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti}{Archive\+Prestiti}} it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Service\+Libri.\+arc\+Prestiti\hspace{0.3cm}{\ttfamily [private]}}
+
+Riferimento all\textquotesingle{}archivio dei Prestiti. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

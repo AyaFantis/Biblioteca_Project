@@ -2,6 +2,16 @@
 \hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 
 
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito\+:
 \nopagebreak
 \begin{figure}[H]
@@ -18,7 +28,7 @@ enum \mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_pr
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a135f28babe6cdb4ed821ee351b8161ef}{Prestito}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a57779acaf40873f30d806e802a2da654}{utente}}, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a052e2e61e5201c0c173464945f5bf989}{libro}}, Local\+Date \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a043f3301f77e3e81c1a0c340fc645410}{data\+Restituzione}}, \mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a133916296172c92bffbb1011933167e7}{stato}})
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a812e56cd56ed6c536d0b0b68d856b469}{Prestito}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} utente\+Coinvolto, \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} libro\+Prestato, Local\+Date \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a043f3301f77e3e81c1a0c340fc645410}{data\+Restituzione}}, \mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}} stato\+Iniziale)
 \begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. Inizializza un nuovo oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} associando un utente e un libro con una data di scadenza. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_aeccb13e50d0f11dfb361f946ab7c2467}{get\+Utente}} ()
 \begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}utente associato al prestito. \end{DoxyCompactList}\item 
@@ -28,8 +38,10 @@ Local\+Date \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entit
 \begin{DoxyCompactList}\small\item\em Restituisce la data di scadenza del prestito. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a24150fa99aea2dcc21951f9a4758b811}{get\+Stato}} ()
 \begin{DoxyCompactList}\small\item\em Restituisce lo stato attuale del prestito. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a0b852a596ee0586793083ee395868752}{set\+Stato}} (\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a133916296172c92bffbb1011933167e7}{stato}})
-\begin{DoxyCompactList}\small\item\em Modifica lo stato del prestito. Utilizzato per aggiornare il ciclo di vita del prestito. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a354cc64aba2a3e51df24c70ffd6874a0}{set\+Stato}} (\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}} nuovo\+Stato)
+\begin{DoxyCompactList}\small\item\em Modifica lo stato del prestito. Utilizzato per aggiornare il ciclo di vita del prestito. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a94879024e0c7172379282cae1c7c33b3}{compare\+To}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a812e56cd56ed6c536d0b0b68d856b469}{Prestito}} altro\+Prestito)
+\begin{DoxyCompactList}\small\item\em Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista. Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,11 +71,11 @@ Gruppo 21
 \label{doc-constructors}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a135f28babe6cdb4ed821ee351b8161ef}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!Prestito@{Prestito}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a812e56cd56ed6c536d0b0b68d856b469}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!Prestito@{Prestito}}
 \index{Prestito@{Prestito}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 \doxysubsubsection{\texorpdfstring{Prestito()}{Prestito()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a135f28babe6cdb4ed821ee351b8161ef} 
-it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}}}]{utente}{, }\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}}}]{libro}{, }\item[{Local\+Date}]{data\+Restituzione}{, }\item[{\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}}}]{stato}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a812e56cd56ed6c536d0b0b68d856b469} 
+it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}}}]{utente\+Coinvolto}{, }\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}}}]{libro\+Prestato}{, }\item[{Local\+Date}]{data\+Restituzione}{, }\item[{\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}}}]{stato\+Iniziale}{}\end{DoxyParamCaption})}
 
 
 
@@ -74,13 +86,13 @@ Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
-{\em utente} & L\textquotesingle{}utente che richiede il prestito. \\
+{\em utente\+Coinvolto} & L\textquotesingle{}utente che richiede il prestito. \\
 \hline
-{\em libro} & Il libro oggetto del prestito. \\
+{\em libro\+Prestato} & Il libro oggetto del prestito. \\
 \hline
 {\em data\+Restituzione} & La data prevista per la restituzione del libro. \\
 \hline
-{\em stato} & Lo stato attuale del prestito. \\
+{\em stato\+Iniziale} & Lo stato attuale del prestito. \\
 \hline
 \end{DoxyParams}
 
@@ -88,7 +100,28 @@ Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_
 \label{doc-func-members}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!getDataRestituzione@{getDataRestituzione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a94879024e0c7172379282cae1c7c33b3}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
+\doxysubsubsection{\texorpdfstring{compareTo()}{compareTo()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a94879024e0c7172379282cae1c7c33b3} 
+int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+compare\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a812e56cd56ed6c536d0b0b68d856b469}{Prestito}}}]{altro\+Prestito}{}\end{DoxyParamCaption})}
+
+
+
+Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista. Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em altro\+Prestito} & Il prestito da confrontare con l\textquotesingle{}istanza corrente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valore negativo se la scadenza di questo prestito è antecedente a quella dell\textquotesingle{}altro, zero se le date coicidono, un valore positivo se è successiva. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!getDataRestituzione@{getDataRestituzione}}
 \index{getDataRestituzione@{getDataRestituzione}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 \doxysubsubsection{\texorpdfstring{getDataRestituzione()}{getDataRestituzione()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341} 
@@ -140,11 +173,11 @@ Restituisce l\textquotesingle{}utente associato al prestito.
 \begin{DoxyReturn}{Returns}
 L\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} contraente del prestito. 
 \end{DoxyReturn}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a0b852a596ee0586793083ee395868752}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!setStato@{setStato}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a354cc64aba2a3e51df24c70ffd6874a0}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!setStato@{setStato}}
 \index{setStato@{setStato}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 \doxysubsubsection{\texorpdfstring{setStato()}{setStato()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a0b852a596ee0586793083ee395868752} 
-void it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+set\+Stato (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}}}]{stato}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a354cc64aba2a3e51df24c70ffd6874a0} 
+void it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+set\+Stato (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito}{Stato\+Prestito}}}]{nuovo\+Stato}{}\end{DoxyParamCaption})}
 
 
 
@@ -152,7 +185,7 @@ Modifica lo stato del prestito. Utilizzato per aggiornare il ciclo di vita del p
 
 
 \begin{DoxyParams}{Parameters}
-{\em stato} & Il nuovo stato da assegnare al prestito. \\
+{\em nuovo\+Stato} & Il nuovo stato da assegnare al prestito. \\
 \hline
 \end{DoxyParams}
 

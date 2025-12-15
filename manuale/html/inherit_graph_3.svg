@@ -14,24 +14,24 @@
 <g id="a_Node000000"><a xlink:href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_astratto.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="172,-32 0,-32 0,0 172,0 172,-32"/>
 <text xml:space="preserve" text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">it.unisa.biblioteca.gruppo21.archive.</text>
-<text xml:space="preserve" text-anchor="middle" x="86" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArchiveAstratto&lt; Utente &gt;</text>
+<text xml:space="preserve" text-anchor="middle" x="86" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArchiveAstratto&lt; Prestito &gt;</text>
 </a>
 </g>
 </g>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_utenti.html" target="_top" xlink:title=" ">
+<g id="a_Node000001"><a xlink:href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1archive_1_1_archive_prestiti.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="380,-32 208,-32 208,0 380,0 380,-32"/>
 <text xml:space="preserve" text-anchor="start" x="216" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">it.unisa.biblioteca.gruppo21.archive.</text>
-<text xml:space="preserve" text-anchor="middle" x="294" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArchiveUtenti</text>
+<text xml:space="preserve" text-anchor="middle" x="294" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArchivePrestiti</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
-<g id="edge4_Node000000_Node000001" class="edge">
+<g id="edge6_Node000000_Node000001" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<g id="a_edge4_Node000000_Node000001"><a xlink:title=" ">
+<g id="a_edge6_Node000000_Node000001"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M183.63,-16C191.69,-16 199.81,-16 207.79,-16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="183.79,-12.5 173.79,-16 183.79,-19.5 183.79,-12.5"/>
 </a>

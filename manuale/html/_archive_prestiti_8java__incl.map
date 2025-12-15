@@ -1,5 +1,9 @@
 <map id="src/main/java/it/unisa/biblioteca/gruppo21/archive/ArchivePrestiti.java" name="src/main/java/it/unisa/biblioteca/gruppo21/archive/ArchivePrestiti.java">
-<area shape="rect" id="Node000001" title="Implementazione concreta dell&#39;archivio per la gestione dei prestiti." alt="" coords="23,5,206,64"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,224,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,62,117,98,112,96,113,66"/>
+<area shape="rect" id="Node000001" title="Implementazione concreta dell&#39;archivio per la gestione dei prestiti." alt="" coords="229,5,413,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,120,229,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,64,159,115,157,110,258,65"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="252,120,390,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,62,323,106,319,103,319,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="414,112,590,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="376,62,453,104,447,104,374,67"/>
 </map>

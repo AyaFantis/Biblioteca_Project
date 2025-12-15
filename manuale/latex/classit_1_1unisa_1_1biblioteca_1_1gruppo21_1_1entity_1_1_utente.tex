@@ -2,6 +2,16 @@
 \hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
 
 
+Inheritance diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente\+:
 \nopagebreak
 \begin{figure}[H]
@@ -36,7 +46,15 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9cd737f5cd9190db0c582610394b69e2}{aggiungi\+Prestito}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} prestito)
 \begin{DoxyCompactList}\small\item\em Aggiunge un prestito alla lista dei libri attualmente in possesso dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_ac14ce891e5fd7b5101402deb82d3dccd}{rimuovi\+Prestito}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} prestito)
-\begin{DoxyCompactList}\small\item\em Rimuove un prestito dalla lista dei prestiti attivi. Viene utilizzato quando un libro viene restituito, per aggiornare la lista dei libri attualmente in possesso dell\textquotesingle{}utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rimuove un prestito dalla lista dei prestiti attivi. Viene utilizzato quando un libro viene restituito, per aggiornare la lista dei libri attualmente in possesso dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_aa1b5c0469311946cfcdfb7d74fadbece}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce una rappresentazione testuale dell\textquotesingle{}oggeto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. Formatta i dati principali in una stringa leggibile, utile per il debugging e per i log di sistema. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_ac3daa95d3bffff5704ca38530ceaa828}{hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. Il calcolo si basa esclusivamente sul matricola. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9a3dde85681f9d61db3497e0753ec90c}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9a3dde85681f9d61db3497e0753ec90c}{equals}} (Object o)
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}uguaglianza logica tra due utenti. L\textquotesingle{}identità di un utente è determinata univocamente dalla sua matricola. Campi mutabili come email, nome o cognome non influenzano l\textquotesingle{}uguaglianza dell\textquotesingle{}oggetto (Entity Equality). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a2465f939651386de3cc5f5ae631263a7}{compare\+To}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a61837ce5f5e9833246261e16b19eb281}{Utente}} u)
+\begin{DoxyCompactList}\small\item\em Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. L\textquotesingle{}ordinamento viene effettuato alfabeticamente (case-\/insensitive) per Cognome. In caso di omonimia (cognomi uguali), viene utilizzato il Nome come criterio secondario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,7 +71,7 @@ String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1
 \item 
 final String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a005126c7d92ad4be941ac5b935beee22}{matricola}}
 \item 
-List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a15bbfd5d6923cf59397aff8d4e8bc148}{prestiti\+Attivi}}
+final List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a85ce1e57436d80508c87f232ce55b158}{prestiti\+Attivi}}
 \end{DoxyCompactItemize}
 
 
@@ -110,6 +128,49 @@ Aggiunge un prestito alla lista dei libri attualmente in possesso dell\textquote
 {\em prestito} & L\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} da aggiungere alla lista. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a2465f939651386de3cc5f5ae631263a7}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
+\doxysubsubsection{\texorpdfstring{compareTo()}{compareTo()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a2465f939651386de3cc5f5ae631263a7} 
+int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+compare\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a61837ce5f5e9833246261e16b19eb281}{Utente}}}]{u}{}\end{DoxyParamCaption})}
+
+
+
+Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. L\textquotesingle{}ordinamento viene effettuato alfabeticamente (case-\/insensitive) per Cognome. In caso di omonimia (cognomi uguali), viene utilizzato il Nome come criterio secondario. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+Questo metodo è "{}inconsistent with equals"{}\+: l\textquotesingle{}ordinamento si basa su dati anagrafici per facilitare la visualizzazione nelle liste, mentre l\textquotesingle{}uguaglianza si basa sulla matricola univoca.
+\end{DoxyNote}
+
+\item 
+\begin{DoxyParams}{Parameters}
+{\em u} & L\textquotesingle{}utente da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un numero negativo se questo utente precede l\textquotesingle{}altro, zero se sono uguali (per nome e cognome), un numero positivo se segue l\textquotesingle{}altro. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9a3dde85681f9d61db3497e0753ec90c}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!equals@{equals}}
+\index{equals@{equals}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9a3dde85681f9d61db3497e0753ec90c} 
+boolean it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o}{}\end{DoxyParamCaption})}
+
+
+
+Verifica l\textquotesingle{}uguaglianza logica tra due utenti. L\textquotesingle{}identità di un utente è determinata univocamente dalla sua matricola. Campi mutabili come email, nome o cognome non influenzano l\textquotesingle{}uguaglianza dell\textquotesingle{}oggetto (Entity Equality). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & L\textquotesingle{}oggetto con cui confrontare l\textquotesingle{}istanza corrente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}oggetto passato è un \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente} e ha la stessa matricola, false altrimenti. 
+\end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_acc7b2f49a2c7c46387573bc36e5ffff9}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!getCognome@{getCognome}}
 \index{getCognome@{getCognome}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
 \doxysubsubsection{\texorpdfstring{getCognome()}{getCognome()}}
@@ -188,6 +249,19 @@ Restituisce la lista dei prestiti.
 \begin{DoxyReturn}{Returns}
 Una lista di oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} rappresentante i libri attualmente in possesso dell\textquotesingle{}utente. 
 \end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_ac3daa95d3bffff5704ca38530ceaa828}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
+\doxysubsubsection{\texorpdfstring{hashCode()}{hashCode()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_ac3daa95d3bffff5704ca38530ceaa828} 
+int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. Il calcolo si basa esclusivamente sul matricola. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a9a3dde85681f9d61db3497e0753ec90c}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java. 
+
+\begin{DoxyReturn}{Returns}
+Intero rappresentante l\textquotesingle{}hash del codice ISBN 
+\end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_ac14ce891e5fd7b5101402deb82d3dccd}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!rimuoviPrestito@{rimuoviPrestito}}
 \index{rimuoviPrestito@{rimuoviPrestito}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
 \doxysubsubsection{\texorpdfstring{rimuoviPrestito()}{rimuoviPrestito()}}
@@ -248,6 +322,19 @@ Aggiorna il nome dell\textquotesingle{}utente.
 {\em nome} & La nuova email da impostare. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_aa1b5c0469311946cfcdfb7d74fadbece}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!toString@{toString}}
+\index{toString@{toString}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_aa1b5c0469311946cfcdfb7d74fadbece} 
+String it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce una rappresentazione testuale dell\textquotesingle{}oggeto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. Formatta i dati principali in una stringa leggibile, utile per il debugging e per i log di sistema. 
+
+\begin{DoxyReturn}{Returns}
+Una stringa nel formato "{}\+Utente\+: \mbox{[}\+Nome\mbox{]} \mbox{[}\+Cognome\mbox{]} -\/ Mat\+: \mbox{[}\+Matricola\mbox{]}"{}. 
+\end{DoxyReturn}
 
 
 \label{doc-variable-members}
@@ -283,11 +370,11 @@ Numero massimo di libri che può prendere in prestito un utente \Hypertarget{cla
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_aa92603779779d523bb074dc35fed34e5} 
 String it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+nome\hspace{0.3cm}{\ttfamily [private]}}
 
-Nome dell\textquotesingle{}utente \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a15bbfd5d6923cf59397aff8d4e8bc148}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!prestitiAttivi@{prestitiAttivi}}
+Nome dell\textquotesingle{}utente \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a85ce1e57436d80508c87f232ce55b158}\index{it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}!prestitiAttivi@{prestitiAttivi}}
 \index{prestitiAttivi@{prestitiAttivi}!it.unisa.biblioteca.gruppo21.entity.Utente@{it.unisa.biblioteca.gruppo21.entity.Utente}}
 \doxysubsubsection{\texorpdfstring{prestitiAttivi}{prestitiAttivi}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a15bbfd5d6923cf59397aff8d4e8bc148} 
-List$<$\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}$>$ it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+prestiti\+Attivi\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente_a85ce1e57436d80508c87f232ce55b158} 
+final List$<$\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}}$>$ it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Utente.\+prestiti\+Attivi\hspace{0.3cm}{\ttfamily [private]}}
 
 Lista dei libri attualmente in possesso 
 
