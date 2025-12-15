@@ -247,6 +247,9 @@ Viene mostrato il messaggio di conferma o errore.
 {\em isbn} & ID \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se la restituzione è avvenuta con successo mentre false se l\textquotesingle{}operazione è fallita. 
+\end{DoxyReturn}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1gui_1_1_controller_a8edadd3474c27ddd580496146fdfa3d6}\index{it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}!gestisciRimozioneLibro@{gestisciRimozioneLibro}}
 \index{gestisciRimozioneLibro@{gestisciRimozioneLibro}!it.unisa.biblioteca.gruppo21.gui.Controller@{it.unisa.biblioteca.gruppo21.gui.Controller}}
 \doxysubsubsection{\texorpdfstring{gestisciRimozioneLibro()}{gestisciRimozioneLibro()}}
@@ -349,23 +352,18 @@ void it.\+unisa.\+biblioteca.\+gruppo21.\+gui.\+Controller.\+mostra\+Messaggio (
 
 Visualizza un messaggio di feedback. 
 
-
-\begin{DoxyItemize}
-\item \begin{DoxyPrecond}{Precondition}
-messaggio non nullo.
+\begin{DoxyPrecond}{Precondition}
+messaggio non nullo. 
 \end{DoxyPrecond}
-
-\item \begin{DoxyPostcond}{Postcondition}
-Il messaggio viene inviato allo stream di output.
+\begin{DoxyPostcond}{Postcondition}
+Il messaggio viene inviato allo stream di output. 
 \end{DoxyPostcond}
 
-\item 
 \begin{DoxyParams}{Parameters}
 {\em messaggio} & Testo da mostrare. \\
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

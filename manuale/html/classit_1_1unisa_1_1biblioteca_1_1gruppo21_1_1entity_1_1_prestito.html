@@ -133,12 +133,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a133916296172c92bffbb1011933167e7" id="r_a133916296172c92bffbb1011933167e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_1_1_stato_prestito.html">StatoPrestito</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a133916296172c92bffbb1011933167e7">stato</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><ul>
-<li>Contiene i riferimenti (tramite ID) all'utente e al libro coinvolti, oltre alle date di inizio e fine prestito e allo stato corrente.</li>
-<li><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
+<div class="textblock"><p>Contiene i riferimenti (tramite ID) all'utente e al libro coinvolti, oltre alle date di inizio e fine prestito e allo stato corrente. </p><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-</li>
-</ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a812e56cd56ed6c536d0b0b68d856b469" name="a812e56cd56ed6c536d0b0b68d856b469"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a812e56cd56ed6c536d0b0b68d856b469">&#9670;&#160;</a></span>Prestito()</h2>
@@ -170,7 +166,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>. Inizializza un nuovo oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> associando un utente e un libro con una data di scadenza. </p>
-<dl class="section note"><dt>Note</dt><dd>È buona norma inizializzare lo stato (es. a ATTIVO) nel costruttore per evitare valori null. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">utenteCoinvolto</td><td>L'utente che richiede il prestito. </td></tr>
@@ -200,16 +195,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>. I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista. Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">altroPrestito</td><td>Il prestito da confrontare con l'istanza corrente. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Un valore negativo se la scadenza di questo prestito è antecedente a quella dell'altro, zero se le date coicidono, un valore positivo se è successiva. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -338,7 +330,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Data entro la quale il libro deve essere restituito. </p><dl class="section note"><dt>Note</dt><dd>Questa è la data di scadenza prevista, non la data effettiva di restituzione. </dd></dl>
+<p>Data entro la quale il libro deve essere restituito. </p>
 
 </div>
 </div>

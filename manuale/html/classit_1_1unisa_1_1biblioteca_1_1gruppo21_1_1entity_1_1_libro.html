@@ -122,11 +122,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae4fe92409e041ab97f0d1b5d19b326ae" id="r_ae4fe92409e041ab97f0d1b5d19b326ae"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4fe92409e041ab97f0d1b5d19b326ae">toString</a> ()</td></tr>
 <tr class="memdesc:ae4fe92409e041ab97f0d1b5d19b326ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una rappresentazione testuale del libro. Restituisce una stringa formattata come "Titolo - Autore".  <br /></td></tr>
 <tr class="memitem:ad01474116ca4bde34c8698bbbe1c1533" id="r_ad01474116ca4bde34c8698bbbe1c1533"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01474116ca4bde34c8698bbbe1c1533">hashCode</a> ()</td></tr>
-<tr class="memdesc:ad01474116ca4bde34c8698bbbe1c1533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo <a class="el" href="#a065b975bad2e7ec1891fd12f2ad76df9" title="Verifica l&#39;ugualglianza logica tra due libri. L&#39;identità di un libro è determinata univocamente dal s...">equals()</a> abbiano lo stesso hash code, rispettando il contratto generale di Java per l'uso nelle collezioni.  <br /></td></tr>
+<tr class="memdesc:ad01474116ca4bde34c8698bbbe1c1533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. Il calcolo si basa esclusivamente sul codice ISBN.  <br /></td></tr>
 <tr class="memitem:a065b975bad2e7ec1891fd12f2ad76df9" id="r_a065b975bad2e7ec1891fd12f2ad76df9"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a065b975bad2e7ec1891fd12f2ad76df9">equals</a> (Object o)</td></tr>
-<tr class="memdesc:a065b975bad2e7ec1891fd12f2ad76df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'ugualglianza logica tra due libri. L'identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l'ISBN identifica univocamente l'edizione.  <br /></td></tr>
+<tr class="memdesc:a065b975bad2e7ec1891fd12f2ad76df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'ugualglianza logica tra due libri. L'identità di un libro è determinata univocamente dal suo codice ISBN.  <br /></td></tr>
 <tr class="memitem:a307995441ab36fb859a5135a440359e5" id="r_a307995441ab36fb859a5135a440359e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a307995441ab36fb859a5135a440359e5">compareTo</a> (<a class="el" href="#ab1eaf4e09994d057ac39eb13e0072232">Libro</a> o)</td></tr>
-<tr class="memdesc:a307995441ab36fb859a5135a440359e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. L'ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l'Autore come criteria secondario.  <br /></td></tr>
+<tr class="memdesc:a307995441ab36fb859a5135a440359e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. L'ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l'Autore come criterio secondario.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -137,11 +137,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4cf763d36476ef6751e5e47af682c143" id="r_a4cf763d36476ef6751e5e47af682c143"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cf763d36476ef6751e5e47af682c143">numeroCopieDisponibili</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Questa classe è un'entità che incapsula le informazioni fondamentali di un libro, inclusa la gestione della quantità totale di copie possedute dalla biblioteca.</p><ul>
-<li><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
+<div class="textblock"><p>Questa classe è un'entità che incapsula le informazioni fondamentali di un libro, inclusa la gestione della quantità totale di copie possedute dalla biblioteca. </p><dl class="section author"><dt>Author</dt><dd>Gruppo 21 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-</li>
-</ul>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab1eaf4e09994d057ac39eb13e0072232" name="ab1eaf4e09994d057ac39eb13e0072232"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1eaf4e09994d057ac39eb13e0072232">&#9670;&#160;</a></span>Libro()</h2>
@@ -207,17 +204,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. L'ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l'Autore come criteria secondario. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Definisce l'ordinamento naturale degli oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. L'ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l'Autore come criterio secondario. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">o</td><td>Il libro da confrontare. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Un numero negativo se questo libro precede l'altro, zero se sono uguali (per titolo e autore), un numero positivo se segue l'altro. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -236,17 +230,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Verifica l'ugualglianza logica tra due libri. L'identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l'ISBN identifica univocamente l'edizione. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Verifica l'ugualglianza logica tra due libri. L'identità di un libro è determinata univocamente dal suo codice ISBN. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">o</td><td>L'oggetto con cui confrontare l'istanza corrente. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true se l'oggetto passato è un <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> e ha lo stesso ISBN, falsa altrimenti. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -326,10 +317,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce la quantità totale di copie. </p>
-<ul>
-<li>Nota: Questo valore rappresenta lo stock totale, non le copie attualmente disponibili (per quelle bisogna sottrarre i prestiti attivi). <dl class="section return"><dt>Returns</dt><dd>Intero rappresentante le copie totali. </dd></dl>
-</li>
-</ul>
+<dl class="section return"><dt>Returns</dt><dd>Intero rappresentante le copie totali. </dd></dl>
 
 </div>
 </div>
@@ -368,7 +356,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo <a class="el" href="#a065b975bad2e7ec1891fd12f2ad76df9" title="Verifica l&#39;ugualglianza logica tra due libri. L&#39;identità di un libro è determinata univocamente dal s...">equals()</a> abbiano lo stesso hash code, rispettando il contratto generale di Java per l'uso nelle collezioni. </p>
+<p>Calcola il codice hash per l'oggetto <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a>. Il calcolo si basa esclusivamente sul codice ISBN. </p>
 <dl class="section return"><dt>Returns</dt><dd>Intero rappresentante l'hash del codice ISBN </dd></dl>
 
 </div>

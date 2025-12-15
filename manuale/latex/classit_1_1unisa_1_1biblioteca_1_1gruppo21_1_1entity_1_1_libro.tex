@@ -40,11 +40,11 @@ void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_l
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ae4fe92409e041ab97f0d1b5d19b326ae}{to\+String}} ()
 \begin{DoxyCompactList}\small\item\em Restituisce una rappresentazione testuale del libro. Restituisce una stringa formattata come "{}\+Titolo -\/ Autore"{}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ad01474116ca4bde34c8698bbbe1c1533}{hash\+Code}} ()
-\begin{DoxyCompactList}\small\item\em Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java per l\textquotesingle{}uso nelle collezioni. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. \end{DoxyCompactList}\item 
 boolean \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals}} (Object o)
-\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l\textquotesingle{}ISBN identifica univocamente l\textquotesingle{}edizione. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a307995441ab36fb859a5135a440359e5}{compare\+To}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_ab1eaf4e09994d057ac39eb13e0072232}{Libro}} o)
-\begin{DoxyCompactList}\small\item\em Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criteria secondario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criterio secondario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -61,16 +61,13 @@ int \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_li
 
 
 \doxysubsection{Detailed Description}
-Questa classe è un\textquotesingle{}entità che incapsula le informazioni fondamentali di un libro, inclusa la gestione della quantità totale di copie possedute dalla biblioteca.
-\begin{DoxyItemize}
-\item \begin{DoxyAuthor}{Author}
+Questa classe è un\textquotesingle{}entità che incapsula le informazioni fondamentali di un libro, inclusa la gestione della quantità totale di copie possedute dalla biblioteca. \begin{DoxyAuthor}{Author}
 Gruppo 21 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0 
 \end{DoxyVersion}
 
-\end{DoxyItemize}
 
 \label{doc-constructors}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_doc-constructors}
@@ -111,11 +108,9 @@ int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+compare\+To (\begin{Do
 
 
 
-Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criteria secondario. 
+Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. L\textquotesingle{}ordinamento viene effettuati alfabetica per Titolo. In caso di titolo identici, viene utilizzato l\textquotesingle{}Autore come criterio secondario. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em o} & Il libro da confrontare. \\
 \hline
@@ -123,8 +118,7 @@ Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classi
 \begin{DoxyReturn}{Returns}
 Un numero negativo se questo libro precede l\textquotesingle{}altro, zero se sono uguali (per titolo e autore), un numero positivo se segue l\textquotesingle{}altro. 
 \end{DoxyReturn}
-
-\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!equals@{equals}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!equals@{equals}}
 \index{equals@{equals}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 \doxysubsubsection{\texorpdfstring{equals()}{equals()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9} 
@@ -132,11 +126,9 @@ boolean it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+equals (\begin{Dox
 
 
 
-Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. Titolo, autore e altri campi vengono ignorati nel confronto poichè l\textquotesingle{}ISBN identifica univocamente l\textquotesingle{}edizione. 
+Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle{}identità di un libro è determinata univocamente dal suo codice ISBN. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em o} & L\textquotesingle{}oggetto con cui confrontare l\textquotesingle{}istanza corrente. \\
 \hline
@@ -144,8 +136,7 @@ Verifica l\textquotesingle{}ugualglianza logica tra due libri. L\textquotesingle
 \begin{DoxyReturn}{Returns}
 true se l\textquotesingle{}oggetto passato è un \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro} e ha lo stesso ISBN, falsa altrimenti. 
 \end{DoxyReturn}
-
-\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getAnnoPubblicazione@{getAnnoPubblicazione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getAnnoPubblicazione@{getAnnoPubblicazione}}
 \index{getAnnoPubblicazione@{getAnnoPubblicazione}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 \doxysubsubsection{\texorpdfstring{getAnnoPubblicazione()}{getAnnoPubblicazione()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a21586a48734dca9e856820c8ce575cc9} 
@@ -194,13 +185,10 @@ int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+get\+Numero\+Copie\+Di
 
 Restituisce la quantità totale di copie. 
 
-
-\begin{DoxyItemize}
-\item Nota\+: Questo valore rappresenta lo stock totale, non le copie attualmente disponibili (per quelle bisogna sottrarre i prestiti attivi). \begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Returns}
 Intero rappresentante le copie totali. 
 \end{DoxyReturn}
-
-\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a7f0e68cdc7844d778584e26ef8d7e0cb}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getTitolo@{getTitolo}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a7f0e68cdc7844d778584e26ef8d7e0cb}\index{it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}!getTitolo@{getTitolo}}
 \index{getTitolo@{getTitolo}!it.unisa.biblioteca.gruppo21.entity.Libro@{it.unisa.biblioteca.gruppo21.entity.Libro}}
 \doxysubsubsection{\texorpdfstring{getTitolo()}{getTitolo()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a7f0e68cdc7844d778584e26ef8d7e0cb} 
@@ -221,7 +209,7 @@ int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Libro.\+hash\+Code (\begin{Dox
 
 
 
-Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. Questo garantisce che oggetti considerati uguali dal metodo \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro_a065b975bad2e7ec1891fd12f2ad76df9}{equals()} abbiano lo stesso hash code, rispettando il contratto generale di Java per l\textquotesingle{}uso nelle collezioni. 
+Calcola il codice hash per l\textquotesingle{}oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}. Il calcolo si basa esclusivamente sul codice ISBN. 
 
 \begin{DoxyReturn}{Returns}
 Intero rappresentante l\textquotesingle{}hash del codice ISBN 

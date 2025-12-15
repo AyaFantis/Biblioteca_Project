@@ -103,17 +103,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa66e42c90e7ad657467db3724f9a12ed" id="r_aa66e42c90e7ad657467db3724f9a12ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa66e42c90e7ad657467db3724f9a12ed">Biblioteca</a> ()</td></tr>
 <tr class="memdesc:aa66e42c90e7ad657467db3724f9a12ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca.html">Biblioteca</a>. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l'inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria.  <br /></td></tr>
 <tr class="memitem:a95906d56abf64c0a04f8820b145157da" id="r_a95906d56abf64c0a04f8820b145157da"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95906d56abf64c0a04f8820b145157da">iscriviUtente</a> (String nome, String cognome, String matricola, String email)</td></tr>
-<tr class="memdesc:a95906d56abf64c0a04f8820b145157da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. Vengono effettiati controlli sulla validità della matricola e dell'email.  <br /></td></tr>
+<tr class="memdesc:a95906d56abf64c0a04f8820b145157da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo utente nel sistema. Vengono effettiati controlli sulla validità della matricola e dell'email.  <br /></td></tr>
 <tr class="memitem:ac97c22dfbd3e906add74796657d61180" id="r_ac97c22dfbd3e906add74796657d61180"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97c22dfbd3e906add74796657d61180">modificaUtente</a> (String nuovoNome, String nuovoCognome, String nuovaEmail, String matricola)</td></tr>
-<tr class="memdesc:ac97c22dfbd3e906add74796657d61180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
+<tr class="memdesc:ac97c22dfbd3e906add74796657d61180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata.  <br /></td></tr>
 <tr class="memitem:a33cf0aa9c50f39be468db4e55dcb67cd" id="r_a33cf0aa9c50f39be468db4e55dcb67cd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33cf0aa9c50f39be468db4e55dcb67cd">rimuoviUtente</a> (String matricola)</td></tr>
-<tr class="memdesc:a33cf0aa9c50f39be468db4e55dcb67cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un utente dal sistema. L'operazione viene rifiutata se l'utente ha ancora prestiti attivi. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
+<tr class="memdesc:a33cf0aa9c50f39be468db4e55dcb67cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un utente dal sistema. L'operazione viene rifiutata se l'utente ha ancora prestiti attivi.  <br /></td></tr>
 <tr class="memitem:aab32f3238782c006969697c755426aa3" id="r_aab32f3238782c006969697c755426aa3"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab32f3238782c006969697c755426aa3">getElencoUtenti</a> ()</td></tr>
-<tr class="memdesc:aab32f3238782c006969697c755426aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera l'elenco completo degli utenti registrati. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
+<tr class="memdesc:aab32f3238782c006969697c755426aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera l'elenco completo degli utenti registrati.  <br /></td></tr>
 <tr class="memitem:adfffa09122b9b43c6cee0ee2cab62e3b" id="r_adfffa09122b9b43c6cee0ee2cab62e3b"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfffa09122b9b43c6cee0ee2cab62e3b">cercaUtente</a> (String cognome, String matricola)</td></tr>
 <tr class="memdesc:adfffa09122b9b43c6cee0ee2cab62e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca utenti in base a criteri anagrafici. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>.  <br /></td></tr>
 <tr class="memitem:a51c5bfd6d2062819c47fa76d11865e47" id="r_a51c5bfd6d2062819c47fa76d11865e47"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51c5bfd6d2062819c47fa76d11865e47">aggiungiLibro</a> (String titolo, String autore, String codiceISBN, int annoPubblicazione, int numeroCopieDisponibili)</td></tr>
-<tr class="memdesc:a51c5bfd6d2062819c47fa76d11865e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nuovo libro al catalogo. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
+<tr class="memdesc:a51c5bfd6d2062819c47fa76d11865e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nuovo libro al catalogo.  <br /></td></tr>
 <tr class="memitem:a73176a2e137280439980e78a400a6fb0" id="r_a73176a2e137280439980e78a400a6fb0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73176a2e137280439980e78a400a6fb0">aggiornaCopieLibro</a> (String isbn, int nuoveCopie)</td></tr>
 <tr class="memdesc:a73176a2e137280439980e78a400a6fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna il numero di copie disponibili di un libro.  <br /></td></tr>
 <tr class="memitem:a9f7ecba2c29c27e8a3d60064f18dc902" id="r_a9f7ecba2c29c27e8a3d60064f18dc902"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f7ecba2c29c27e8a3d60064f18dc902">rimuoviLibro</a> (String codiceISBN)</td></tr>
@@ -123,11 +123,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dd86ef4e009f4fb8461e1b130c952f4" id="r_a1dd86ef4e009f4fb8461e1b130c952f4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd86ef4e009f4fb8461e1b130c952f4">cercaLibro</a> (String titolo, String autore, String codiceISBN)</td></tr>
 <tr class="memdesc:a1dd86ef4e009f4fb8461e1b130c952f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca libri per titolo, autore o ISBN. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>.  <br /></td></tr>
 <tr class="memitem:aa1e70ee8e9c07d3736c009bfc3272cdb" id="r_aa1e70ee8e9c07d3736c009bfc3272cdb"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1e70ee8e9c07d3736c009bfc3272cdb">effettuaPrestito</a> (String identificativo, String codiceISBN, LocalDate dataScadenza)</td></tr>
-<tr class="memdesc:aa1e70ee8e9c07d3736c009bfc3272cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
+<tr class="memdesc:aa1e70ee8e9c07d3736c009bfc3272cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente.  <br /></td></tr>
 <tr class="memitem:a79b71f182769bdd35ee83deb80a9f8f5" id="r_a79b71f182769bdd35ee83deb80a9f8f5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79b71f182769bdd35ee83deb80a9f8f5">restituisciLibro</a> (String matricola, String codiceISBN)</td></tr>
 <tr class="memdesc:a79b71f182769bdd35ee83deb80a9f8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
 <tr class="memitem:a2b2fd662d11d6460109f791541fda36e" id="r_a2b2fd662d11d6460109f791541fda36e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2fd662d11d6460109f791541fda36e">getStoricoPrestiti</a> ()</td></tr>
-<tr class="memdesc:a2b2fd662d11d6460109f791541fda36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera lo storico completo di tutti i prestiti registrati. *Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. *.  <br /></td></tr>
+<tr class="memdesc:a2b2fd662d11d6460109f791541fda36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>.  <br /></td></tr>
 <tr class="memitem:a0673e368c3c4c206cf831f8c1be93e80" id="r_a0673e368c3c4c206cf831f8c1be93e80"><td class="memItemLeft" align="right" valign="top"><a id="a0673e368c3c4c206cf831f8c1be93e80" name="a0673e368c3c4c206cf831f8c1be93e80"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>controllaRitardi</b> ()</td></tr>
 <tr class="memdesc:a0673e368c3c4c206cf831f8c1be93e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN_RITARDO se la data di scadenza è superata. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. <br /></td></tr>
@@ -228,7 +228,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Aggiunge un nuovo libro al catalogo. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri.html">ServiceLibri</a>. </p>
+<p>Aggiunge un nuovo libro al catalogo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">titolo</td><td>Titolo del libro. </td></tr>
@@ -335,7 +335,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
+<p>Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">identificativo</td><td>Nome o cognome dell'utente richiedente. </td></tr>
@@ -383,7 +383,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recupera l'elenco completo degli utenti registrati. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. </p>
+<p>Recupera l'elenco completo degli utenti registrati. </p>
 <dl class="section return"><dt>Returns</dt><dd>Lista di oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente.html">Utente</a>. </dd></dl>
 
 </div>
@@ -403,7 +403,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recupera lo storico completo di tutti i prestiti registrati. *Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. *. </p>
+<p>Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l'operazione a <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti.html">ServicePrestiti</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Lista di oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito.html">Prestito</a>. </dd></dl>
 
 </div>
@@ -437,7 +437,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registra un nuovo utente nel sistema. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. Vengono effettiati controlli sulla validità della matricola e dell'email. </p>
+<p>Registra un nuovo utente nel sistema. Vengono effettiati controlli sulla validità della matricola e dell'email. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nome dell'utente. </td></tr>
@@ -480,7 +480,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. </p>
+<p>Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nuovoNome</td><td>Il nuovo nome da impostare. </td></tr>
@@ -566,7 +566,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rimuove un utente dal sistema. L'operazione viene rifiutata se l'utente ha ancora prestiti attivi. Passa l'operazione al <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti.html">ServiceUtenti</a>. </p>
+<p>Rimuove un utente dal sistema. L'operazione viene rifiutata se l'utente ha ancora prestiti attivi. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matricola</td><td>La matricola dell'utente da rimuovere. </td></tr>

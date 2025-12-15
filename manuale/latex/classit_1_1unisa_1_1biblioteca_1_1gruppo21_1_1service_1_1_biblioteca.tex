@@ -16,17 +16,17 @@ Collaboration diagram for it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Bibliot
 \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa66e42c90e7ad657467db3724f9a12ed}{Biblioteca}} ()
 \begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca}{Biblioteca}. Inizializza gli archivi di Utenti, Libri e Prestiti, collegando le dipendenze necessarie. Durante l\textquotesingle{}inizializzazione, ripristina i collegamenti tra prestiti attivi e utenti in memoria. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a95906d56abf64c0a04f8820b145157da}{iscrivi\+Utente}} (String nome, String cognome, String matricola, String email)
-\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_ac97c22dfbd3e906add74796657d61180}{modifica\+Utente}} (String nuovo\+Nome, String nuovo\+Cognome, String nuova\+Email, String matricola)
-\begin{DoxyCompactList}\small\item\em Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a33cf0aa9c50f39be468db4e55dcb67cd}{rimuovi\+Utente}} (String matricola)
-\begin{DoxyCompactList}\small\item\em Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se l\textquotesingle{}utente ha ancora prestiti attivi. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se l\textquotesingle{}utente ha ancora prestiti attivi. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aab32f3238782c006969697c755426aa3}{get\+Elenco\+Utenti}} ()
-\begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo degli utenti registrati. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Recupera l\textquotesingle{}elenco completo degli utenti registrati. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_adfffa09122b9b43c6cee0ee2cab62e3b}{cerca\+Utente}} (String cognome, String matricola)
 \begin{DoxyCompactList}\small\item\em Cerca utenti in base a criteri anagrafici. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a51c5bfd6d2062819c47fa76d11865e47}{aggiungi\+Libro}} (String titolo, String autore, String codice\+ISBN, int anno\+Pubblicazione, int numero\+Copie\+Disponibili)
-\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo libro al catalogo. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo libro al catalogo. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a73176a2e137280439980e78a400a6fb0}{aggiorna\+Copie\+Libro}} (String isbn, int nuove\+Copie)
 \begin{DoxyCompactList}\small\item\em Aggiorna il numero di copie disponibili di un libro. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a9f7ecba2c29c27e8a3d60064f18dc902}{rimuovi\+Libro}} (String codice\+ISBN)
@@ -36,11 +36,11 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a1dd86ef4e009f4fb8461e1b130c952f4}{cerca\+Libro}} (String titolo, String autore, String codice\+ISBN)
 \begin{DoxyCompactList}\small\item\em Cerca libri per titolo, autore o ISBN. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_aa1e70ee8e9c07d3736c009bfc3272cdb}{effettua\+Prestito}} (String identificativo, String codice\+ISBN, Local\+Date data\+Scadenza)
-\begin{DoxyCompactList}\small\item\em Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a79b71f182769bdd35ee83deb80a9f8f5}{restituisci\+Libro}} (String matricola, String codice\+ISBN)
 \begin{DoxyCompactList}\small\item\em Registra la restituzione di un libro. Aggiorna lo stato del prestito a RESTITUITO e incrementa le copie disponibili Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a2b2fd662d11d6460109f791541fda36e}{get\+Storico\+Prestiti}} ()
-\begin{DoxyCompactList}\small\item\em Recupera lo storico completo di tutti i prestiti registrati. \texorpdfstring{$\ast$}{*}\+Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\item 
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a0673e368c3c4c206cf831f8c1be93e80}\label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_biblioteca_a0673e368c3c4c206cf831f8c1be93e80} 
 void {\bfseries controlla\+Ritardi} ()
 \begin{DoxyCompactList}\small\item\em Controlla la presenza di ritardi nei prestiti attivi. Scansiona i prestiti e aggiorna lo stato a IN\+\_\+\+RITARDO se la data di scadenza è superata. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -113,7 +113,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+aggiungi\+Lib
 
 
 
-Aggiunge un nuovo libro al catalogo. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_libri}{Service\+Libri}. 
+Aggiunge un nuovo libro al catalogo. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -181,7 +181,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+effettua\+Pre
 
 
 
-Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. 
+Registra un nuovo prestito per un utente. Verifica la disponibilità del libro e il limite massimo di prestiti per utente. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -216,7 +216,7 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 
 
 
-Recupera l\textquotesingle{}elenco completo degli utenti registrati. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. 
+Recupera l\textquotesingle{}elenco completo degli utenti registrati. 
 
 \begin{DoxyReturn}{Returns}
 Lista di oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_utente}{Utente}. 
@@ -229,7 +229,7 @@ List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_
 
 
 
-Recupera lo storico completo di tutti i prestiti registrati. \texorpdfstring{$\ast$}{*}\+Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. \texorpdfstring{$\ast$}{*}. 
+Recupera lo storico completo di tutti i prestiti registrati. Include sia i prestiti attivi che quelli conclusi (restituiti). Passa l\textquotesingle{}operazione a \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_prestiti}{Service\+Prestiti}. 
 
 \begin{DoxyReturn}{Returns}
 Lista di oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. 
@@ -242,7 +242,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+iscrivi\+Uten
 
 
 
-Registra un nuovo utente nel sistema. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. 
+Registra un nuovo utente nel sistema. Vengono effettiati controlli sulla validità della matricola e dell\textquotesingle{}email. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -266,7 +266,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+modifica\+Ute
 
 
 
-Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. 
+Modifica i dati anagrafici di un utente esistente. Permette di aggiornare Nome, Cognome ed Email. La Matricola viene usata come chiave di ricerca e non può essere modificata. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -328,7 +328,7 @@ String it.\+unisa.\+biblioteca.\+gruppo21.\+service.\+Biblioteca.\+rimuovi\+Uten
 
 
 
-Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se l\textquotesingle{}utente ha ancora prestiti attivi. Passa l\textquotesingle{}operazione al \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1service_1_1_service_utenti}{Service\+Utenti}. 
+Rimuove un utente dal sistema. L\textquotesingle{}operazione viene rifiutata se l\textquotesingle{}utente ha ancora prestiti attivi. 
 
 
 \begin{DoxyParams}{Parameters}

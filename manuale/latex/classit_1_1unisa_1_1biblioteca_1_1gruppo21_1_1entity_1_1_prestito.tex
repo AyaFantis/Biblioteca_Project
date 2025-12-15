@@ -56,17 +56,13 @@ final Local\+Date \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_
 
 
 \doxysubsection{Detailed Description}
-
-\begin{DoxyItemize}
-\item Contiene i riferimenti (tramite ID) all\textquotesingle{}utente e al libro coinvolti, oltre alle date di inizio e fine prestito e allo stato corrente.
-\item \begin{DoxyAuthor}{Author}
+Contiene i riferimenti (tramite ID) all\textquotesingle{}utente e al libro coinvolti, oltre alle date di inizio e fine prestito e allo stato corrente. \begin{DoxyAuthor}{Author}
 Gruppo 21 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0 
 \end{DoxyVersion}
 
-\end{DoxyItemize}
 
 \label{doc-constructors}
 \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_doc-constructors}
@@ -81,9 +77,6 @@ it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+Prestito (\begin{DoxyPa
 
 Costruttore della classe \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. Inizializza un nuovo oggetto \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito} associando un utente e un libro con una data di scadenza. 
 
-\begin{DoxyNote}{Note}
-È buona norma inizializzare lo stato (es. a ATTIVO) nel costruttore per evitare valori null. 
-\end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
 {\em utente\+Coinvolto} & L\textquotesingle{}utente che richiede il prestito. \\
@@ -111,8 +104,6 @@ int it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+compare\+To (\begin
 Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito}{Prestito}. I prestiti vengono ordinati in ordine cronologico crescente in base alla data di restituzione prevista. Questo ordinamento è utile per identifare rapidamente i prestiti in scadenza o scaduti nelle liste. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em altro\+Prestito} & Il prestito da confrontare con l\textquotesingle{}istanza corrente. \\
 \hline
@@ -120,8 +111,7 @@ Definisce l\textquotesingle{}ordinamento naturale degli oggetti \doxylink{classi
 \begin{DoxyReturn}{Returns}
 Un valore negativo se la scadenza di questo prestito è antecedente a quella dell\textquotesingle{}altro, zero se le date coicidono, un valore positivo se è successiva. 
 \end{DoxyReturn}
-
-\end{DoxyItemize}\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!getDataRestituzione@{getDataRestituzione}}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!getDataRestituzione@{getDataRestituzione}}
 \index{getDataRestituzione@{getDataRestituzione}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 \doxysubsubsection{\texorpdfstring{getDataRestituzione()}{getDataRestituzione()}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_ac24c19267467c23ce7cf811e4e31d341} 
@@ -199,10 +189,7 @@ Modifica lo stato del prestito. Utilizzato per aggiornare il ciclo di vita del p
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a043f3301f77e3e81c1a0c340fc645410} 
 final Local\+Date it.\+unisa.\+biblioteca.\+gruppo21.\+entity.\+Prestito.\+data\+Restituzione\hspace{0.3cm}{\ttfamily [private]}}
 
-Data entro la quale il libro deve essere restituito. \begin{DoxyNote}{Note}
-Questa è la data di scadenza prevista, non la data effettiva di restituzione. 
-\end{DoxyNote}
-\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a052e2e61e5201c0c173464945f5bf989}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!libro@{libro}}
+Data entro la quale il libro deve essere restituito. \Hypertarget{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a052e2e61e5201c0c173464945f5bf989}\index{it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}!libro@{libro}}
 \index{libro@{libro}!it.unisa.biblioteca.gruppo21.entity.Prestito@{it.unisa.biblioteca.gruppo21.entity.Prestito}}
 \doxysubsubsection{\texorpdfstring{libro}{libro}}
 {\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1gruppo21_1_1entity_1_1_prestito_a052e2e61e5201c0c173464945f5bf989} 
