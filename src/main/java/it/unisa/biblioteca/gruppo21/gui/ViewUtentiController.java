@@ -121,7 +121,7 @@ public class ViewUtentiController extends AbstractViewController {
         txtEmail.clear();
         
         
-        txtMatricola.setEditable(false);
+        txtMatricola.setEditable(true);
         
         btnInserisci.setDisable(false);
         btnModifica.setDisable(true);
